@@ -1,0 +1,33 @@
+{
+  "name": "entropic-elixirs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodeman": "^1.1.2",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.8.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "resetDb": "node resetDb.js",
+    "seed": "node seed.js",
+    "debug": "nodemon --inspect-brk server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirinStar/Entropic-Elixirs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShirinStar/Entropic-Elixirs/issues"
+  },
+  "homepage": "https://github.com/ShirinStar/Entropic-Elixirs#readme"
+}
