@@ -1,14 +1,22 @@
 const express = require('express');
-const { User, Answer } = require('./models');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const PORT = process.env.PORT || 3001;
+const {userRouter} = require('./routes/userRouter');
+const {answerRouter} = require('./routes/answerRouter');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+app.use(logger('dev'));
+app.use(bodyParser.json());
 
-app.get('/', async(req, res) => {
-  const user = await User.findAll();
-  const answer = await Answer.findAll();
-  res.json({ user, answer })
-  // res.send('hello Entropic we are starting')
-})
+// app.get('/users', async (req, res) =>{
+// const users = await User.findAll();
+// const answers = await Answer.findAll();
+//   res.json({ users, answers })
+// });
+
+app.get('/', (req, res) => {
+  res.send('hello entropic!');
+});
 
 app.listen(PORT, () => console.log(`up and running on port ${PORT}`));
