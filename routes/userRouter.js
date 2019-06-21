@@ -25,10 +25,10 @@ userRouter.post('/', async (req, res) => {
     res.status(500).send(e.message);
   };
 });
-//
-// userRouter.use('/:id/answers', (req, res, next) => {
-//   res.locals.userId = req.params.id
-//   next();
-// }, answerRouter)
+
+userRouter.use('/:id/answers', (req, res, next) => {
+  res.locals.userId = req.params.id
+  next();
+}, answerRouter)
 
 module.exports = { userRouter }
