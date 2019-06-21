@@ -4,6 +4,7 @@ const { answerRouter } = require('./answerRouter');
 
 const userRouter = Router();
 
+
 userRouter.get('/', async (req, res) => {
   try {
     const users = await User.findAll();

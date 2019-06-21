@@ -28,9 +28,9 @@ answerRouter.post('/', async (req, res) => {
       answer_openness,
       answer_sum,
     });
-    const answer = {
-      ...newAnswer.dataValues,
-    }
+    // const answer = {
+    //   ...newAnswer.dataValues,
+    // }
     res.json(answer);
   } catch(e) {
     console.log(e);

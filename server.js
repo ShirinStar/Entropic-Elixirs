@@ -8,6 +8,7 @@ const {answerRouter} = require('./routes/answerRouter');
 const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use('/users', userRouter);
 
 // app.get('/users', async (req, res) =>{
 // const users = await User.findAll();
