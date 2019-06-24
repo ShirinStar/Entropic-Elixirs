@@ -18,8 +18,8 @@ userRouter.post('/', async (req, res) => {
   try {
     const { userAge, userGender } = req.body;
     const intakeUser = await User.create({
-      user_age,
-      user_gender
+      userAge,
+      userGender
     });
     res.json(intakeUser);
   } catch(e) {
