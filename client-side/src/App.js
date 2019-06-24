@@ -4,7 +4,8 @@ import IntakeForm from './components/IntakeForm';
 import { intakeUser } from './services/apiHelper'
 
 function App(props) {
-  const [user, setUser] = React.useState(''); //connect to websocket call receive user id
+
+  const [user, setUser] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user inttake form
 
   const handleRegister = async(data) => {

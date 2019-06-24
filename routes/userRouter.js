@@ -16,7 +16,7 @@ userRouter.get('/', async (req, res) => {
 
 userRouter.post('/', async (req, res) => {
   try {
-    const { user_age, user_gender } = req.body;
+    const { userAge, userGender } = req.body;
     const intakeUser = await User.create({
       user_age,
       user_gender

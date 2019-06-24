@@ -23,8 +23,8 @@ if (process.env.DATABASE_URL) {
 }
 
 const User = sequelize.define('user', {
-  user_age: Sequelize.INTEGER,
-  user_gender: Sequelize.STRING
+  userAge: Sequelize.INTEGER,
+  userGender: Sequelize.STRING
 });
 
 const Answer = sequelize.define('answer', {
