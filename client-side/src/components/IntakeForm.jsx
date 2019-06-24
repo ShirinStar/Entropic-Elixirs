@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
-// import { Button, Form, FormGroup, Input, Select } from 'reactstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormGroup from 'react-bootstrap/FormGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import { Input } from 'reactstrap';
+import { Header } from "../style/Style";
 
 function IntakeForm() {
   const [userAge, setUserAge] = React.useState('');
   const [userGender, setUserGender] = React.useState('');
 
 return (
-  <form onSubmit = {e => {e.preventDefualt();}}>
-    <input
-      type= 'age'
-      name= 'age'
-      value= {userAge}
-      placeholder= 'your age'
-      onChange= {e => setUserAge(e.target.value)}
+  <Form onSubmit= {e => {e.preventDefualt();}}>
+
+    <Header>General Information</Header>
+    <br />
+
+    <FormGroup>
+      <Input
+        type='age'
+        name='age'
+        value={userAge}
+        placeholder='your age'
+        autocomplete='off'
+        onChange= {e => setUserAge(e.target.value)}
       />
+    </FormGroup>
 
-    <select name= 'gender' onChange = {e => setUserGender(e.target.value)}>
-    <option>Your gender</option>
-    <option>Femal</option>
-    <option>Male</option>
-    <option>Other</option>
-    </select>
+    <FormGroup>
+     <FormControl as='select'
+      onChange= {e => setUserGender(e.target.value)}>
+      <option>Your gender</option>
+      <option>Femal</option>
+      <option>Male</option>
+      <option>Other</option>
+     </FormControl>
+    </FormGroup>
 
-  <button type='submit'>Next</button>
-
-  </form>
+    <Button type='submit'>Next</Button>
+  </Form>
  );
 }
 export default IntakeForm;

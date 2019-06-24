@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
-import './App.css';
-// import { newUser } from './services/apiHelpers';
-import IntakeForm from './components/IntakeForm';
+import { Wrapper } from "./style/Style";
+import IntakeForm from "./components/IntakeForm";
 
-function App() {
-
-
-
-
+function app(){
   return (
-    <div className="App">
-      <h1>Hello world</h1>
+    <Wrapper>
       <IntakeForm />
-    </div>
+    </Wrapper>
   );
-}
-
-export default App;
+};
+export default app;
