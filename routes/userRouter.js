@@ -17,10 +17,11 @@ userRouter.get('/', async (req, res) => {
 userRouter.post('/', async (req, res) => {
   try {
     const { user_age, user_gender } = req.body;
-    const newUser = await User.create({
+    const intakeUser = await User.create({
       user_age,
       user_gender
     });
+    res.json(intakeUser);
   } catch(e) {
     console.error(e.message);
     res.status(500).send(e.message);

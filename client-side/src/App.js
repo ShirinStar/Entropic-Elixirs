@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
-import { Wrapper } from "./style/Style";
-import IntakeForm from "./components/IntakeForm";
+import { Wrapper } from './style/Style';
+import IntakeForm from './components/IntakeForm';
+import { intakeUser } from './services/apiHelper'
 
-function app(){
+function App(props) {
+  const [user, setUser] = React.useState(''); //connect to websocket call receive user id
+  const [userInfo, setUserInfo] = React.useState(''); // connect to user inttake form
+
+  const handleRegister = async(data) => {
+    try {
+      const resp = intakeUser(data)
+      setUserInfo(resp.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <Wrapper>
-      <IntakeForm />
+      <IntakeForm
+        userInfo={userInfo}
+        handleRegister={handleRegister}
+      />
     </Wrapper>
   );
 };
-export default app;
+
+export default App;

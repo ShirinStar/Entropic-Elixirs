@@ -1,7 +1,7 @@
 const axios = require('axios');
 const BASE_URL = 'http://localhost:3001';
 
-const newUser = async (data) => {
+const intakeUser = async(data) => {
   try {
     const { user_age, user_gender } = data;
     const resp = await axios.post(`${BASE_URL}/users`, {
@@ -34,5 +34,5 @@ const newUser = async (data) => {
 // }
 
 export {
-  newUser
+  intakeUser
 }
