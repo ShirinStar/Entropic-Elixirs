@@ -3,9 +3,9 @@ const BASE_URL = 'http://localhost:3001';
 
 
 
-const intakeUser = async(data) => {
+const intakeUser = async(userInfo) => {
   try {
-    const { user_age, user_gender } = data;
+    const { user_age, user_gender } = userInfo;
     const resp = await axios.post(`${BASE_URL}/users`, {
     user_age,
     user_gender

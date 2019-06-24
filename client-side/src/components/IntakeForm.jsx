@@ -7,16 +7,16 @@ import { Input } from 'reactstrap';
 import { Header } from '../style/Style';
 
 function IntakeForm(props) {
-  const { handleRegister } = props
-  const [ userAge, setUserAge ] = React.useState('');
-  const [ userGender, setUserGender ] = React.useState('');
+  const { handleRegister, userInfo } = props
+  const [ user_age, setUser_age ] = React.useState('');
+  const [ user_gender, setUser_gender ] = React.useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const submit = handleRegister;
     const userInfo = {
-      userAge,
-      userGender
+      user_age,
+      user_gender
     }
     submit(userInfo)
   }
@@ -30,19 +30,17 @@ return (
       <Input
         type='number'
         name='age'
-        value={userAge}
         placeholder='your age'
         autoComplete='off'
-        onChange= {e => setUserAge(e.target.value)}
+        onChange= {e => setUser_age(e.target.value)}
       />
     </FormGroup>
 
     <FormGroup>
      <FormControl as='select'
-      value={userGender}
-      onChange= {e => setUserGender(e.target.value)}>
+      onChange= {e => setUser_gender(e.target.value)}>
       <option>Your gender</option>
-      <option>Femal</option>
+      <option>Female</option>
       <option>Male</option>
       <option>Other</option>
      </FormControl>
