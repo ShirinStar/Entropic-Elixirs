@@ -32,7 +32,7 @@ return (
         name='age'
         value={userAge}
         placeholder='your age'
-        autocomplete='off'
+        autoComplete='off'
         onChange= {e => setUserAge(e.target.value)}
       />
     </FormGroup>

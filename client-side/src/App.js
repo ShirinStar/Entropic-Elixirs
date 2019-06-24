@@ -10,8 +10,7 @@ function App(props) {
 
   const handleRegister = async(data) => {
     try {
-      const resp = intakeUser(data)
-      setUserInfo(resp.data)
+      const resp = await intakeUser(userInfo)
     } catch (error) {
       console.log(error);
     }

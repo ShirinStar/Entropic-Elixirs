@@ -10,7 +10,7 @@ return (
     <input
       type= 'age'
       name= 'age'
-      value= {userAge}
+      value= {user_age}
       placeholder= 'your age'
       onChange= {e => setUserAge(e.target.value)}
       />
