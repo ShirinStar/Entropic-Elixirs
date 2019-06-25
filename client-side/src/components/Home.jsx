@@ -6,7 +6,7 @@ function Home(props) {
   return(
     <div>
     <h1>Home</h1>
-    <button onClick={()=>props.history.push('/welcome')}>submit</button>
+    <button onClick={()=>props.history.push('/welcome')}>start</button>
     </div>
   )
 }

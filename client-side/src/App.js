@@ -8,7 +8,6 @@ import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App(props) {
-
   const [user, setUser] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
 
@@ -27,10 +26,10 @@ function App(props) {
   }
 
   return (
-    <div className="App">
-     <Route exact path='/' render={Home}/>
+   <div className="App">
+    <Wrapper>
 
-      <Wrapper>
+     <Route exact path='/' render={Home}/>
 
        <Route path='/welcome' render={props => (
         <ConsentForm

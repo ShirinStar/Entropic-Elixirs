@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom'
-
+import { withRouter } from 'react-router-dom';
 
 function ConsentForm(props) {
   const { handleConsent } = props
+
+  const handleMsg = () => {
+    const textEl = document.createElement('p');
+    textEl.classList.add('textEl');
+    textEl.innerText = "your consent is needed in order to proceed"
+    document.body.appendChild(textEl);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const submit = handleConsent;
     const input = document.querySelector('input[type=checkbox]');
     if(input.checked == false) {
-      alert("your consent is needed in order to proceed");
+      setTimeout(handleMsg(), 1500)
     } else {
       submit()
     }
