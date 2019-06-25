@@ -18,8 +18,12 @@ function IntakeForm(props) {
       user_age,
       user_gender
     }
-    submit(userInfo)
+    if(!user_age || !user_gender) {
+      alert("Please enter a valid answer");
+    } else {
+     submit(userInfo);
   }
+}
 
 return (
   <Form onSubmit={handleSubmit}>
