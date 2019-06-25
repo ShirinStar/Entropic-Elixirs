@@ -21,6 +21,7 @@ app.use(
     })
 );
 app.use(WebpackHotMiddleware(compiler));
+
 app.use(bodyParser.json());
 app.use('/users', userRouter);
 

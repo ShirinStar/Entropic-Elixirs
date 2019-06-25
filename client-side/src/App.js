@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Wrapper } from './style/Style';
+import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
-import { intakeUser } from './services/apiHelper'
+import ConcentForm from './components/ConcentForm';
+import { intakeUser } from './services/apiHelper';
+import { withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App(props) {
 
@@ -15,16 +19,38 @@ function App(props) {
     } catch (error) {
       console.log(error);
     }
+    props.history.push('/1');
+  }
+
+  const handleConcent = () => {
+    props.history.push('/intake');
   }
 
   return (
-    <Wrapper>
+   <Router>
+    <div className="App">
+     <Route exact path='/' render={Home} />
+
+      <Wrapper>
+
+       <Route exact path='/' render={props => (
+        <ConcentForm
+         {...props}
+        handleConcent={handleConcent}
+        />
+       )}/>
+
+      <Route exact path='/intake' render={props => (
       <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
-      />
-    </Wrapper>
+       />
+     )}/>
+
+     </Wrapper>
+    </div>
+  </Router>
   );
 };
 
-export default App;
+export default withRouter(App);
