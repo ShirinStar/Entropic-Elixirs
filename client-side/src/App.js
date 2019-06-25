@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Wrapper } from './style/Style';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
-import ConcentForm from './components/ConcentForm';
+import ConsentForm from './components/ConsentForm';
 import { intakeUser } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -22,25 +22,24 @@ function App(props) {
     props.history.push('/1');
   }
 
-  const handleConcent = () => {
+  const handleConsent = () => {
     props.history.push('/intake');
   }
 
   return (
-   <Router>
     <div className="App">
      <Route exact path='/' render={Home} />
 
       <Wrapper>
 
-       <Route exact path='/' render={props => (
-        <ConcentForm
+       <Route path='/welcome' render={props => (
+        <ConsentForm
          {...props}
-        handleConcent={handleConcent}
+        handleConsent={handleConsent}
         />
        )}/>
 
-      <Route exact path='/intake' render={props => (
+      <Route path='/intake' render={props => (
       <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
@@ -49,7 +48,6 @@ function App(props) {
 
      </Wrapper>
     </div>
-  </Router>
   );
 };
 

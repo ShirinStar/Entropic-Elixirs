@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom'
 
 
-function ConcentForm(props) {
-  const { handleConcent } = props
+function ConsentForm(props) {
+  const { handleConsent } = props
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const submit = handleConcent;
+    const submit = handleConsent;
     const input = document.querySelector('input[type=checkbox]');
     if(input.checked == false) {
-      alert("your concent is needed in order to proceed");
+      alert("your consent is needed in order to proceed");
     } else {
       submit()
     }
@@ -33,4 +33,4 @@ return (
  </div>
   );
 }
-export default withRouter(ConcentForm);
+export default withRouter(ConsentForm);
