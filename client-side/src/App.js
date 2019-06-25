@@ -28,7 +28,7 @@ function App(props) {
 
   return (
     <div className="App">
-     <Route exact path='/' render={Home} />
+     <Route exact path='/' render={Home}/>
 
       <Wrapper>
 
