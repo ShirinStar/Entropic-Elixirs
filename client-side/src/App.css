@@ -85,8 +85,8 @@ input[type=checkbox] {
 .main-info {
   margin: 0 auto;
   max-width: 500px;
-  margin-top: 10%;
-  margin-left: 40%;
+  margin-top: 12%;
+  margin-left: 36%;
 }
 
 .form-info {
@@ -126,7 +126,7 @@ select {
 .main-q {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 .q-title {

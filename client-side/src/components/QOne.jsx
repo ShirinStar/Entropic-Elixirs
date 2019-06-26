@@ -21,10 +21,12 @@ function QOne(props) {
   e.preventDefault()
   const submit = handleNext;
   const input = document.querySelector('input[type=radio]');
-  if(input.checked == false) {
+  // let i;
+  // for ( i =0; i < input.length; i++) {
+  if(input.checked.length > 1) {
     handleMsg()
   } else {
-   submit(userInfo);
+   submit();
  }
 }
 
