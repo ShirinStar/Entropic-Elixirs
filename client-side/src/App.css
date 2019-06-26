@@ -53,7 +53,7 @@ body {
 }
 
 .div-title {
-  margin-top: 2%;
+  margin-top: 4%;
   max-width: 600px;
   background-color: #1F1F1F;
 
@@ -82,6 +82,47 @@ input[type=checkbox] {
   margin-right: 3%;
 }
 
+.main-info {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+.form-info {
+  max-width: 300px;
+  align-content: center;
+}
+
+.input-age {
+  width: 200px;
+  padding: 4px;
+  font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid #92298E;
+  margin-bottom: 1rem;
+  border-radius: .25em;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: white;
+  border:1px solid #92298E;
+  line-height: 2;
+  overflow: hidden;
+  border-radius: .25em;
+  width: 70%;
+  height: 70%;
+  margin: 0;
+  padding: 0 0 0 .2em;
+  color: grey;
+  font-size: 16px;
+ }
+
 .btn {
   width: 20%;
   margin-top: 5em;
@@ -106,9 +147,7 @@ input[type=checkbox] {
   margin: 0 auto;
   display: block;
   text-align: center;
-  margin-top: -6%;
-  margin-left: -10%;
+  margin-top: -20%;
+  margin-left: -35%;
   z-index: 10;
-  /* background-color: yellow; */
-
 }

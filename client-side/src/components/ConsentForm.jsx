@@ -5,12 +5,13 @@ function ConsentForm(props) {
   const { handleConsent } = props
 
   const handleMsg = () => {
+    const form = document.querySelector('form');
     const textEl = document.createElement('p');
     textEl.classList.add('textEl');
     textEl.innerText = "*your consent is needed in order to proceed"
-    document.body.appendChild(textEl);
+    form.appendChild(textEl);
     const elsToDelete = setTimeout(() => {
-      document.body.removeChild(textEl);
+      form.removeChild(textEl);
     },2500)
   }
 
@@ -37,13 +38,11 @@ return (
   nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
   esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.</p>
-
   <form className='form-terms' onSubmit={handleSubmit}>
     <input className='check-terms' type="checkbox" name="terms" value="terms"/> agree to terms<br/>
     <button className='btn' type='submit'>submit</button>
   </form>
  </div>
-
  </>
   );
 }
