@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
+import QOne from './components/QOne';
 import { intakeUser } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -9,8 +10,9 @@ import './App.css';
 
 
 function App(props) {
-  const [user, setUser] = React.useState(''); //future connect to websocket call receive user id
+  const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
+
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -24,6 +26,10 @@ function App(props) {
 
   const handleConsent = () => {
     props.history.push('/intake');
+  }
+
+  const handleNext = () => {
+    props.history.push('/2');
   }
 
   return (
@@ -42,6 +48,12 @@ function App(props) {
       <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
+       />
+     )}/>
+
+      <Route path='/1' render={props => (
+      <QOne
+        handleNext={handleNext}
        />
      )}/>
 
