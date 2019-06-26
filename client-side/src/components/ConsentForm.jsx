@@ -9,6 +9,9 @@ function ConsentForm(props) {
     textEl.classList.add('textEl');
     textEl.innerText = "your consent is needed in order to proceed"
     document.body.appendChild(textEl);
+    const elsToDelete = setTimeout(() => {
+      document.body.removeChild(textEl);
+    },1500)
   }
 
   const handleSubmit = async (e) => {
@@ -16,9 +19,9 @@ function ConsentForm(props) {
     const submit = handleConsent;
     const input = document.querySelector('input[type=checkbox]');
     if(input.checked == false) {
-      setTimeout(handleMsg(), 1500)
+     handleMsg()
     } else {
-      submit()
+     submit()
     }
   }
 
