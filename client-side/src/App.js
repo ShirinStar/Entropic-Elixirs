@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Wrapper } from './style/Style';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
 import { intakeUser } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
+
 
 function App(props) {
   const [user, setUser] = React.useState(''); //future connect to websocket call receive user id
@@ -27,7 +28,6 @@ function App(props) {
 
   return (
    <div className="App">
-    <Wrapper>
 
      <Route exact path='/' render={Home}/>
 
@@ -45,7 +45,6 @@ function App(props) {
        />
      )}/>
 
-     </Wrapper>
     </div>
   );
 };
