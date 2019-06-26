@@ -52,11 +52,63 @@ body {
   font-size: 14px;
 }
 
+.div-title {
+  margin-top: 2%;
+  max-width: 600px;
+  background-color: #1F1F1F;
+
+}
+
+.general-title {
+  margin-left: 5%;
+  padding: 0.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.main-terms {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-top: 10%;
+}
+
+.form-terms {
+
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+  /* background-color: red !important; */
+  margin-right: 3%;
+}
+
+.btn {
+  width: 20%;
+  margin-top: 5em;
+  font-size: 1.1em;
+  padding: 0.3em;
+  color: #0F72BB;
+  border: 1px solid #0F72BB;
+  background-color: white;
+  border-radius: 0.7em;
+  display: block;
+  margin-left: 75%;
+}
+
+.btn:hover {
+  background-color: #0F72BB;
+  color: white;
+}
+
 .textEl {
   font-weight: 600;
-  margin-top: 2%;
-  margin-left: 10%;
+  color: #E46460;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-top: -6%;
+  margin-left: -10%;
   z-index: 10;
-  background-color: yellow;
+  /* background-color: yellow; */
 
 }

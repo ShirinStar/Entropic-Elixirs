@@ -7,11 +7,11 @@ function ConsentForm(props) {
   const handleMsg = () => {
     const textEl = document.createElement('p');
     textEl.classList.add('textEl');
-    textEl.innerText = "your consent is needed in order to proceed"
+    textEl.innerText = "*your consent is needed in order to proceed"
     document.body.appendChild(textEl);
     const elsToDelete = setTimeout(() => {
       document.body.removeChild(textEl);
-    },1500)
+    },2500)
   }
 
   const handleSubmit = async (e) => {
@@ -43,6 +43,7 @@ return (
     <button className='btn' type='submit'>submit</button>
   </form>
  </div>
+
  </>
   );
 }
