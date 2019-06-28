@@ -23,9 +23,9 @@ module.exports = {
   module: {
       rules: [
         {
-          test: /\.js|jsx$/,
+          test: /\.js|jsx|json$/,
           exclude: /(node_modules|bower_components|wasm)/,
-          resolve: {extensions: [".js", ".jsx"]},
+          resolve: {extensions: [".js", ".jsx", ".json"]},
           use: {
             loader: 'babel-loader',
             options: {
