@@ -28,10 +28,15 @@ const User = sequelize.define('user', {
 });
 
 const Answer = sequelize.define('answer', {
-  answer_antropy: Sequelize.DECIMAL,
-  answer_flow: Sequelize.DECIMAL,
-  answer_openness: Sequelize.DECIMAL,
-  answer_sum: Sequelize.DECIMAL
+  answer_breaking: Sequelize.DECIMAL,
+  answer_building: Sequelize.DECIMAL,
+  answer_with_it: Sequelize.DECIMAL,
+  answer_against_it: Sequelize.DECIMAL,
+  answer_intuition: Sequelize.DECIMAL,
+  answer_intention: Sequelize.DECIMAL,
+  answer_entropy_sum: Sequelize.DECIMAL,
+  answer_flow_sum: Sequelize.DECIMAL,
+  answer_openness_sum: Sequelize.DECIMAL
 });
 
 User.hasMany(Answer);

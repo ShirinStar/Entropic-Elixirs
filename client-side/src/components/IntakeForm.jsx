@@ -5,17 +5,6 @@ function IntakeForm(props) {
   const [ user_age, setUser_age ] = React.useState('');
   const [ user_gender, setUser_gender ] = React.useState('');
 
-  const handleMsg = () => {
-    const form = document.querySelector('form');
-    const textEl = document.createElement('p');
-    textEl.classList.add('textEl');
-    textEl.innerText = "*incomplete answer"
-    form.appendChild(textEl);
-    const elsToDelete = setTimeout(() => {
-      form.removeChild(textEl);
-    },2500)
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     const submit = handleRegister;
@@ -23,12 +12,8 @@ function IntakeForm(props) {
       user_age,
       user_gender
     }
-    if(!user_age || !user_gender) {
-      handleMsg()
-    } else {
-     submit(userInfo);
-  }
-}
+    submit(userInfo);
+ }
 
 return (
  <>
@@ -37,20 +22,19 @@ return (
    </div>
    <div className='main-info'>
     <form className='form-info' onSubmit={handleSubmit}>
+      <label htmlFor='age'>Age</label>
       <input className='input-age'
         type='number'
         name='age'
         placeholder='your age'
         autoComplete='off'
         onChange= {e => setUser_age(e.target.value)}
-       />
-     <select className='option-gnd'
-      onChange= {e => setUser_gender(e.target.value)}>
-      <option className='gender-option' value={null}>Select Gender</option>
-      <option className='gender-option' >Female</option>
-      <option className='gender-option' >Male</option>
-      <option className='gender-option' >Other</option>
-     </select>
+        required />
+     <label htmlFor='gender'>Gender</label>
+       <input type="radio" name='gender' value='Male' required onChange={e => setUser_gender(e.target.value)}/> Male<br />
+       <input type="radio" name='gender' value='Female' required onChange={e => setUser_gender(e.target.value)}/> Female<br />
+       <input type="radio" name='gender' value='Non-binary' required onChange={e => setUser_gender(e.target.value)}/> Non-binary<br />
+       <input type="radio" name='gender' value='Gender non-conforming' required onChange={e => setUser_gender(e.target.value)}/> Gender non-conforming<br />
     <button className='btn' type='submit'>Next</button>
    </form>
   </div>

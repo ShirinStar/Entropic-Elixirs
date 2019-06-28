@@ -41,6 +41,7 @@ function App(props) {
         <ConsentForm
          {...props}
         handleConsent={handleConsent}
+        
         />
        )}/>
 
