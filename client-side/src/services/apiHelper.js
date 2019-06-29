@@ -22,22 +22,23 @@ const intakeUser = async(userInfo) => {
 //   return resp.data
 // }
 
-// const postAnswer = async (id) => {
-//   const resp = await axios.post(`${BASE_URL}/users/${id}/answers`, {
-//  answer_breaking,
-  // answer_building,
-  // answer_with_it,
-  // answer_against_it,
-  // answer_intuition,
-  // answer_intention,
-  // answer_entropy_sum,
-  // answer_flow_sum,
-  // answer_openness_sum
-// });
-//   console.log(resp.data);
-//   return resp.data
-// }
+const postAnswer = async (id) => {
+  const resp = await axios.post(`${BASE_URL}/users/${id}/answers`, {
+  answer_breaking,
+  answer_building,
+  answer_with_it,
+  answer_against_it,
+  answer_intuition,
+  answer_intention,
+  answer_entropy_sum,
+  answer_flow_sum,
+  answer_openness_sum
+});
+  console.log(resp.data);
+  return resp.data
+}
 
 export {
-  intakeUser
+  intakeUser,
+  postAnswer
 }

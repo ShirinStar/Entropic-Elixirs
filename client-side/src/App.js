@@ -3,7 +3,7 @@ import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
 import QOne from './components/QOne';
-import { intakeUser } from './services/apiHelper';
+import { intakeUser, postAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -12,6 +12,7 @@ import './App.css';
 function App(props) {
   const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
+  const [userAnswers, setUserAnswers] = React.useState(''); // connect to user intake form
 
 
   const handleRegister = async(userInfo) => {
@@ -24,12 +25,18 @@ function App(props) {
     props.history.push('/1');
   }
 
-  const handleConsent = () => {
-    props.history.push('/intake');
+  const handleNext = async(userAnswers) => {
+    console.log(userAnswers);
+    try {
+      const resp = await postAnswer(userAnswers)
+    } catch (error) {
+      console.log(error);
+    }
+    props.history.push('/1');
   }
 
-  const handleNext = () => {
-    props.history.push('/2');
+  const handleConsent = () => {
+    props.history.push('/intake');
   }
 
   return (
@@ -41,7 +48,7 @@ function App(props) {
         <ConsentForm
          {...props}
         handleConsent={handleConsent}
-        
+
         />
        )}/>
 
@@ -54,6 +61,7 @@ function App(props) {
 
       <Route path='/1' render={props => (
       <QOne
+        userAnswers={userAnswers}
         handleNext={handleNext}
        />
      )}/>
