@@ -12,13 +12,15 @@ const [ answers, setAnswers ] = React.useState({
   'answer_intention': 0
 });
 
-
  const handleSubmit = async (e) => {
   e.preventDefault()
-  const submit = handleNext;
   const input = document.querySelector('input[name="answer"]:checked');
-  console.log(input);
-   submit(input);
+  setAnswers({
+    [input.getAttribute("data-catagory")] : [...(input.value)]
+  })
+  console.log(setAnswers);
+  const submit = handleNext;
+   submit(setAnswers);
  }
 
  return (
