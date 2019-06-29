@@ -14,7 +14,6 @@ function App(props) {
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [userAnswers, setUserAnswers] = React.useState(''); // connect to user intake form
 
-
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
     try {
@@ -26,13 +25,13 @@ function App(props) {
   }
 
   const handleNext = async(userAnswers) => {
-    console.log(userAnswers);
+    console.log(userAnswers, 'from app29');
     // try {
     //   const resp = await postAnswer(userAnswers)
     // } catch (error) {
     //   console.log(error);
     // }
-    props.history.push('/1');
+    // props.history.push('/1');
   }
 
   const handleConsent = () => {

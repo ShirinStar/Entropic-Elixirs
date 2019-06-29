@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import questions from './questionsList';
 
 function QOne(props) {
-const { handleNext, userAnswers } = props
-const [ answers, setAnswers ] = React.useState({
+const {handleNext, userAnswers} = props
+const [answers, setAnswers] = React.useState({
   'answer_breaking': 0,
   'answer_building': 0,
   'answer_with_it': 0,
@@ -16,12 +16,15 @@ const [ answers, setAnswers ] = React.useState({
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
   setAnswers({
-    [input.getAttribute("data-catagory")] : [...(input.value)]
+    ...answers,
+    [input.getAttribute("data-catagory")] : parseInt(input.value)
   })
-  console.log(setAnswers);
   const submit = handleNext;
-   submit(setAnswers);
+  const userAnswers = answers;
+   submit(userAnswers);
  }
+
+ console.log(answers, 'line27');
 
  return (
   <>
@@ -39,8 +42,7 @@ const [ answers, setAnswers ] = React.useState({
    questions.questions[0].answers.map(answer => {
      return (
       <div key={answer.text}>
-       <input data-catagory={answer.catagory} type='radio' name='answer' value={answer.value}
-        required/>
+       <input data-catagory={answer.catagory} type='radio' name='answer' value={answer.value} required/>
         {answer.text}
       </div>
      )
