@@ -27,11 +27,11 @@ function App(props) {
 
   const handleNext = async(userAnswers) => {
     console.log(userAnswers);
-    try {
-      const resp = await postAnswer(userAnswers)
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const resp = await postAnswer(userAnswers)
+    // } catch (error) {
+    //   console.log(error);
+    // }
     props.history.push('/1');
   }
 
