@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-const questions = require ('./questions.js');
+import questions from './questionsList';
 
 function QOne(props) {
 const { handleNext, userAnswers } = props
@@ -25,16 +25,16 @@ const [ answer_intention, setAnswer_intention ] = React.useState('');
    submit(userAnswers);
 }
 
- useEffect(async () => {
-   const res = await ('./questions.js')
-   console.log(res);
- })
+ // useEffect(async () => {
+ //   const res = await ('./questions.js')
+ //   console.log(res);
+ // })
 
 return (
   <div className='div-title'>
     <h1 className='general-title'>Quesion no.1</h1>
 
-
+    <h2>{questions.title}</h2>
 
  </div>
    // <div className='main-q'>
