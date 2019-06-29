@@ -15,12 +15,12 @@ const [answers, setAnswers] = React.useState({
  const handleSubmit = async (e) => {
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
-  setAnswers({
+  const userAnswers = {
     ...answers,
     [input.getAttribute("data-catagory")] : parseInt(input.value)
-  })
+ }
+  setAnswers(userAnswers)
   const submit = handleNext;
-  const userAnswers = answers;
    submit(userAnswers);
  }
 

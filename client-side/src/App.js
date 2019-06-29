@@ -12,7 +12,7 @@ import './App.css';
 function App(props) {
   const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
-  const [userAnswers, setUserAnswers] = React.useState(''); // connect to user intake form
+  const [userAnswers, setUserAnswers] = React.useState(''); // connect to user answers
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -24,7 +24,7 @@ function App(props) {
     props.history.push('/1');
   }
 
-  const handleNext = async(userAnswers) => {
+  const handleNext = (userAnswers) => {
     console.log(userAnswers, 'from app29');
     // try {
     //   const resp = await postAnswer(userAnswers)
