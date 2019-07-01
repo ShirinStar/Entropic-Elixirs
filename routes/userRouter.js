@@ -29,7 +29,6 @@ userRouter.post('/', async (req, res) => {
 
 userRouter.use('/:id/answers', (req, res, next) => {
   res.locals.userId = req.params.id
-  // res.json(postAnswer);
   next();
 }, answerRouter)
 

@@ -31,9 +31,6 @@ answerRouter.post('/', async (req, res) => {
       answer_intuition,
       answer_intention
     });
-    // const answer = {
-    //   ...newAnswer.dataValues,
-    // }
     res.json(userAnswers);
   } catch(e) {
     console.log(e);

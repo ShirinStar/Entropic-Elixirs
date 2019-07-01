@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
-import QOne from './components/QOne';
+import Questions from './components/Questions';
 import { intakeUser, postAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 
@@ -13,6 +13,7 @@ function App(props) {
   const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [userAnswers, setUserAnswers] = React.useState(''); // connect to user answers
+  const [qIndex, setQIndex] = React.useState(0); // question ->url
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -33,7 +34,9 @@ function App(props) {
     } catch (error) {
     console.log(error);
    }
-    // props.history.push('/1');
+   const increamentPage = qIndex++
+   setQIndex(increamentPage);
+   props.history.push(`/${qIndex}`)
   }
 
   const handleConsent = () => {
@@ -61,7 +64,7 @@ function App(props) {
      )}/>
 
       <Route path='/1' render={props => (
-      <QOne
+      <Questions
         userAnswers={userAnswers}
         handleNext={handleNext}
        />
