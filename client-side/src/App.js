@@ -24,13 +24,15 @@ function App(props) {
     props.history.push('/1');
   }
 
-  const handleNext = (userAnswers) => {
+  const handleNext = async(userAnswers) => {
     console.log(userAnswers, 'from app29');
-    // try {
-    //   const resp = await postAnswer(userAnswers)
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+    // const id = await localStorage.getItem('id');
+    const userId = 2; //change this from after pulling user id from websocket
+    await postAnswer(userId, userAnswers);
+    } catch (error) {
+    console.log(error);
+   }
     // props.history.push('/1');
   }
 

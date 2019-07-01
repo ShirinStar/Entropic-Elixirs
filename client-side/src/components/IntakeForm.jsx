@@ -29,8 +29,8 @@ return (
         placeholder='your age'
         autoComplete='off'
         onChange= {e => setUser_age(e.target.value)}
-        required />
-     <label htmlFor='gender'>Gender</label>
+        required /> <br />
+     <label htmlFor='gender'>Gender</label> <br />
        <input type="radio" name='gender' value='Male' required onChange={e => setUser_gender(e.target.value)}/> Male<br />
        <input type="radio" name='gender' value='Female' required onChange={e => setUser_gender(e.target.value)}/> Female<br />
        <input type="radio" name='gender' value='Non-binary' required onChange={e => setUser_gender(e.target.value)}/> Non-binary<br />
