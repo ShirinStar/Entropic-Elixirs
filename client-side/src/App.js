@@ -22,7 +22,7 @@ function App(props) {
     } catch (error) {
       console.log(error);
     }
-    props.history.push('/1');
+    props.history.push(`/${qIndex}`);
   }
 
   const handleNext = async(userAnswers) => {
@@ -63,7 +63,7 @@ function App(props) {
        />
      )}/>
 
-      <Route path='/1' render={props => (
+      <Route path=`/${qIndex}` render={props => (
       <Questions
         userAnswers={userAnswers}
         handleNext={handleNext}
