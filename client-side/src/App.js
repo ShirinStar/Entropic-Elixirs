@@ -34,9 +34,9 @@ function App(props) {
     } catch (error) {
     console.log(error);
    }
-   const increamentPage = questionId++
-   setQuestionId(increamentPage);
-   props.history.push(`/${questionId}`)
+   let increment = 1;
+   setQuestionId(questionId + increment);
+   props.history.push(`/${questionId + increment}`)
   }
 
   const handleConsent = () => {
@@ -51,7 +51,7 @@ function App(props) {
       return (matchQuestion && matchQuestion.params) || {};
     }
 }, [])
-
+  console.log(questionId, 'from54');
   return (
    <div className="App">
 
@@ -72,8 +72,9 @@ function App(props) {
        />
      )}/>
 
-      <Route path='/:questionId' render={props => (
+      <Route path={`/${questionId}`} render={props => (
       <Questions
+        questionId={questionId}
         userAnswers={userAnswers}
         handleNext={handleNext}
        />

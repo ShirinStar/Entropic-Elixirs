@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import questions from './questionsList';
 
 function Questions(props) {
-const {handleNext, userAnswers} = props
+const {handleNext, userAnswers, questionId} = props
 const [answers, setAnswers] = React.useState({
   'answer_breaking': 0,
   'answer_building': 0,
@@ -16,41 +16,41 @@ const [answers, setAnswers] = React.useState({
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
   const answerIndex = parseInt(input.getAttribute("data-answer-index"));
-  let updateAnswer = answers;
-  questions.questions[0].answers[answerIndex].scores.forEach((score) => {
-    updateAnswer = {
-      ...updateAnswer,
-      [score.catagory] : updateAnswer[score.catagory] + parseInt(score.value)
+  let userAnswers = answers;
+  questions.questions[questionId].answers[answerIndex].scores.forEach((score) => {
+    userAnswers = {
+      ...userAnswers,
+      [score.catagory] : userAnswers[score.catagory] + parseInt(score.value)
     }
   })
  //  const userAnswers = {
  //    ...answers,
  //    [input.getAttribute("data-catagory")] : parseInt(input.value)
  // }
- console.log(updateAnswer, 'from line29');
+ // console.log(updateAnswer, 'from line29');
   // const increamentAnswer = userAnswers + userAnswers;
   // console.log(increamentAnswer);
- //  setAnswers(userAnswers)
- //  const submit = handleNext;
- //   submit(userAnswers);
+  setAnswers(userAnswers)
+  const submit = handleNext;
+   submit(userAnswers);
  }
 
- // console.log(answers, 'line27');
+ console.log(answers, 'line27');
 
  return (
   <>
    <div className='div-title'>
-    <h1 className='general-title'>Quesion {questions.questions[0].number}</h1>
+    <h1 className='general-title'>Quesion {questions.questions[questionId].number}</h1>
    </div>
 
    <div>
-    <h2>{questions.questions[0].title}</h2>
+    <h2>{questions.questions[questionId].title}</h2>
    </div>
 
   <div>
    <form className='form-q' onSubmit={handleSubmit}>
   {
-   questions.questions[0].answers.map((answer, index) => {
+   questions.questions[questionId].answers.map((answer, index) => {
      return (
       <div key={answer.text}>
        <input data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>

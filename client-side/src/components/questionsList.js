@@ -8,10 +8,6 @@ export default {
             {
             "catagory": "answer_breaking",
             "value": 1
-          },
-          {
-            "catagory": "answer_building",
-            "value": 1
           }
         ]
         },
@@ -84,47 +80,47 @@ export default {
       "answers": [{
           "text": "sudden significant change in life circumstances",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         },
         {
           "text": "significant yet expected change in life circumstances",
-          "catagory": '',
+          "catagory": "",
           "value": 0
         },
         {
           "text": "current partner asked me to",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         },
         {
           "text": "want to meet a romantic partner and need to sort some things out first",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         },
         {
           "text": "I've been aware of it for a while and it was finally time to just do it",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         },
         {
           "text": "just wasn't happy with myself and/or my circumstances",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         },
         {
           "text": "saw patterns in my behavior that weren't working for me, so I decided to change them",
           "scores": [{
-            "catagory": '',
+            "catagory": "",
             "value": 0
           }]
         }
