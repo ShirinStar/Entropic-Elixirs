@@ -15,23 +15,21 @@ const [answers, setAnswers] = React.useState({
  const handleSubmit = async (e) => {
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
-  // const answerIndex = parseInt(input.getAttribute("data-answer-index"));
-  // const updateAnswer = questions.questions[qIndex].answers[answerIndex].scores.forEach((score) => {
-  //   const userAnswers = {
-  //     ...answers,
-  //     [score.catagory] : parseInt(score.value)
-  //   }
-  // })
-  const userAnswers = {
-    ...answers,
-    [input.getAttribute("data-catagory")] : parseInt(input.value)
- }
- // console.log(updateAnswer, 'from line29');
+  const answerIndex = parseInt(input.getAttribute("data-answer-index"));
+  const updateAnswer = questions.questions[qIndex].answers[answerIndex].scores.forEach((score) => {
+    const userAnswers = {
+      ...answers,
+      [score.catagory] : parseInt(score.value)
+    }
+  })
+ //  const userAnswers = {
+ //    ...answers,
+ //    [input.getAttribute("data-catagory")] : parseInt(input.value)
+ // }
+ console.log(updateAnswer, 'from line29');
   // const increamentAnswer = userAnswers + userAnswers;
   // console.log(increamentAnswer);
   setAnswers(userAnswers)
-
-
   const submit = handleNext;
    submit(userAnswers);
  }
