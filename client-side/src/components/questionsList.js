@@ -4,10 +4,16 @@ export default {
       "title": "In the past 6-12 months, how much work have you done on your relationship with yourself?",
       "answers": [{
           "text": "This is something I never think about.",
-          "scores": [{
+          "scores": [
+            {
             "catagory": "answer_breaking",
             "value": 1
-          }]
+          },
+          {
+            "catagory": "answer_building",
+            "value": 1
+          }
+        ]
         },
         {
           "text": "I think about doing work on myself sometimes, but what for?",

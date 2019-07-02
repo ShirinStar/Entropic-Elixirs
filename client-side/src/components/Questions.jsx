@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import questions from './questionsList';
 
 function Questions(props) {
-const {handleNext, userAnswers, qIndex} = props
+const {handleNext, userAnswers} = props
 const [answers, setAnswers] = React.useState({
   'answer_breaking': 0,
   'answer_building': 0,
@@ -16,10 +16,11 @@ const [answers, setAnswers] = React.useState({
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
   const answerIndex = parseInt(input.getAttribute("data-answer-index"));
-  const updateAnswer = questions.questions[qIndex].answers[answerIndex].scores.forEach((score) => {
-    const userAnswers = {
-      ...answers,
-      [score.catagory] : parseInt(score.value)
+  let updateAnswer = answers;
+  questions.questions[0].answers[answerIndex].scores.forEach((score) => {
+    updateAnswer = {
+      ...updateAnswer,
+      [score.catagory] : updateAnswer[score.catagory] + parseInt(score.value)
     }
   })
  //  const userAnswers = {
@@ -29,9 +30,9 @@ const [answers, setAnswers] = React.useState({
  console.log(updateAnswer, 'from line29');
   // const increamentAnswer = userAnswers + userAnswers;
   // console.log(increamentAnswer);
-  setAnswers(userAnswers)
-  const submit = handleNext;
-   submit(userAnswers);
+ //  setAnswers(userAnswers)
+ //  const submit = handleNext;
+ //   submit(userAnswers);
  }
 
  // console.log(answers, 'line27');
@@ -39,17 +40,17 @@ const [answers, setAnswers] = React.useState({
  return (
   <>
    <div className='div-title'>
-    <h1 className='general-title'>Quesion {questions.questions[qIndex].number}</h1>
+    <h1 className='general-title'>Quesion {questions.questions[0].number}</h1>
    </div>
 
    <div>
-    <h2>{questions.questions[qIndex].title}</h2>
+    <h2>{questions.questions[0].title}</h2>
    </div>
 
   <div>
    <form className='form-q' onSubmit={handleSubmit}>
   {
-   questions.questions[qIndex].answers.map((answer, index) => {
+   questions.questions[0].answers.map((answer, index) => {
      return (
       <div key={answer.text}>
        <input data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
