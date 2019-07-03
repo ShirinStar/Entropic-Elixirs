@@ -43,13 +43,16 @@ answerRouter.put('/', async (req, res) => {
     const { answer_breaking, answer_building, answer_with_it, answer_against_it,
     answer_intuition, answer_intention} = req.body;
     const user = await User.findByPk(res.locals.userId);
-    const answer = await user.getAnswers({
+    const answers = await user.getAnswers({
       order: [
         ['id']
       ]
     });
-    const userAnswers = await answer.update(req.body);
-    res.json(userAnswers);
+    //answers are array
+    for (let index in answers) {
+      await answers[index].update(req.body);
+    }
+    res.end();
   } catch(e) {
     console.log(e);
     res.status(500).send(e.message);
