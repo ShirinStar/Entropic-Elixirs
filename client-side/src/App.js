@@ -3,14 +3,14 @@ import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
-import { intakeUser, postAnswer } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Switch, Route, Link, matchPath } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 
 function App(props) {
-  const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
+  const [userId, setUserId] = React.useState(2); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [questionId, setQuestionId] = React.useState(0); // question ->url
 
@@ -21,19 +21,21 @@ function App(props) {
     } catch (error) {
       console.log(error);
     }
-      props.history.push(`/question/${questionId}`);
+    props.history.push(`/question/${questionId}`);
   }
 
   const handleNext = async(userAnswers) => {
-    try {
     // const userId = await localStorage.getItem('userId');
-    const userId = 2; //change this from after pulling userId from websocket
-    await postAnswer(userId, userAnswers);
-    } catch (error) {
+    const id = 2; //change this from after pulling userId from websocket
+    try {
+      if (userId == id) {
+      await updatedAnswer(userId, userAnswers)
+    } else {
+      await postAnswer(userId, userAnswers)
+    }} catch (error) {
     console.log(error);
    }
    let increment = 1;
-   console.log("Set question id ", questionId + increment);
    setQuestionId(questionId + increment);
    // if(questionId <= 13) {
       props.history.push(`/question/${questionId + increment}`) // until questionId == 13

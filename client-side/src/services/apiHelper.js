@@ -25,7 +25,17 @@ const intakeUser = async(userInfo) => {
 const postAnswer = async (userId, userAnswers) => {
  try {
     const resp = await axios.post(`${BASE_URL}/users/${userId}/answers`, userAnswers);
-    // console.log(resp.data);
+    console.log(resp.data);
+    return resp.data
+  } catch(error) {
+    console.log(error);
+   }
+};
+
+const updatedAnswer = async (userId, userAnswers) => {
+ try {
+    const resp = await axios.put(`${BASE_URL}/users/${userId}/answers`, userAnswers);
+    console.log(resp.data);
     return resp.data
   } catch(error) {
     console.log(error);
@@ -34,5 +44,6 @@ const postAnswer = async (userId, userAnswers) => {
 
 export {
   intakeUser,
-  postAnswer
+  postAnswer,
+  updatedAnswer
 }

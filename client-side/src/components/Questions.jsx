@@ -34,7 +34,7 @@ const [answers, setAnswers] = React.useState({
  return (
   <>
    <div className='div-title'>
-    <h1 className='general-title'>Quesion {questions.questions[questionId].number}</h1>
+    <h1 className='general-title'>Quesion no. {questions.questions[questionId].number}</h1>
    </div>
 
    <div>
