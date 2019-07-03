@@ -12,7 +12,6 @@ import './App.css';
 function App(props) {
   const [userId, setUserId] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
-  const [userAnswers, setUserAnswers] = React.useState(''); // connect to user answers
   const [questionId, setQuestionId] = React.useState(0); // question ->url
 
   const handleRegister = async(userInfo) => {
@@ -22,7 +21,7 @@ function App(props) {
     } catch (error) {
       console.log(error);
     }
-    props.history.push(`/${questionId}`);
+      props.history.push(`/question/${questionId}`);
   }
 
   const handleNext = async(userAnswers) => {
@@ -34,9 +33,10 @@ function App(props) {
     console.log(error);
    }
    let increment = 1;
+   console.log("Set question id ", questionId + increment);
    setQuestionId(questionId + increment);
    // if(questionId <= 13) {
-   props.history.push(`/${questionId + increment}`) // until questionId == 13
+      props.history.push(`/question/${questionId + increment}`) // until questionId == 13
   // } else props.history.push('/intake');
 }
 
@@ -65,9 +65,9 @@ function App(props) {
        />
      )}/>
 
-      <Route path={`/${questionId}`} render={props => (
+      <Route path={'/question/:questionId'} render={props => (
       <Questions
-        questionId={questionId}
+        questionId={props.match.params.questionId}
         handleNext={handleNext}
        />
      )}/>
