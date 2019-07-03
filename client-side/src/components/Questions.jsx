@@ -16,17 +16,17 @@ const [answers, setAnswers] = React.useState({
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
   const answerIndex = parseInt(input.getAttribute("data-answer-index"));
-  // let newAnswers = answers;
-  // questions.questions[questionId].answers[answerIndex].scores.forEach((score) => {
-  //   newAnswers = {
-  //     ...newAnswers,
-  //     [score.catagory] : newAnswers[score.catagory] + parseInt(score.value)
-  //   }
-  // })
+  let newAnswers = answers;
+  questions.questions[questionId].answers[answerIndex].scores.forEach((score) => {
+    newAnswers = {
+      ...newAnswers,
+      [score.catagory] : newAnswers[score.catagory] + parseInt(score.value)
+    }
+  })
 
-  setAnswers({avner: "Hello"});
+  setAnswers(newAnswers);
   const submit = handleNext;
-   submit(answers);
+   submit(newAnswers);
  }
 
  console.log('rendering questionId from line36', questionId, 'current answers', answers);
