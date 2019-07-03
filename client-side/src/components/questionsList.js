@@ -1,6 +1,6 @@
 export default {
   questions: [{
-      "number": "no.1",
+      "number": 1,
       "title": "In the past 6-12 months, how much work have you done on your relationship with yourself?",
       "answers": [{
           "text": "This is something I never think about.",
@@ -42,7 +42,7 @@ export default {
       ]
     },
     {
-      "number": "no.2",
+      "number": 2,
       "title": "Which of the following kinds of support would you be most interested in receiving at this moment in your life?",
       "answers": [{
           "text": "raising your awareness of specific dynamics and patterns that might be impacting you negatively",
@@ -75,7 +75,7 @@ export default {
       ]
     },
     {
-      "number": "no.3",
+      "number": 3,
       "title": "If you answered C, D, or E to the previous question, what was/is the impetus for you to begin working on yourself?",
       "answers": [{
           "text": "sudden significant change in life circumstances",
@@ -129,7 +129,7 @@ export default {
       ]
     },
     {
-      "number": "no.4",
+      "number": 4,
       "title": "Do you believe you have a clear understanding of why you behave the way you do?",
       "answers": [{
           "text": "always",
@@ -155,7 +155,7 @@ export default {
       ]
     },
     {
-      "number": "no.5",
+      "number": 5,
       "title": "Do you believe you have a clear understanding of who you are?",
       "answers": [{
           "text": "yes",
@@ -174,7 +174,7 @@ export default {
       ]
     },
     {
-      "number": "no.6",
+      "number": 6,
       "title": "If you had it your way, are there many things you would want to change about yourself and/or your life as it is today?",
       "answers": [{
           "text": "I’m happy about the way things are. There are few or no things I would like to change about myself and my life.",
@@ -217,7 +217,7 @@ export default {
       ]
     },
     {
-      "number": "no.7",
+      "number": 7,
       "title": "How often do your actions have the impact you desire?",
       "answers": [{
           "text": "My actions always have their desired effect.",
@@ -260,7 +260,7 @@ export default {
       ]
     },
     {
-      "number": "no.8",
+      "number": 8,
       "title": "Which of the following best describes the flow of your life over the past 12 months?",
       "answers": [{
           "text": "Things have been falling into place naturally, with minimal pushing on my part",
@@ -303,7 +303,7 @@ export default {
       ]
     },
     {
-      "number": "no.9",
+      "number": 9,
       "title": "Looking back over the past few years, how often have things 'worked out' the way they're 'supposed to'?",
       "answers": [{
           "text": "Things work out the way they’re supposed to all the time.",
@@ -353,7 +353,7 @@ export default {
       ]
     },
     {
-      "number": "no.10",
+      "number": 10,
       "title": "Do you perceive yourself receiving unsolicited feedback from the world around you?",
       "answers": [{
           "text": "Yes",
@@ -379,7 +379,7 @@ export default {
       ]
     },
     {
-      "number": "no.11",
+      "number": 11,
       "title": "Are you interested in more closely tuning in to feedback you may be receiving from the world around you?",
       "answers": [{
           "text": "Yes, I would like to tune in more closely",
@@ -410,7 +410,7 @@ export default {
       ]
     },
     {
-      "number": "no.12",
+      "number": 12,
       "title": "Do you prefer to follow your instincts or to make plans and/or work towards goals?",
       "answers": [{
           "text": "Prefer to follow my instincts most or all of the time",
@@ -446,7 +446,7 @@ export default {
       ]
     },
     {
-      "number": "no.13",
+      "number": 13,
       "title": "Has your approach (instincts vs planning) been working for you?",
       "answers": [{
           "text": "Yes",

@@ -44,14 +44,6 @@ function App(props) {
     props.history.push('/intake');
   }
 
-//   useEffect(() => {
-//     const getParams = pathname => {
-//       const matchQuestion = matchPath(pathname, {
-//         path: `/:questionId`,
-//       });
-//       return (matchQuestion && matchQuestion.params) || {};
-//     }
-// }, [])
 
   return (
    <div className="App">

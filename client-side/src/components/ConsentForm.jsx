@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
 function ConsentForm(props) {
-  const { handleConsent } = props
+  const {handleConsent} = props
 
   const handleSubmit = async (e) => {
     e.preventDefault()
