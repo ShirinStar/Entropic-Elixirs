@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import questions from './questionsList';
 
 function Questions(props) {
-const {handleNext, userAnswers, questionId} = props
+const {handleNext, questionId} = props
 const [answers, setAnswers] = React.useState({
   'answer_breaking': 0,
   'answer_building': 0,
@@ -12,30 +12,27 @@ const [answers, setAnswers] = React.useState({
   'answer_intention': 0
 });
 
- const handleSubmit = async (e) => {
+ const handleSubmit = (e) => {
   e.preventDefault()
   const input = document.querySelector('input[name="answer"]:checked');
   const answerIndex = parseInt(input.getAttribute("data-answer-index"));
-  let userAnswers = answers;
+  let newAnswers = {...answers};
   questions.questions[questionId].answers[answerIndex].scores.forEach((score) => {
-    userAnswers = {
-      ...userAnswers,
-      [score.catagory] : userAnswers[score.catagory] + parseInt(score.value)
+    newAnswers = {
+      ...newAnswers,
+      [score.catagory] : answers[score.catagory] + parseInt(score.value)
     }
   })
  //  const userAnswers = {
  //    ...answers,
  //    [input.getAttribute("data-catagory")] : parseInt(input.value)
  // }
- // console.log(updateAnswer, 'from line29');
-  // const increamentAnswer = userAnswers + userAnswers;
-  // console.log(increamentAnswer);
-  setAnswers(userAnswers)
+  setAnswers(newAnswers)
   const submit = handleNext;
-   submit(userAnswers);
+   submit(newAnswers);
  }
 
- console.log(answers, 'line27');
+ console.log('rendering questionId from line36', questionId, 'current answers', answers);
 
  return (
   <>

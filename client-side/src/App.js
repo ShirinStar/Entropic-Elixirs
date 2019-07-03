@@ -26,32 +26,33 @@ function App(props) {
   }
 
   const handleNext = async(userAnswers) => {
-    console.log(userAnswers, 'from app29');
     try {
-    // const id = await localStorage.getItem('id');
-    const userId = 2; //change this from after pulling user id from websocket
+    // const userId = await localStorage.getItem('userId');
+    const userId = 2; //change this from after pulling userId from websocket
     await postAnswer(userId, userAnswers);
     } catch (error) {
     console.log(error);
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   props.history.push(`/${questionId + increment}`)
-  }
+   // if(questionId <= 13) {
+   props.history.push(`/${questionId + increment}`) // until questionId == 13
+  // } else props.history.push('/intake');
+}
 
   const handleConsent = () => {
     props.history.push('/intake');
   }
 
-  useEffect(() => {
-    const getParams = pathname => {
-      const matchQuestion = matchPath(pathname, {
-        path: `/:questionId`,
-      });
-      return (matchQuestion && matchQuestion.params) || {};
-    }
-}, [])
-  console.log(questionId, 'from54');
+//   useEffect(() => {
+//     const getParams = pathname => {
+//       const matchQuestion = matchPath(pathname, {
+//         path: `/:questionId`,
+//       });
+//       return (matchQuestion && matchQuestion.params) || {};
+//     }
+// }, [])
+
   return (
    <div className="App">
 
@@ -75,7 +76,6 @@ function App(props) {
       <Route path={`/${questionId}`} render={props => (
       <Questions
         questionId={questionId}
-        userAnswers={userAnswers}
         handleNext={handleNext}
        />
      )}/>
