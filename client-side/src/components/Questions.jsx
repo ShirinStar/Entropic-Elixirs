@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import questions from './questionsList';
+import { postAnswer} from '../services/apiHelper';
 
 function Questions(props) {
-const {handleNext, questionId} = props
+const {handleNext, questionId, userId} = props
 const [answers, setAnswers] = React.useState({
   'answer_breaking': 0,
   'answer_building': 0,
@@ -23,13 +24,14 @@ const [answers, setAnswers] = React.useState({
       [score.catagory] : newAnswers[score.catagory] + parseInt(score.value)
     }
   })
-
   setAnswers(newAnswers);
   const submit = handleNext;
    submit(newAnswers);
  }
 
- console.log('rendering questionId from line36', questionId, 'current answers', answers);
+ useEffect(() => {
+     postAnswer(userId, answers)
+   }, []);
 
  return (
   <>

@@ -3,6 +3,7 @@ import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
+import FourteenQ from './components/FourteenQ';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
@@ -37,9 +38,10 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   // if(questionId <= 13) {
-      props.history.push(`/question/${questionId + increment}`) // until questionId == 13
-  // } else props.history.push('/intake');
+   if((questionId + increment) == 13) {
+     props.history.push('/14')
+  } else { props.history.push(`/question/${questionId + increment}`);
+ }
 }
 
   const handleConsent = () => {
@@ -50,13 +52,12 @@ function App(props) {
   return (
    <div className="App">
 
-     <Route exact path='/' render={Home}/>
+     <Route exact path='/' render={Home} />
 
        <Route path='/welcome' render={props => (
         <ConsentForm
          {...props}
         handleConsent={handleConsent}
-
         />
        )}/>
 
@@ -69,10 +70,13 @@ function App(props) {
 
       <Route path={'/question/:questionId'} render={props => (
       <Questions
+        userId={userId}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
        />
      )}/>
+
+     <Route path='/14' render={FourteenQ} />
 
     </div>
   );

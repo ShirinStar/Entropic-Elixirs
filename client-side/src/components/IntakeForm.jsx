@@ -26,7 +26,7 @@ return (
       <input className='input-age'
         type='number'
         name='age'
-        placeholder='your age'
+        placeholder='Please provide your age'
         autoComplete='off'
         onChange= {e => setUser_age(e.target.value)}
         required /> <br />
