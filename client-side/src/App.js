@@ -38,11 +38,20 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 13) {
+   if((questionId + increment) == 2) {
      props.history.push('/14')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
+
+ const handleDone = async(userAnswers) => {
+  try {
+   await updatedAnswer(userId, userAnswers)
+  } catch(error) {
+   console.log(error);
+  }
+  props.history.push('/intake');
+ }
 
   const handleConsent = () => {
     props.history.push('/intake');
@@ -76,8 +85,11 @@ function App(props) {
        />
      )}/>
 
-     <Route path='/14' render={FourteenQ} />
-
+     <Route path='/14' render={props => (
+     <FourteenQ
+       handleDone={handleDone}
+      />
+    )}/>
     </div>
   );
 };
