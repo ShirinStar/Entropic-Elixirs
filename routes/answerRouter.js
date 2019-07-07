@@ -20,16 +20,16 @@ answerRouter.get('/', async (req, res) => {
 
 answerRouter.post('/', async (req, res) => {
   try {
-    const { answer_breaking, answer_building, answer_with_it, answer_against_it,
-    answer_intuition, answer_intention} = req.body;
+    const { breaking, building, with_it, against_it,
+    intuition, intention} = req.body;
     const user = await User.findByPk(res.locals.userId);
     const userAnswers = await user.createAnswer({
-      answer_breaking,
-      answer_building,
-      answer_with_it,
-      answer_against_it,
-      answer_intuition,
-      answer_intention
+      breaking,
+      building,
+      with_it,
+      against_it,
+      intuition,
+      intention
     });
     res.json(userAnswers);
   } catch(e) {
@@ -40,8 +40,8 @@ answerRouter.post('/', async (req, res) => {
 
 answerRouter.put('/', async (req, res) => {
   try {
-    const { answer_breaking, answer_building, answer_with_it, answer_against_it,
-    answer_intuition, answer_intention} = req.body;
+    const { breaking, building, with_it, against_it,
+    intuition, intention} = req.body;
     const user = await User.findByPk(res.locals.userId);
     console.log(res.locals.userId, 'userId');
     req.body.userId = res.locals.userId;

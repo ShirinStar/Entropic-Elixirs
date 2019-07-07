@@ -28,12 +28,12 @@ const User = sequelize.define('user', {
 });
 
 const Answer = sequelize.define('answer', {
-  answer_breaking: Sequelize.DECIMAL,
-  answer_building: Sequelize.DECIMAL,
-  answer_with_it: Sequelize.DECIMAL,
-  answer_against_it: Sequelize.DECIMAL,
-  answer_intuition: Sequelize.DECIMAL,
-  answer_intention: Sequelize.DECIMAL
+  breaking: Sequelize.DECIMAL,
+  building: Sequelize.DECIMAL,
+  with_it: Sequelize.DECIMAL,
+  against_it: Sequelize.DECIMAL,
+  intuition: Sequelize.DECIMAL,
+  intention: Sequelize.DECIMAL
 });
 
 User.hasOne(Answer);

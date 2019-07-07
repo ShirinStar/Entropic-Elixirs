@@ -5,12 +5,12 @@ import { postAnswer} from '../services/apiHelper';
 function Questions(props) {
 const {handleNext, questionId, userId} = props
 const [answers, setAnswers] = React.useState({
-  'answer_breaking': 0,
-  'answer_building': 0,
-  'answer_with_it': 0,
-  'answer_against_it': 0,
-  'answer_intuition': 0,
-  'answer_intention': 0
+  'breaking': 0,
+  'building': 0,
+  'with_it': 0,
+  'against_it': 0,
+  'intuition': 0,
+  'intention': 0
 });
 
  const handleSubmit = async (e) => {

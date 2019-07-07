@@ -4,6 +4,7 @@ import IntakeForm from './components/IntakeForm';
 import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
+import Sum from './components/Sum';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
@@ -50,7 +51,7 @@ function App(props) {
   } catch(error) {
    console.log(error);
   }
-  props.history.push('/intake');
+  props.history.push('/sum');
  }
 
   const handleConsent = () => {
@@ -91,6 +92,12 @@ function App(props) {
        handleDone={handleDone}
       />
     )}/>
+
+    <Route path='/sum' render={props => (
+    <Sum
+      finalAnswers={finalAnswers}
+     />
+   )}/>
     </div>
   );
 };

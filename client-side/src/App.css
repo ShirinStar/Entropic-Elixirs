@@ -218,3 +218,14 @@ margin: 1rem;
   font-size: 1.1rem;
   margin-left: 1rem;
 }
+
+.graph-container {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+#answers-chart {
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 5%;
+}

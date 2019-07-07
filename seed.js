@@ -9,7 +9,7 @@ async function seed() {
     user_gender: 'female'
   });
 
-  await rachel.createAnswer({ answer_breaking: 1, answer_building: 1, answer_with_it: 1, answer_against_it: 1, answer_intuition: 1, answer_intention: 1});
+  await rachel.createAnswer({ breaking: 1, building: 1, with_it: 1, against_it: 1, intuition: 1, intention: 1});
 
   process.exit();
 };

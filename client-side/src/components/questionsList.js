@@ -6,7 +6,7 @@ export default {
           "text": "This is something I never think about.",
           "scores": [
             {
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }
         ]
@@ -14,28 +14,28 @@ export default {
         {
           "text": "I think about doing work on myself sometimes, but what for?",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         },
         {
           "text": "I want to do work on myself, but I don’t know how.",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         },
         {
           "text": "I do work on myself often, but wouldn’t say it’s a central focus of my life.",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         },
         {
           "text": "Working on myself is something I spend considerable time and resources on (either by myself or with the support of others).",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         }
@@ -47,28 +47,28 @@ export default {
       "answers": [{
           "text": "raising your awareness of specific dynamics and patterns that might be impacting you negatively",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         },
         {
           "text": "understanding how specific dynamics and patterns are impacting you negatively",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         },
         {
           "text": "deciding how you might like to alter your habits, attitudes, behaviors and/or context",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         },
         {
           "text": "making changes to your habits, attitudes behaviors and/or context",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         }
@@ -80,49 +80,49 @@ export default {
       "answers": [{
           "text": "sudden significant change in life circumstances",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "significant yet expected change in life circumstances",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "current partner asked me to",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "want to meet a romantic partner and need to sort some things out first",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "I've been aware of it for a while and it was finally time to just do it",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "just wasn't happy with myself and/or my circumstances",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         },
         {
           "text": "saw patterns in my behavior that weren't working for me, so I decided to change them",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 0
           }]
         }
@@ -134,21 +134,21 @@ export default {
       "answers": [{
           "text": "always",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         },
         {
           "text": "sometimes",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         },
         {
           "text": "never",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         }
@@ -160,14 +160,14 @@ export default {
       "answers": [{
           "text": "yes",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         },
         {
           "text": "no",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         }
@@ -179,18 +179,18 @@ export default {
       "answers": [{
           "text": "I’m happy about the way things are. There are few or no things I would like to change about myself and my life.",
           "scores": [{
-            "catagory": "answer_building",
+            "catagory": "building",
             "value": 1
           }]
         },
         {
           "text": "I’m happy with myself, but not my circumstances. There are few or no things I would like to change about myself, and many things I’d like to change about my life.",
           "scores": [{
-              "catagory": "answer_building",
+              "catagory": "building",
               "value": 0.5
             },
             {
-              "catagory": "answer_breaking",
+              "catagory": "breaking",
               "value": 0.5
             }
           ]
@@ -198,11 +198,11 @@ export default {
         {
           "text": "I’m happy with my circumstances, but not myself. There are many things I would like to change about myself, and few to no things I’d like to change about my life.",
           "scores": [{
-              "catagory": "answer_building",
+              "catagory": "building",
               "value": 0.5
             },
             {
-              "catagory": "answer_breaking",
+              "catagory": "breaking",
               "value": 0.5
             }
           ]
@@ -210,7 +210,7 @@ export default {
         {
           "text": "I’m not happy with myself or my circumstances. There are many things I would like to change about myself and about my life.",
           "scores": [{
-            "catagory": "answer_breaking",
+            "catagory": "breaking",
             "value": 1
           }]
         }
@@ -222,18 +222,18 @@ export default {
       "answers": [{
           "text": "My actions always have their desired effect.",
           "scores": [{
-            "catagory": "answer_with_it",
+            "catagory": "with_it",
             "value": 1
           }]
         },
         {
           "text": "My actions often have their desired effect, but not always.",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.65
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.35
             }
           ]
@@ -241,11 +241,11 @@ export default {
         {
           "text": "My actions sometimes have their desired effect, but not most of the time.",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.35
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.65
             }
           ]
@@ -253,7 +253,7 @@ export default {
         {
           "text": "My actions never have their desired effect.",
           "scores": [{
-            "catagory": "answer_against_it",
+            "catagory": "against_it",
             "value": 1
           }]
         }
@@ -265,18 +265,18 @@ export default {
       "answers": [{
           "text": "Things have been falling into place naturally, with minimal pushing on my part",
           "scores": [{
-            "catagory": "answer_with_it",
+            "catagory": "with_it",
             "value": 1
           }]
         },
         {
           "text": "Things have been falling into place, but it has still taken a lot of effort on my part",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.7
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.3
             }
           ]
@@ -284,11 +284,11 @@ export default {
         {
           "text": "Interesting opportunities have arisen but I've had to do a lot of maneuvering to make them happen",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.5
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.5
             }
           ]
@@ -296,7 +296,7 @@ export default {
         {
           "text": "It's been an uphill battle at every turn",
           "scores": [{
-            "catagory": "answer_against_it",
+            "catagory": "against_it",
             "value": 1
           }]
         }
@@ -308,18 +308,18 @@ export default {
       "answers": [{
           "text": "Things work out the way they’re supposed to all the time.",
           "scores": [{
-            "catagory": "answer_with_it",
+            "catagory": "with_it",
             "value": 1
           }]
         },
         {
           "text": "Things often work out the way they're supposed to, but not all the time.",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.7
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.3
             }
           ]
@@ -327,11 +327,11 @@ export default {
         {
           "text": "Things sometimes work out the way they’re supposed to, but not often.",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.4
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.6
             }
           ]
@@ -339,7 +339,7 @@ export default {
         {
           "text": "Things never work out the way they’re supposed to.",
           "scores": [{
-            "catagory": "answer_against_it",
+            "catagory": "against_it",
             "value": 1
           }]
         },
@@ -384,18 +384,18 @@ export default {
       "answers": [{
           "text": "Yes, I would like to tune in more closely",
           "scores": [{
-            "catagory": "answer_intuition",
+            "catagory": "intuition",
             "value": 1
           }]
         },
         {
           "text": "Maybe",
           "scores": [{
-              "catagory": "answer_intuition",
+              "catagory": "intuition",
               "value": 0.5
             },
             {
-              "catagory": "answer_intention",
+              "catagory": "intention",
               "value": 0.5
             }
           ]
@@ -403,7 +403,7 @@ export default {
         {
           "text": "No, I would rather stick to what I know and observe",
           "scores": [{
-            "catagory": "answer_intention",
+            "catagory": "intention",
             "value": 1
           }]
         }
@@ -415,18 +415,18 @@ export default {
       "answers": [{
           "text": "Prefer to follow my instincts most or all of the time",
           "scores": [{
-            "catagory": "answer_intuition",
+            "catagory": "intuition",
             "value": 1
           }]
         },
         {
           "text": "Both, but more instincts",
           "scores": [{
-              "catagory": "answer_intuition",
+              "catagory": "intuition",
               "value": 0.6
             },
             {
-              "catagory": "answer_intention",
+              "catagory": "intention",
               "value": 0.4
             }
           ]
@@ -434,11 +434,11 @@ export default {
         {
           "text": "Both, but I'm more of a planner",
           "scores": [{
-              "catagory": "answer_intuition",
+              "catagory": "intuition",
               "value": 0.4
             },
             {
-              "catagory": "answer_intention",
+              "catagory": "intention",
               "value": 0.6
             }
           ]
@@ -451,25 +451,25 @@ export default {
       "answers": [{
           "text": "Yes",
           "scores": [{
-            "catagory": "answer_with_it",
+            "catagory": "with_it",
             "value": 1
           }]
         },
         {
           "text": "No",
           "scores": [{
-            "catagory": "answer_against_it",
+            "catagory": "against_it",
             "value": 1
           }]
         },
         {
           "text": "sometimes",
           "scores": [{
-              "catagory": "answer_with_it",
+              "catagory": "with_it",
               "value": 0.5
             },
             {
-              "catagory": "answer_against_it",
+              "catagory": "against_it",
               "value": 0.5
             }
           ]
