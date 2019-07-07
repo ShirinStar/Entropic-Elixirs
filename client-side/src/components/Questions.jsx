@@ -21,7 +21,7 @@ const [answers, setAnswers] = React.useState({
   questions.questions[questionId].answers[answerIndex].scores.forEach((score) => {
     newAnswers = {
       ...newAnswers,
-      [score.catagory] : newAnswers[score.catagory] + parseInt(score.value)
+      [score.catagory] : newAnswers[score.catagory] + parseFloat(score.value)
     }
   })
   setAnswers(newAnswers);
@@ -29,9 +29,9 @@ const [answers, setAnswers] = React.useState({
    submit(newAnswers);
  }
 
- useEffect(() => {
-     postAnswer(userId, answers)
-   }, []);
+ // useEffect(() => {
+ //     postAnswer(userId, answers)
+ //   }, []);
 
  return (
   <>

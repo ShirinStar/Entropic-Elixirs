@@ -1,4 +1,11 @@
 export default {
+  titles: [
+    "Professional",
+    "Romantic",
+    "Artistic",
+    "Social",
+    "Familial"
+  ],
   rankings: [{
       "categories": [{
         "category": "answer_intuition",

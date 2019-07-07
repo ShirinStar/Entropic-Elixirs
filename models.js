@@ -36,7 +36,7 @@ const Answer = sequelize.define('answer', {
   answer_intention: Sequelize.DECIMAL
 });
 
-User.hasMany(Answer);
+User.hasOne(Answer);
 Answer.belongsTo(User, {
   foreignKey: {
     allowNull: false

@@ -28,24 +28,23 @@ function App(props) {
 
   const handleNext = async(userAnswers) => {
     // const userId = await localStorage.getItem('userId');
-    const id = 2; //change this from after pulling userId from websocket
     try {
-      if (userId == id) {
-      await updatedAnswer(userId, userAnswers)
-    } else {
-      await postAnswer(userId, userAnswers)
-    }} catch (error) {
+     await updatedAnswer(userId, userAnswers)
+    } catch (error) {
     console.log(error);
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 1) {
+   if((questionId + increment) == 3) {
+     setFinalAnswers(userAnswers)
      props.history.push('/14')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
 
  const handleDone = async(userAnswers) => {
+   console.log(userAnswers, 'handleDone');
+   setFinalAnswers(userAnswers)
   try {
    await updatedAnswer(userId, userAnswers)
   } catch(error) {
@@ -81,7 +80,6 @@ function App(props) {
       <Route path={'/question/:questionId'} render={props => (
       <Questions
         userId={userId}
-        finalAnswers={finalAnswers}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
        />
@@ -89,6 +87,7 @@ function App(props) {
 
      <Route path='/14' render={props => (
      <FourteenQ
+       finalAnswers={finalAnswers}
        handleDone={handleDone}
       />
     )}/>

@@ -7,6 +7,7 @@ import webpack from 'webpack'
 import webpackConfig from './webpack.config'
 import WebpackMiddleware from 'webpack-dev-middleware'
 import WebpackHotMiddleware from 'webpack-hot-middleware'
+import path from 'path'
 
 const PORT = process.env.PORT || 3001;
 
@@ -31,8 +32,8 @@ app.use('/users', userRouter);
 //   res.json({ users, answers })
 // });
 
-app.get('/', (req, res) => {
-  res.send('hello entropic!');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 app.listen(PORT, () => console.log(`up and running on port ${PORT}`));
