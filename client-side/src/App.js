@@ -14,6 +14,7 @@ function App(props) {
   const [userId, setUserId] = React.useState(2); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [questionId, setQuestionId] = React.useState(0); // question ->url
+  const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -38,7 +39,7 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 2) {
+   if((questionId + increment) == 1) {
      props.history.push('/14')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
@@ -80,6 +81,7 @@ function App(props) {
       <Route path={'/question/:questionId'} render={props => (
       <Questions
         userId={userId}
+        finalAnswers={finalAnswers}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
        />

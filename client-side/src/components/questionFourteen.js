@@ -35,7 +35,7 @@ export default {
     },
     {
       "categories": [{
-        "category": "setAnswer_intention",
+        "category": "answer_intention",
         "value": 1
       }
      ]
