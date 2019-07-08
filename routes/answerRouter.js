@@ -40,13 +40,14 @@ answerRouter.post('/', async (req, res) => {
 
 answerRouter.put('/', async (req, res) => {
   try {
-    const { breaking, building, with_it, against_it,
-    intuition, intention} = req.body;
     const user = await User.findByPk(res.locals.userId);
-    console.log(res.locals.userId, 'userId');
-    req.body.userId = res.locals.userId;
-    const userAnswers = Answer.build(req.body)
-    user.setAnswer(userAnswers)
+    const currentAnswer = await user.getAnswer();
+    if (currentAnswer) {
+        currentAnswer.update(req.body);
+    }
+    else {
+        user.createAnswer(req.body);
+    }
     // const answers = await user.getAnswer({
     //   order: [
     //     ['id']

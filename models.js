@@ -37,11 +37,12 @@ const Answer = sequelize.define('answer', {
 });
 
 User.hasOne(Answer);
+/*
 Answer.belongsTo(User, {
   foreignKey: {
     allowNull: false
   }
-});
+});*/
 
 module.exports = {
   sequelize,
