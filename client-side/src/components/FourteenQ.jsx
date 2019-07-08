@@ -3,7 +3,7 @@ import rankings from './questionFourteen';
 
 
 function FourteenQ(props) {
-  const {handleDone, finalAnswers} = props
+  const {handleContinue, finalAnswers} = props
   console.log(finalAnswers, 'finalAnswers');
 
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ function FourteenQ(props) {
          }
      })
    })
-   const submit = handleDone;
+   const submit = handleContinue;
     submit(newAnswers);
   }
 
@@ -60,7 +60,7 @@ function FourteenQ(props) {
     </form>
    </div>
  ))}
- <button form='q-14' className='btn' type='submit'>Done</button>
+ <button form='q-14' className='btn' type='submit'>Continue</button>
  </div>
 </>
 )

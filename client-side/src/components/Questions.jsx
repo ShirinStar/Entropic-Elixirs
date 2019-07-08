@@ -25,6 +25,7 @@ const [answers, setAnswers] = React.useState({
     }
   })
   setAnswers(newAnswers);
+  console.log(newAnswers, 'from questions');
   const submit = handleNext;
    submit(newAnswers);
  }

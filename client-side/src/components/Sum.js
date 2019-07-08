@@ -9,10 +9,13 @@ const {finalAnswers} = props
 
 const graphData = finalAnswers
 
-// Object.keys(graphData).map(key => {
-//     const value = graphData[key]
-//     console.log(value);
-// })
+const drinkMaker = () => {
+  Object.keys(graphData).map(key => {
+      const value = graphData[key]
+      console.log(key, value);
+      //here connect to post to server to send to Ryan
+  })
+}
 
 return (
 <>
@@ -21,10 +24,12 @@ return (
   </div>
 
   <div className='graph-container'>
-    <LineChart id="answers-chart" data={graphData}
+    <PieChart id="answers-chart" data={graphData}
     width="400px" height="500px"
     />
   </div>
+
+  <button className='btn' onClick={drinkMaker} >make me my drink</button>
 </>
  )
 }

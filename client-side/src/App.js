@@ -27,6 +27,10 @@ function App(props) {
     props.history.push(`/question/${questionId}`);
   }
 
+  const handleConsent = () => {
+    props.history.push('/intake');
+  }
+
   const handleNext = async(userAnswers) => {
     // const userId = await localStorage.getItem('userId');
     try {
@@ -36,14 +40,14 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 3) {
+   if((questionId + increment) == 13) {
      setFinalAnswers(userAnswers)
      props.history.push('/14')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
 
- const handleDone = async(userAnswers) => {
+ const handleContinue = async(userAnswers) => {
    console.log(userAnswers, 'handleDone');
    setFinalAnswers(userAnswers)
   try {
@@ -53,10 +57,6 @@ function App(props) {
   }
   props.history.push('/sum');
  }
-
-  const handleConsent = () => {
-    props.history.push('/intake');
-  }
 
 
   return (
@@ -89,7 +89,7 @@ function App(props) {
      <Route path='/14' render={props => (
      <FourteenQ
        finalAnswers={finalAnswers}
-       handleDone={handleDone}
+       handleContinue={handleContinue}
       />
     )}/>
 
