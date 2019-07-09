@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
+import TextOne from './components/TextOne';
+import TextTwo from './components/TextTwo';
+import TextThree from './components/TextThree';
 import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
@@ -48,7 +51,6 @@ function App(props) {
 }
 
  const handleContinue = async(userAnswers) => {
-   console.log(userAnswers, 'handleDone');
    setFinalAnswers(userAnswers)
   try {
    await updatedAnswer(userId, userAnswers)
@@ -63,6 +65,10 @@ function App(props) {
    <div className="App">
 
      <Route exact path='/' render={Home} />
+
+     <Route path='/intro1' render={TextOne} />
+     <Route path='/intro2' render={TextTwo} />
+     <Route path='/intro3' render={TextThree} />
 
        <Route path='/welcome' render={props => (
         <ConsentForm

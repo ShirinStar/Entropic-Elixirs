@@ -36,6 +36,8 @@ const [answers, setAnswers] = React.useState({
 
  return (
   <>
+  <div className='form-container'>
+  <div className='general-container'>
    <div className='div-title'>
     <h1 className='general-title'>Quesion no. {questions.questions[questionId].number}</h1>
    </div>
@@ -49,8 +51,8 @@ const [answers, setAnswers] = React.useState({
   {
    questions.questions[questionId].answers.map((answer, index) => {
      return (
-      <div key={answer.text}>
-       <input data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
+      <div className='block-div' key={answer.text}>
+       <input className='question-input' data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
         {answer.text}
       </div>
      )
@@ -60,7 +62,8 @@ const [answers, setAnswers] = React.useState({
    </form>
 
   </div>
-
+  </div>
+  </div>
   </>
   );
  };
