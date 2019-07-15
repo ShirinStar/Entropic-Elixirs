@@ -20,14 +20,13 @@ function App(props) {
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
-  const ws = new WebSocket('ws://localhost:8080');
+  const ws = new WebSocket('ws://localhost:8080'); //change this address
   ws.addEventListener('open', function open() {
     console.log('ws connected');
     ws.send('main app is here');
   });
 
   ws.addEventListener('message', async function incoming(msg) {
-
     const data = JSON.parse(msg.data)
     console.log(data);
     if(data.type == 'token') {

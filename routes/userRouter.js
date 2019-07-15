@@ -37,18 +37,6 @@ userRouter.post('/login', async (req, res) => {
   };
 });
 
-userRouter.get('/get-token', async (req, res) => {
-  try {
-    const { token } = req.params;
-    const userId = await User.findByPk(token);
-    console.log(userId);
-    // res.json(userId)
-       } catch (e) {
-        console.log(e);
-        res.status(500).send(e.message);
-      }
-    });
-
 userRouter.use('/:id/answers', (req, res, next) => {
   res.locals.user_id = req.params.id
   next();

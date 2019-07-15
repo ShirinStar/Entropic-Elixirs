@@ -27,12 +27,16 @@ const loginWS = async(token) => {
   }
 };
 
-// const getUser = async (userId) => {
-//   const resp = await axios.get(`${BASE_URL}/users/${userId}`)
-//   });
-//   console.log(resp.data);
-//   return resp.data
-// }
+const getUserId = async () => {
+ try {
+  const resp = await axios.get(`${BASE_URL}/admin`)
+  console.log(resp.data);
+  return resp.data
+ } catch(error) {
+  console.log(error);
+  }
+};
+
 
 const postAnswer = async (user_id, userAnswers) => {
  try {
