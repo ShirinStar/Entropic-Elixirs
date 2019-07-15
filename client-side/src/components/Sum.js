@@ -25,7 +25,7 @@ return (
     </div>
 
     <div className='graph-container'>
-      <PieChart id="answers-chart" data={graphData}
+      <LineChart id="answers-chart" data={graphData}
       width="400px" height="500px"
       />
     </div>

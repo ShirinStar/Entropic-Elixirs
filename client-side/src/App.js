@@ -20,6 +20,19 @@ function App(props) {
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
+  const ws = new WebSocket('ws://localhost:8080');
+  ws.addEventListener('open', function open() {
+    console.log('ws connected');
+    ws.send('main app is here');
+  });
+
+  ws.addEventListener('message', function incoming(msg) {
+    console.log(msg);
+    if(msg.data=='token') {
+      console.log('new user arrived');
+    }
+  });
+
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
     try {

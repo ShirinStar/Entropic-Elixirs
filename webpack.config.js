@@ -3,7 +3,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-        "entropic": ["./client-side/src","webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000"]
+        "entropic": ["./client-side/src","webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000"],
+        "dummy-client": ["./dummy-client","webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000"]
   },
   output: {
     path: path.resolve(__dirname, "public"),
