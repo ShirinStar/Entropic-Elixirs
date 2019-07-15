@@ -3,7 +3,7 @@ import questions from './questionsList';
 import { postAnswer} from '../services/apiHelper';
 
 function Questions(props) {
-const {handleNext, questionId, userId} = props
+const {handleNext, questionId} = props
 const [answers, setAnswers] = React.useState({
   'breaking': 0,
   'building': 0,
@@ -29,10 +29,6 @@ const [answers, setAnswers] = React.useState({
   const submit = handleNext;
    submit(newAnswers);
  }
-
- // useEffect(() => {
- //     postAnswer(userId, answers)
- //   }, []);
 
  return (
   <>

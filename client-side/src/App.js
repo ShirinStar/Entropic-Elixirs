@@ -8,14 +8,14 @@ import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
-import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 
 function App(props) {
-  const [userId, setUserId] = React.useState(2); //future connect to websocket call receive user id
+  const [user_id, setUser_id] = React.useState(2); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
@@ -26,11 +26,14 @@ function App(props) {
     ws.send('main app is here');
   });
 
-  ws.addEventListener('message', function incoming(msg) {
-    console.log(msg);
-    if(msg.data=='token') {
-      console.log('new user arrived');
+  ws.addEventListener('message', async function incoming(msg) {
+
+    const data = JSON.parse(msg.data)
+    console.log(data);
+    if(data.type == 'token') {
+      await loginWS(data.value);
     }
+      console.log('new user arrived');
   });
 
   const handleRegister = async(userInfo) => {
@@ -48,9 +51,9 @@ function App(props) {
   }
 
   const handleNext = async(userAnswers) => {
-    // const userId = await localStorage.getItem('userId');
+    // const user_id = await localStorage.getItem('user_id');
     try {
-     await updatedAnswer(userId, userAnswers)
+     await updatedAnswer(user_id, userAnswers)
     } catch (error) {
     console.log(error);
    }
@@ -66,7 +69,7 @@ function App(props) {
  const handleContinue = async(userAnswers) => {
    setFinalAnswers(userAnswers)
   try {
-   await updatedAnswer(userId, userAnswers)
+   await updatedAnswer(user_id, userAnswers)
   } catch(error) {
    console.log(error);
   }
@@ -99,7 +102,7 @@ function App(props) {
 
       <Route path={'/question/:questionId'} render={props => (
       <Questions
-        userId={userId}
+        user_id={user_id}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
        />

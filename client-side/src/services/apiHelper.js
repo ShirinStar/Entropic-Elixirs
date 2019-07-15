@@ -15,6 +15,18 @@ const intakeUser = async(userInfo) => {
   }
 };
 
+const loginWS = async(token) => {
+  try {
+    const resp = await axios.post(`${BASE_URL}/users/login`, {
+      token
+    });
+    console.log(resp.data);
+    return resp.data
+  } catch(error) {
+    console.log(error);
+  }
+};
+
 // const getUser = async (userId) => {
 //   const resp = await axios.get(`${BASE_URL}/users/${userId}`)
 //   });
@@ -22,9 +34,9 @@ const intakeUser = async(userInfo) => {
 //   return resp.data
 // }
 
-const postAnswer = async (userId, userAnswers) => {
+const postAnswer = async (user_id, userAnswers) => {
  try {
-    const resp = await axios.post(`${BASE_URL}/users/${userId}/answers`, userAnswers);
+    const resp = await axios.post(`${BASE_URL}/users/${user_id}/answers`, userAnswers);
     console.log(resp.data);
     return resp.data
   } catch(error) {
@@ -32,9 +44,9 @@ const postAnswer = async (userId, userAnswers) => {
    }
 };
 
-const updatedAnswer = async (userId, userAnswers) => {
+const updatedAnswer = async (user_id, userAnswers) => {
  try {
-    const resp = await axios.put(`${BASE_URL}/users/${userId}/answers`, userAnswers);
+    const resp = await axios.put(`${BASE_URL}/users/${user_id}/answers`, userAnswers);
     console.log(resp.data);
     return resp.data
   } catch(error) {
@@ -45,5 +57,6 @@ const updatedAnswer = async (userId, userAnswers) => {
 export {
   intakeUser,
   postAnswer,
-  updatedAnswer
+  updatedAnswer,
+  loginWS
 }

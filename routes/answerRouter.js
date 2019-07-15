@@ -5,7 +5,7 @@ const answerRouter = Router();
 
 answerRouter.get('/', async (req, res) => {
   try {
-    const user = await User.findByPk(res.locals.userId);
+    const user = await User.findByPk(res.locals.user_id);
     const answers = await user.getAnswer({
       order: [
         ['id']
@@ -22,7 +22,7 @@ answerRouter.post('/', async (req, res) => {
   try {
     const { breaking, building, with_it, against_it,
     intuition, intention} = req.body;
-    const user = await User.findByPk(res.locals.userId);
+    const user = await User.findByPk(res.locals.user_id);
     const userAnswers = await user.createAnswer({
       breaking,
       building,
@@ -40,7 +40,7 @@ answerRouter.post('/', async (req, res) => {
 
 answerRouter.put('/', async (req, res) => {
   try {
-    const user = await User.findByPk(res.locals.userId);
+    const user = await User.findByPk(res.locals.user_id);
     const currentAnswer = await user.getAnswer();
     if (currentAnswer) {
         currentAnswer.update(req.body);
@@ -48,15 +48,6 @@ answerRouter.put('/', async (req, res) => {
     else {
         user.createAnswer(req.body);
     }
-    // const answers = await user.getAnswer({
-    //   order: [
-    //     ['id']
-    //   ]
-    // });
-    //answers are array
-    // for (let index in answers) {
-    //   await answers[index].update(req.body);
-    // }
     res.end();
   } catch(e) {
     console.log(e);
