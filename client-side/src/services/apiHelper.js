@@ -17,10 +17,9 @@ const intakeUser = async(userInfo) => {
 
 const loginWS = async(token) => {
   try {
-    const resp = await axios.post(`${BASE_URL}/users/login`, {
-      token
+    const resp = await axios.get(`${BASE_URL}/users/login`, {
+      "token": token
     });
-    console.log(resp.data);
     return resp.data
   } catch(error) {
     console.log(error);

@@ -1,14 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
-import {userRouter} from './routes/userRouter';
-import {answerRouter} from './routes/answerRouter';
+import { userRouter } from './routes/userRouter';
+import { answerRouter } from './routes/answerRouter';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config';
 import WebpackMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 import path from 'path';
-import {  Answer, User } from 'models';
+import { Answer, User } from 'models';
 
 const PORT = process.env.PORT || 3001;
 
@@ -18,35 +18,29 @@ app.use(express.static('public'));
 
 const compiler = webpack(webpackConfig);
 app.use(
-    WebpackMiddleware(compiler, {
-        publicPath: webpackConfig.output.publicPath
-    })
+  WebpackMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath
+  })
 );
 app.use(WebpackHotMiddleware(compiler));
 
 app.use(bodyParser.json());
-app.use('/users', userRouter);
+// app.use('/users', userRouter);
 
-app.param('token', function(req, res, next, token){
-  console.log('token param is detected: ', token)
-  findUserByToken(
-    token,
-    function(error, user){
-      if (error) return next(error);
-      req.user = user;
-      return next();
-    }
-  );
+app.get('/', function (req, res, next) {
+  return res.render('user', req.user);
 });
 
-app.get('/',function(req, res, next){
-    return res.render('user', req.user);
-  }
-);
+app.post('/users/login', function(req, res) {
+  if (req.body && req.body.token) {
 
+    // Make a post get to the rest server with the token, to get a user ID
+    console.log(req.body.token);
+  }
+});
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/public/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.listen(PORT, () => console.log(`up and running on port ${PORT}`));

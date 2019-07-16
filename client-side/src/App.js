@@ -20,19 +20,24 @@ function App(props) {
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
-  const ws = new WebSocket('ws://localhost:8080'); //change this address
+  const ws = new WebSocket('ws://dummy-ws-server.glitch.me'); //change this address
   ws.addEventListener('open', function open() {
-    console.log('ws connected');
-    ws.send('main app is here');
+    console.log('Websocket connection established 🚀');
   });
 
   ws.addEventListener('message', async function incoming(msg) {
-    const data = JSON.parse(msg.data)
-    console.log(data);
-    if(data.type == 'token') {
-      await loginWS(data.value);
-    }
-      console.log('new user arrived');
+    const token = JSON.parse(msg.data);
+
+    // Make a post request to the server with the token, to get a user ID
+    fetch('/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        "token": token.value
+      }),
+      headers: { 'Content-type': 'application/json' }
+    }).then(response => {
+      console.log(response.json());
+    });
   });
 
   const handleRegister = async(userInfo) => {
