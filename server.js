@@ -8,7 +8,6 @@ import webpackConfig from './webpack.config';
 import WebpackMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 import path from 'path';
-import { Answer, User } from 'models';
 
 const PORT = process.env.PORT || 3001;
 

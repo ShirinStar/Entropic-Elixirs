@@ -8,7 +8,7 @@ import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
-import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer, loginWS, getUserId } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
@@ -27,8 +27,11 @@ function App(props) {
 
   ws.addEventListener('message', async function incoming(msg) {
     const token = JSON.parse(msg.data);
-    const resp = await loginWS(token.value);
-    console.log(resp.id);
+    const resp = await getUserId(token.value);
+    console.log(resp);
+    // const user_id = await localStorage.setItem('user_id', JSON.stringify(resp));
+    //how can i use this user id to trigger the first screen and to save it to my state?
+
   });
 
   const handleRegister = async(userInfo) => {
@@ -46,7 +49,7 @@ function App(props) {
   }
 
   const handleNext = async(userAnswers) => {
-    // const user_id = await localStorage.getItem('user_id');
+
     try {
      await updatedAnswer(user_id, userAnswers)
     } catch (error) {

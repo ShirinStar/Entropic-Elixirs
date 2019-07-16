@@ -1,5 +1,6 @@
 const axios = require('axios');
 const BASE_URL = 'http://localhost:3001';
+const BASE_WS = 'https://dummy-rest-api.glitch.me/user'
 
 const intakeUser = async(userInfo) => {
   try {
@@ -15,26 +16,27 @@ const intakeUser = async(userInfo) => {
   }
 };
 
-const loginWS = async(token) => {
+const getUserId = async(token) => {
   try {
-    const resp = await axios.post(`https://dummy-rest-api.glitch.me/user`, {
+    const resp = await axios.post(`${BASE_WS}`, {
       "token": token
     });
+    console.log(resp.data);
     return resp.data
   } catch(error) {
     console.log(error);
   }
 };
 
-const getUserId = async () => {
- try {
-  const resp = await axios.get(`${BASE_URL}/admin`)
-  console.log(resp.data);
-  return resp.data
- } catch(error) {
-  console.log(error);
-  }
-};
+// const loginWS = async () => {
+//  try {
+//   const resp = await axios.post(`${BASE_URL}/users`)
+//   console.log(resp.data);
+//   return resp.data
+//  } catch(error) {
+//   console.log(error);
+//   }
+// };
 
 
 const postAnswer = async (user_id, userAnswers) => {
@@ -61,5 +63,6 @@ export {
   intakeUser,
   postAnswer,
   updatedAnswer,
-  loginWS
+  // loginWS,
+  getUserId
 }
