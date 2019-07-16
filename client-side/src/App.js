@@ -15,21 +15,31 @@ import './App.css';
 
 
 function App(props) {
-  const [user_id, setUser_id] = React.useState(2); //future connect to websocket call receive user id
+  const [user_id, setUser_id] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
-  const ws = new WebSocket('ws://dummy-ws-server.glitch.me'); //change this address
+  const ws = new WebSocket('ws://localhost:8080'); //change this address
   ws.addEventListener('open', function open() {
     console.log('Websocket connection established 🚀');
+    ws.send('main app is connected');
   });
 
   ws.addEventListener('message', async function incoming(msg) {
-    const token = JSON.parse(msg.data);
-    const resp = await getUserId(token.value);
-    console.log(resp);
-    // const user_id = await localStorage.setItem('user_id', JSON.stringify(resp));
+    const data = JSON.parse(msg.data);
+    console.log(data);
+    if(data.type == 'token') //change this to type of data they are sending
+    {
+      await loginWS(data.value)
+    };
+    // ws://dummy-ws-server.glitch.me
+    // const resp = await getUserId(data.value);
+    // console.log(resp);
+    // const userID = await localStorage.setItem('id', resp.id); // resp is an object it comes undefine
+    // const userToken = await localStorage.setItem('token', token.value); // resp is an object it comes undefine
+    // console.log(userID);
+    // console.log(userToken);
     //how can i use this user id to trigger the first screen and to save it to my state?
 
   });
@@ -49,7 +59,6 @@ function App(props) {
   }
 
   const handleNext = async(userAnswers) => {
-
     try {
      await updatedAnswer(user_id, userAnswers)
     } catch (error) {
@@ -74,6 +83,9 @@ function App(props) {
   props.history.push('/sum');
  }
 
+ useEffect(() => {
+//to what my user_id is connected that when it is changing i can change the home screen?
+ }, [user_id])
 
   return (
    <div className="App">
