@@ -17,7 +17,7 @@ const intakeUser = async(userInfo) => {
 
 const loginWS = async(token) => {
   try {
-    const resp = await axios.get(`${BASE_URL}/users/login`, {
+    const resp = await axios.post(`https://dummy-rest-api.glitch.me/user`, {
       "token": token
     });
     return resp.data

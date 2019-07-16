@@ -27,17 +27,8 @@ function App(props) {
 
   ws.addEventListener('message', async function incoming(msg) {
     const token = JSON.parse(msg.data);
-
-    // Make a post request to the server with the token, to get a user ID
-    fetch('/users/login', {
-      method: 'post',
-      body: JSON.stringify({
-        "token": token.value
-      }),
-      headers: { 'Content-type': 'application/json' }
-    }).then(response => {
-      console.log(response.json());
-    });
+    const resp = await loginWS(token.value);
+    console.log(resp.id);
   });
 
   const handleRegister = async(userInfo) => {
