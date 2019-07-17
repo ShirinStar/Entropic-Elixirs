@@ -9,7 +9,8 @@ wss.on('connection', function connection(ws) {
      if (client.readyState === WebSocket.OPEN) {
        client.send(JSON.stringify({
          type: 'token',
-         value: '123344'
+         value: '123344',
+         id: 666
        }));
      }
    });

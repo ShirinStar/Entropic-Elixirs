@@ -29,8 +29,9 @@ userRouter.post('/', async (req, res) => {
 
 userRouter.post('/login', async (req, res) => {
   try {
-    const loginWS = await User.create(req.body);
-    res.json(loginWS);
+    const user_id = req.body;
+    const postUserId = await User.create(user_id);
+    res.json(postUserId);
   } catch(e) {
     console.error(e.message);
     res.status(500).send(e.message);
