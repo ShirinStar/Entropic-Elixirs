@@ -8,6 +8,7 @@ import webpackConfig from './webpack.config';
 import WebpackMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 import path from 'path';
+import cookieParser from 'cookie-parser';
 
 const PORT = process.env.PORT || 3001;
 
@@ -23,6 +24,7 @@ app.use(
 );
 app.use(WebpackHotMiddleware(compiler));
 
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use('/users', userRouter);
 
@@ -30,13 +32,6 @@ app.get('/', function (req, res, next) {
   return res.render('user', req.user);
 });
 
-// app.post('/users/login', function(req, res) {
-//   if (req.body && req.body.token) {
-//
-//     // Make a post get to the rest server with the token, to get a user ID
-//     console.log(req.body.token);
-//   }
-// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/index.html'));

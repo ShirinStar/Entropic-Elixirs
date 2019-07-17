@@ -9,7 +9,7 @@ import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
 import axios from'axios';
-import { intakeUser, postAnswer, updatedAnswer, loginWS, postUserId, getUserId } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
@@ -22,41 +22,21 @@ function App(props) {
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
 
-  const ws = new WebSocket('ws://localhost:8080'); //change this address
+  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic'); //change this address
   ws.addEventListener('open', function open() {
     console.log('Websocket connection established 🚀');
     ws.send('main app is connected');
+    //need to find why the ws is keep reconnecting with each trigger
   });
 
   ws.addEventListener('message', async function incoming(msg) {
     const data = JSON.parse(msg.data);
-    if(data.type == 'token') //change this to type of data they are sending
-    {
-      let wsToken = data.value
-      setUserToken(wsToken)
-      console.log('setting user token from ws', wsToken);
-      // const settingToken = await localStorage.setItem('token', wsToken);
-      // console.log('local storage', settingToken);
-      await handleDemo();
-    };
-
+    console.log('ws msg', data);
+    const result = await loginWS(data.token);
+    if (result.status == "success") {
+      props.history.push('/intro1');
+    }
   });
-
-  const handleDemo = async() => {
-    let token = userToken
-    const getId = await getUserId(token)
-    console.log('userid from app', getId);
-
-    const id = Object.keys(getId).map(key => {
-        const value = getId[key]
-        return value
-    })
-    setUser_id(id) // this stays empty...
-    const postId = await postUserId(id)
-    props.history.push(`/intro1`)
-    // const userID = await localStorage.setItem('id', resp.id); // resp is an object it comes undefine
-    // const userToken = await localStorage.setItem('token', token.value);
-  }
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -74,7 +54,7 @@ function App(props) {
 
   const handleNext = async(userAnswers) => {
     try {
-     await updatedAnswer(user_id, userAnswers)
+     await updatedAnswer(userAnswers)
     } catch (error) {
     console.log(error);
    }
@@ -90,50 +70,18 @@ function App(props) {
  const handleContinue = async(userAnswers) => {
    setFinalAnswers(userAnswers)
   try {
-   await updatedAnswer(user_id, userAnswers)
+   await updatedAnswer(userAnswers)
   } catch(error) {
    console.log(error);
   }
   props.history.push('/sum');
- }
+}
 
-   // useEffect(() => {
-   //
-   //
-   //
-   //   const getUserId = async () => {
-   //    try {
-   //     const resp = await axios.get(`https://jsonplaceholder.typicode.com/users`)
-   //     console.log(resp.data);
-   //     return resp.data
-   //    } catch(error) {
-   //     console.log(error);
-   //     }
-   //   };
-   //
-   //   // async function fetchId() {
-   //   //  fetch('https://jsonplaceholder.typicode.com/users')
-   //   //   .then(function(req, res) {
-   //   //     if(req.body && req.body.token == userToken)
-   //   //     return res.json();
-   //   //   }
-   //   //   })
-   //   //   const resp = await axios.get(getUserId());
-   //   //   postUserId(resp.data.id);
-   //   //   console.log(resp.data.id);
-   //   // }
-   //
-   //   getUserId();
-   // }, [userToken]);
 
   return (
    <div className="App">
 
-     <Route exact path='/' render={props => (
-     <Home
-       handleDemo={handleDemo}
-      />
-    )}/>
+     <Route exact path='/' render={Home}/>
 
      <Route path='/intro1' render={TextOne} />
      <Route path='/intro2' render={TextTwo} />

@@ -1,6 +1,6 @@
 const axios = require('axios');
 const BASE_URL = 'http://localhost:3001';
-const BASE_WS = 'https://dummy-rest-api.glitch.me/user'
+// const BASE_WS = 'https://dummy-rest-api.glitch.me/user'
 // https://glitch.com/edit/#!/dummy-rest-api?path=server.js:1:0
 
 
@@ -17,41 +17,30 @@ const intakeUser = async(userInfo) => {
     console.log(error);
   }
 };
-
-const getUserId = async(token) => {
-  try {
-    const resp = await axios.post(`${BASE_WS}`, {
-      "token": token
-    })
-   //    , {
-   //    headers: {
-   //    Authorization: `Bearer ${token}`
-   //   }
-   // });
-    console.log(resp.data);
-    return resp.data
-  } catch(error) {
-    console.log(error);
-  }
-};
-
-
-const postUserId = async(user_id) => {
-  try {
-    const resp = await axios.post(`${BASE_URL}/users/login`, {
-      user_id
-    });
-    console.log(resp.data);
-    return resp.data
-  } catch(error) {
-    console.log(error);
-  }
-};
-
-// const loginWS = async(token) => {
+//
+// const getUserId = async(token) => {
 //   try {
+//     //change this address to real API
 //     const resp = await axios.post(`${BASE_WS}`, {
 //       "token": token
+//     })
+//    //    , {
+//    //    headers: {
+//    //    Authorization: `Bearer ${token}`
+//    //   }
+//    // });
+//     console.log(resp.data);
+//     return resp.data
+//   } catch(error) {
+//     console.log(error);
+//   }
+// };
+
+//
+// const postUserId = async(user_id) => {
+//   try {
+//     const resp = await axios.post(`${BASE_URL}/users/login`, {
+//       user_id
 //     });
 //     console.log(resp.data);
 //     return resp.data
@@ -60,9 +49,21 @@ const postUserId = async(user_id) => {
 //   }
 // };
 
-const postAnswer = async (user_id, userAnswers) => {
+const loginWS = async(token) => {
+  try {
+    const resp = await axios.post(`${BASE_URL}/users/login`, {
+      token
+    });
+    console.log(resp.data);
+    return resp.data
+  } catch(error) {
+    console.log(error);
+  }
+};
+
+const postAnswer = async (userAnswers) => {
  try {
-    const resp = await axios.post(`${BASE_URL}/users/${user_id}/answers`, userAnswers);
+    const resp = await axios.post(`${BASE_URL}/users/answers`, userAnswers);
     console.log(resp.data);
     return resp.data
   } catch(error) {
@@ -70,9 +71,9 @@ const postAnswer = async (user_id, userAnswers) => {
    }
 };
 
-const updatedAnswer = async (user_id, userAnswers) => {
+const updatedAnswer = async (userAnswers) => {
  try {
-    const resp = await axios.put(`${BASE_URL}/users/${user_id}/answers`, userAnswers);
+    const resp = await axios.put(`${BASE_URL}/users/answers`, userAnswers);
     console.log(resp.data);
     return resp.data
   } catch(error) {
@@ -84,7 +85,7 @@ export {
   intakeUser,
   postAnswer,
   updatedAnswer,
-  // loginWS,
-  postUserId,
-  getUserId
+  loginWS
+  // postUserId,
+  // getUserId
 }

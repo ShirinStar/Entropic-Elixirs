@@ -39,8 +39,13 @@ answerRouter.post('/', async (req, res) => {
 });
 
 answerRouter.put('/', async (req, res) => {
+  console.log(req.cookies);
   try {
-    const user = await User.findByPk(res.locals.user_id);
+    const user = await User.findOne({
+      where: {
+        token: req.cookies.token
+        }
+      });
     const currentAnswer = await user.getAnswer();
     if (currentAnswer) {
         currentAnswer.update(req.body);
