@@ -27,7 +27,9 @@ function App(props) {
     console.log('Websocket connection established 🚀');
     ws.send('main app is connected');
     //need to find why the ws is keep reconnecting with each trigger
+    // {'force new connection':true}
   });
+
 
   ws.addEventListener('message', async function incoming(msg) {
     const data = JSON.parse(msg.data);
@@ -37,6 +39,7 @@ function App(props) {
       props.history.push('/intro1');
     }
   });
+
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -60,7 +63,7 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 13) {
+   if((questionId + increment) == 2) {
      setFinalAnswers(userAnswers)
      props.history.push('/14')
   } else { props.history.push(`/question/${questionId + increment}`);
@@ -119,6 +122,7 @@ function App(props) {
     <Route path='/sum' render={props => (
     <Sum
       finalAnswers={finalAnswers}
+      
      />
    )}/>
     </div>

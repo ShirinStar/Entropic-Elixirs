@@ -60,6 +60,18 @@ answerRouter.put('/', async (req, res) => {
   }
 });
 
+answerRouter.post('/drinkMaker', async (req, res) => {
+  try {
+    console.log(req.body);
+    res.json(req.body);
+  } catch(e) {
+    console.log(e);
+    res.status(500).send(e.message);
+  }
+});
+
+
+
 // answerRouter.get('/:id', async (req, res) => {
 //   try {
 //     const { id } = req.params;

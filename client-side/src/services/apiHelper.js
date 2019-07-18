@@ -17,37 +17,6 @@ const intakeUser = async(userInfo) => {
     console.log(error);
   }
 };
-//
-// const getUserId = async(token) => {
-//   try {
-//     //change this address to real API
-//     const resp = await axios.post(`${BASE_WS}`, {
-//       "token": token
-//     })
-//    //    , {
-//    //    headers: {
-//    //    Authorization: `Bearer ${token}`
-//    //   }
-//    // });
-//     console.log(resp.data);
-//     return resp.data
-//   } catch(error) {
-//     console.log(error);
-//   }
-// };
-
-//
-// const postUserId = async(user_id) => {
-//   try {
-//     const resp = await axios.post(`${BASE_URL}/users/login`, {
-//       user_id
-//     });
-//     console.log(resp.data);
-//     return resp.data
-//   } catch(error) {
-//     console.log(error);
-//   }
-// };
 
 const loginWS = async(token) => {
   try {
@@ -81,11 +50,23 @@ const updatedAnswer = async (userAnswers) => {
    }
 };
 
+const drinkMaker = async (answerValues) => {
+  console.log('hi ryan');
+ try {
+    const resp = await axios.post(`${BASE_URL}/users/answers/drinkMaker`, {
+      answerValues
+    });
+    console.log(resp.data);
+    return resp.data
+  } catch(error) {
+    console.log(error);
+   }
+};
+
 export {
   intakeUser,
   postAnswer,
   updatedAnswer,
-  loginWS
-  // postUserId,
-  // getUserId
+  loginWS,
+  drinkMaker
 }

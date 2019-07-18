@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart, ColumnChart, PieChart } from 'react-chartkick';
 import Chart from 'chart.js';
+import { drinkMaker } from '../services/apiHelper';
 
 
 function Sum(props) {
@@ -8,14 +9,15 @@ function Sum(props) {
   // console.log(finalAnswers);
 
   const graphData = finalAnswers
+  const answerValues = JSON.stringify(Object.values(graphData));
+  console.log(answerValues);
 
-  const drinkMaker = () => {
-    Object.keys(graphData).map(key => {
-        const value = graphData[key]
-        console.log(key, value);
-        //here connect to post to server to send to Ryan
-    })
+  function drinkMaking(e) {
+  e.preventDefault();
+  drinkMaker(answerValues)
   }
+
+
 
 return (
   <>
@@ -30,7 +32,7 @@ return (
       />
     </div>
 
-    <button className='btn-sum' onClick={drinkMaker} >make me my drink</button>
+    <button className='btn-sum' onClick={drinkMaking}>make me my drink</button>
     </div>
   </>
  )
