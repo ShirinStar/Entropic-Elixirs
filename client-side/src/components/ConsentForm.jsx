@@ -34,7 +34,7 @@ return (
     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.</p>
     <form className='form-terms' onSubmit={handleSubmit}>
-      <input className='check-terms' type="checkbox" name="terms" value="terms" onChange={handleChange}/> agree to terms<br/>
+      <input id='check-terms' style={{fontSize:'24px'}} type="checkbox" name="terms" value="terms" onChange={handleChange}/> agree to terms<br/>
       <button className='btn' type='submit'>submit</button>
     </form>
    </div>

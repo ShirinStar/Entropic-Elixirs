@@ -24,9 +24,9 @@ function FourteenQ(props) {
 
   return (
   <>
-  <div className='general-container'>
+  <div className='fourteen-container'>
    <div className='div-title-q14'>
-     <h1 className='general-title'>How certain are you about what you want in various different areas of your life?</h1>
+     <h1 className='fourteen-title'>How certain are you about what you want in various different areas of your life?</h1>
     </div>
 
     {rankings.titles.map(title => (

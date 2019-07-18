@@ -6,18 +6,14 @@ import { drinkMaker } from '../services/apiHelper';
 
 function Sum(props) {
   const {finalAnswers} = props
-  // console.log(finalAnswers);
 
   const graphData = finalAnswers
   const answerValues = JSON.stringify(Object.values(graphData));
-  console.log(answerValues);
 
   function drinkMaking(e) {
   e.preventDefault();
   drinkMaker(answerValues)
   }
-
-
 
 return (
   <>

@@ -39,10 +39,10 @@ const [answers, setAnswers] = React.useState({
    </div>
 
    <div>
-    <h2>{questions.questions[questionId].title}</h2>
+    <h2 className='question-title'>{questions.questions[questionId].title}</h2>
    </div>
 
-  <div>
+  <div className='radio-form'>
    <form className='form-q' onSubmit={handleSubmit}>
   {
    questions.questions[questionId].answers.map((answer, index) => {

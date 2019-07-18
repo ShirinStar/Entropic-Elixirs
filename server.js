@@ -32,7 +32,6 @@ app.get('/', function (req, res, next) {
   return res.render('user', req.user);
 });
 
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });

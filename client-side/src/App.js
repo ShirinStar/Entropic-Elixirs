@@ -30,7 +30,6 @@ function App(props) {
     // {'force new connection':true}
   });
 
-
   ws.addEventListener('message', async function incoming(msg) {
     const data = JSON.parse(msg.data);
     console.log('ws msg', data);
@@ -39,7 +38,6 @@ function App(props) {
       props.history.push('/intro1');
     }
   });
-
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -85,27 +83,26 @@ function App(props) {
    <div className="App">
 
      <Route exact path='/' render={Home}/>
-
      <Route path='/intro1' render={TextOne} />
      <Route path='/intro2' render={TextTwo} />
      <Route path='/intro3' render={TextThree} />
 
-       <Route path='/welcome' render={props => (
-        <ConsentForm
+     <Route path='/welcome' render={props => (
+       <ConsentForm
          {...props}
         handleConsent={handleConsent}
         />
        )}/>
 
       <Route path='/intake' render={props => (
-      <IntakeForm
+       <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
        />
      )}/>
 
       <Route path={'/question/:questionId'} render={props => (
-      <Questions
+       <Questions
         user_id={user_id}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
@@ -113,16 +110,16 @@ function App(props) {
      )}/>
 
      <Route path='/14' render={props => (
-     <FourteenQ
+      <FourteenQ
        finalAnswers={finalAnswers}
        handleContinue={handleContinue}
       />
     )}/>
 
     <Route path='/sum' render={props => (
-    <Sum
+     <Sum
       finalAnswers={finalAnswers}
-      
+
      />
    )}/>
     </div>
