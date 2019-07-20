@@ -16,8 +16,6 @@ import './App.css';
 
 
 function App(props) {
-  const [user_id, setUser_id] = React.useState(''); //future connect to websocket call receive user id
-  const [userToken, setUserToken] = React.useState(''); //future connect to websocket call receive user id
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
   const [questionId, setQuestionId] = React.useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
@@ -38,6 +36,12 @@ function App(props) {
       props.history.push('/intro1');
     }
   });
+
+  const clearState = () => {
+    setUserInfo('')
+    setQuestionId(0)
+    setFinalAnswers('')
+  }
 
   const handleRegister = async(userInfo) => {
     console.log(userInfo);
@@ -78,6 +82,10 @@ function App(props) {
   props.history.push('/sum');
 }
 
+// const handleDrink = () => {
+//   clearState()
+//   props.history.push('/');
+// }
 
   return (
    <div className="App">
@@ -103,7 +111,6 @@ function App(props) {
 
       <Route path={'/question/:questionId'} render={props => (
        <Questions
-        user_id={user_id}
         questionId={props.match.params.questionId}
         handleNext={handleNext}
        />
@@ -119,9 +126,9 @@ function App(props) {
     <Route path='/sum' render={props => (
      <Sum
       finalAnswers={finalAnswers}
-
+      clearState={clearState}
      />
-   )}/>
+    )}/>
     </div>
   );
 };
