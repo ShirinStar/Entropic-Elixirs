@@ -47,9 +47,9 @@ const [answers, setAnswers] = React.useState({
   {
    questions.questions[questionId].answers.map((answer, index) => {
      return (
-      <div className='block-div' key={answer.text}>
+      <div className='wrapper' key={answer.text}>
        <input className='question-input' data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
-        {answer.text}
+        <label htmlFor='question-label'> {answer.text} </label>
       </div>
      )
     })

@@ -8,12 +8,11 @@ import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
-import axios from'axios';
+import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-
 
 function App(props) {
   const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
@@ -82,14 +81,8 @@ function App(props) {
   props.history.push('/sum');
 }
 
-// const handleDrink = () => {
-//   clearState()
-//   props.history.push('/');
-// }
-
   return (
    <div className="App">
-
      <Route exact path='/' render={Home}/>
      <Route path='/intro1' render={TextOne} />
      <Route path='/intro2' render={TextTwo} />

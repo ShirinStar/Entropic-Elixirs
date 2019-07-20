@@ -7,17 +7,21 @@ second yellow: #FEC65F;
 second blue: #7FD0DB
 second red: #E46460;
 font-family: 'DM Sans', sans-serif; */
-
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 body {
   margin: 0 auto;
   font-family: 'DM Sans', sans-serif;
+  background: #f2f2f2;
 }
 
 .home {
    max-width: 550px;
    margin: 0 auto;
-
 }
 
 .head-line {
@@ -53,7 +57,7 @@ body {
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
-  background-color: white;
+  background-color: #f2f2f2;
   border-radius: 0.7em;
   display: block;
   margin-left: 39%;
@@ -61,7 +65,7 @@ body {
 
 .head-btn:hover {
   background-color: #0F72BB;
-  color: white;
+  color: #f2f2f2;
 }
 
 .text-container {
@@ -69,7 +73,6 @@ body {
   max-width: 500px;
   margin-top: 25%;
   padding-bottom: 10%;
-  /* border-bottom: 5px solid #92298E; */
 }
 
 .intro-text {
@@ -85,7 +88,7 @@ body {
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
-  background-color: white;
+  background-color: #f2f2f2;
   border-radius: 0.7em;
   display: block;
   margin-left: 75%;
@@ -94,7 +97,7 @@ body {
 
 .head-btn-intro:hover {
   background-color: #0F72BB;
-  color: white;
+  color: #f2f2f2;
 }
 
 .temp-txt {
@@ -198,10 +201,76 @@ input[type=checkbox] {
 }
 
 .radio-form {
+  box-sizing: border-box;
   font-size: 22px;
-  max-width: 450px;
+  max-width: 850px;
   margin-left: 5%;
+  padding: 20px 50px
+}
 
+.wrapper {
+  position: relative;
+  width: 400px;
+  margin-left: -5%;
+  margin-top: -0.5rem;
+}
+
+.wrapper label {
+  display: block;
+  margin-top: -8%;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 54px;
+
+  /* position: absolute; */
+}
+
+.wrapper input {
+  /* height: 40px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 40px; */
+}
+
+.wrapper input + label::before {
+  /* border: 2px solid;
+  content: "";
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+  border-radius: 50%; */
+}
+
+.wrapper input + label::after {
+  /* content: "";
+  opacity: 0;
+  border: 10px solid;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 10px; */
+  /* transition: opacity 0.2s ease-in-out; */
+}
+
+/* .wrapper input:checked + label::after {
+  opacity: 1;
+}
+
+.wrapper input:focus + label::before {
+  box-shadow: 0 0 0 3px #ffbf47;
+  outline: 3px solid transparent; /* For Windows high contrast mode. */
+
+
+input[type=radio] {
+  transform: scale(2);
+  margin-right: 5%;
+  display: inline-block;
+  margin-top: 4%;
+  /* position: absolute; */
 }
 
 .q-title {
@@ -214,16 +283,16 @@ input[type=checkbox] {
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
-  background-color: white;
+  background-color: #f2f2f2;;
   border-radius: 0.7em;
   display: block;
-  margin-left: 75%;
-  margin-top: 15%;
+  margin-left: 85%;
+  margin-top: 10%;
 }
 
 .btn:hover {
   background-color: #0F72BB;
-  color: white;
+  color: #f2f2f2;;
 }
 
 .textEl {
@@ -265,37 +334,39 @@ input[type=checkbox] {
  display: flex;
 }
 
+.wrapper-14 {
+  position: relative;
+  width: 400px;
+  margin-left: -5%;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 3%;
+  margin-top: -0.5rem;
+}
+
 .title-q14 {
   font-size: 1.8rem;
   margin-bottom: 12%;
-  margin-top: 12%;
+  padding-top: 15%;
   border-bottom: 3px solid #92298E;
 }
 
 .number-container {
-    margin-left: 32%;
+  margin-left: 32%;
 }
 
 .number-q14 {
   margin: 0 auto;
-  /* max-width: 4px; */
   display: inline-block;
-  padding-right: 9%;
+  padding-right: 13%;
 }
 
 .form-info {
   font-size: 1.5rem;
 }
 
-input[type=radio] {
-  transform: scale(1.5);
-  margin-right: 5%;
-  display: inline-block;
-  margin-bottom: 2%;
-}
-
 .radio-btn-q14 {
-margin: 1.2rem;
+ margin: 1.2rem;
 }
 
 .lable-q14-1 {
@@ -305,7 +376,7 @@ margin: 1.2rem;
 
 .lable-q14-2 {
   font-size: 1.2rem;
-  margin-left: 1.6rem;
+  margin-left: 1.4rem;
 }
 
 .graph-container {
@@ -326,7 +397,7 @@ margin: 1.2rem;
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
-  background-color: white;
+  background-color: #f2f2f2;;
   border-radius: 0.7em;
   display: block;
   margin-left: 35%;
@@ -334,5 +405,5 @@ margin: 1.2rem;
 
 .btn-sum:hover {
   background-color: #0F72BB;
-  color: white;
+  color: #f2f2f2;;
 }

@@ -12,10 +12,10 @@ function Sum(props) {
   const answerValues = JSON.stringify(Object.values(graphData));
 
   function drinkMaking(e) {
-    clearState();
     e.preventDefault();
-    drinkMaker(answerValues)
-    props.history.push('/')
+    drinkMaker(answerValues);
+    clearState();
+    props.history.push('/');
   }
 
 return (

@@ -45,7 +45,7 @@ function FourteenQ(props) {
        {
         rankings.rankings.map((ranking, index) => {
           return (
-           <div key={index}>
+           <div className='wrapper-14' key={index}>
             <input className='radio-btn-q14' data-ranking-index={index}
                    data-catagory={ranking.categories.catagory}
                    value={ranking.categories.value}
