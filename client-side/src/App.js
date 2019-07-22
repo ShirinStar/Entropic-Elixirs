@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import TextOne from './components/TextOne';
@@ -8,38 +8,23 @@ import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
+import SocketContext from './components/SocketContext';
 import axios from 'axios';
-import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 function App(props) {
-  const [userInfo, setUserInfo] = React.useState(''); // connect to user intake form
-  const [questionId, setQuestionId] = React.useState(0); // question ->url
-  const [finalAnswers, setFinalAnswers] = React.useState(''); //grabbing users answers from components
-
-  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic'); //change this address
-  ws.addEventListener('open', function open() {
-    console.log('Websocket connection established 🚀');
-    ws.send('main app is connected');
-    //need to find why the ws is keep reconnecting with each trigger
-    // {'force new connection':true}
-  });
-
-  ws.addEventListener('message', async function incoming(msg) {
-    const data = JSON.parse(msg.data);
-    console.log('ws msg', data);
-    const result = await loginWS(data.token);
-    if (result.status == "success") {
-      props.history.push('/intro1');
-    }
-  });
+  const [userInfo, setUserInfo] = useState(''); // connect to user intake form
+  const [questionId, setQuestionId] = useState(0); // question ->url
+  const [finalAnswers, setFinalAnswers] = useState(''); //grabbing users answers from components
+  const [currentToken, setCurrentToken] = useState('');
 
   const clearState = () => {
     setUserInfo('')
     setQuestionId(0)
-    setFinalAnswers('')
+    setFinalAnswers('') // how to reset it midway
   }
 
   const handleRegister = async(userInfo) => {
@@ -80,6 +65,16 @@ function App(props) {
   }
   props.history.push('/sum');
 }
+
+const { incoming } = useContext(SocketContext)
+
+useEffect(() => {
+  if(incoming.data != currentToken) {
+    setCurrentToken(incoming)
+    clearState();
+  }
+  console.log('incoming msg', incoming);
+}, [currentToken])
 
   return (
    <div className="App">

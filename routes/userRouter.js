@@ -38,6 +38,7 @@ userRouter.post('/login', async (req, res) => {
     const request = await fetch(`${url}?token=${token}`,
                           {'force new connection':true},
                           {mode: 'no-cors'})
+                          
     if (request.status == 200) {
         const userData = await request.json();
         console.log(userData);

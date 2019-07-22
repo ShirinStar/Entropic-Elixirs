@@ -221,20 +221,19 @@ input[type=checkbox] {
   padding-right: 20px;
   padding-bottom: 30px;
   padding-left: 54px;
-
   /* position: absolute; */
 }
 
-.wrapper input {
+/* .wrapper input { */
   /* height: 40px;
   left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
   width: 40px; */
-}
+/* } */
 
-.wrapper input + label::before {
+/* .wrapper input + label::before { */
   /* border: 2px solid;
   content: "";
   height: 40px;
@@ -243,9 +242,9 @@ input[type=checkbox] {
   top: 0;
   width: 40px;
   border-radius: 50%; */
-}
+/* } */
 
-.wrapper input + label::after {
+/* .wrapper input + label::after { */
   /* content: "";
   opacity: 0;
   border: 10px solid;
@@ -254,7 +253,7 @@ input[type=checkbox] {
   left: 10px;
   top: 10px; */
   /* transition: opacity 0.2s ease-in-out; */
-}
+/* } */
 
 /* .wrapper input:checked + label::after {
   opacity: 1;
