@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function IntakeForm(props) {
   const {handleRegister, userInfo} = props
-  const [user_age, setUser_age] = React.useState('');
-  const [user_gender, setUser_gender] = React.useState('');
+  const [user_age, setUser_age] = useState('');
+  const [user_gender, setUser_gender] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault()

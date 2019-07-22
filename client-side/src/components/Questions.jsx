@@ -4,7 +4,7 @@ import { postAnswer} from '../services/apiHelper';
 
 function Questions(props) {
 const {handleNext, questionId} = props
-const [answers, setAnswers] = React.useState({
+const [answers, setAnswers] = useState({
   'breaking': 0,
   'building': 0,
   'with_it': 0,

@@ -71,7 +71,6 @@ const { incoming } = useContext(SocketContext)
 useEffect(() => {
   if(incoming.data != currentToken) {
     setCurrentToken(incoming)
-    clearState();
   }
   console.log('incoming msg', incoming);
 }, [currentToken])
@@ -79,7 +78,11 @@ useEffect(() => {
   return (
    <div className="App">
      <Route exact path='/' render={Home}/>
-     <Route path='/intro1' render={TextOne} />
+     <Route path='/intro1' render={props => (
+      <TextOne
+      clearState={clearState}
+      />
+     )}/>
      <Route path='/intro2' render={TextTwo} />
      <Route path='/intro3' render={TextThree} />
 

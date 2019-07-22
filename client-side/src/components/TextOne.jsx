@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
 function TextOne(props) {
+const {clearState} = props
+
+function clearingState(e) {
+  e.preventDefault();
+  clearState();
+  props.history.push('/intro2')
+}
 
   return(
     <div className='text-container'>
@@ -13,7 +20,7 @@ function TextOne(props) {
 
        <p className='intro-text'>Entropic Elixirs helps align your physiology with your personal
        growth goals by providing the right mixture of essences to give your body the push that your soul needs to thrive. </p>
-       <button className='head-btn-intro' onClick={()=>props.history.push('/intro2')}>Next</button>
+       <button className='head-btn-intro' onClick={clearingState}>Next</button>
       </div>
     </div>
   )
