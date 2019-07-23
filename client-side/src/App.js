@@ -9,6 +9,7 @@ import Questions from './components/Questions';
 import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
+import Header from'./components/Header';
 import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
@@ -77,6 +78,13 @@ useEffect(() => {
 
   return (
    <div className="App">
+
+     <Route path='/' render={props => (
+      <Header
+      clearState={clearState}
+      />
+     )}/>
+
      <Route exact path='/' render={Home}/>
      <Route path='/intro1' render={props => (
       <TextOne

@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const SocketProvider = (props) => {
-
   const [value, setValue] = useState({
     incoming: {}
   });
