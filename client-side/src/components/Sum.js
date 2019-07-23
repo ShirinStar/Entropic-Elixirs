@@ -9,20 +9,17 @@ function Sum(props) {
   const {finalAnswers, clearState} = props
 
   const data = finalAnswers
-  console.log(data);
 
   const graphData= {
-    breaking: data.breaking / 12 * 100,
-    building:  data.building / 12 * 100,
-    with_it: data.with_it / 12 * 100,
-    against_it: data.against_it / 12 * 100,
-    intuition: data.intuition / 24 * 100,
-    intention: data.intention / 24 * 100
+    breaking: (data.breaking / 12 * 100).toFixed(2),
+    building: (data.building / 12 * 100).toFixed(2),
+    with_it: (data.with_it / 12 * 100).toFixed(2),
+    against_it: (data.against_it / 12 * 100).toFixed(2),
+    intuition: (data.intuition / 24 * 100).toFixed(2),
+    intention: (data.intention / 24 * 100).toFixed(2)
   }
-  console.log(graphData);
 
   const answerValues = JSON.stringify(Object.values(graphData));
-  console.log(answerValues);
 
   function drinkMaking(e) {
     e.preventDefault();
