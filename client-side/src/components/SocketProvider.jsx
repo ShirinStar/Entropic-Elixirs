@@ -10,7 +10,7 @@ const SocketProvider = (props) => {
   });
 
 useEffect(() => {
-  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic'); //change this address
+  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic'); 
     ws.addEventListener('open', function open() {
      console.log('Websocket connection established 🚀');
     })

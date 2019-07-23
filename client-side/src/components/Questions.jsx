@@ -33,33 +33,33 @@ const [answers, setAnswers] = useState({
  return (
   <>
   <div className='form-container'>
-  <div className='general-container'>
-   <div className='div-title'>
-    <h1 className='general-title'>Quesion no. {questions.questions[questionId].number}</h1>
-   </div>
-
-   <div>
-    <h2 className='question-title'>{questions.questions[questionId].title}</h2>
-   </div>
-
-  <div className='radio-form'>
-   <form className='form-q' onSubmit={handleSubmit}>
-  {
-   questions.questions[questionId].answers.map((answer, index) => {
-     return (
-      <div className='wrapper' key={answer.text}>
-       <input className='question-input' data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
-        <label htmlFor='question-label'> {answer.text} </label>
+   <div className='general-container'>
+    <div className='div-title'>
+     <h1 className='general-title'>Quesion no. {questions.questions[questionId].number}</h1>
       </div>
-     )
-    })
-   }
-    <button className='btn' type='submit'>Next</button>
-   </form>
 
-  </div>
-  </div>
-  </div>
+       <div>
+        <h2 className='question-title'>{questions.questions[questionId].title}</h2>
+       </div>
+
+        <div className='radio-form'>
+         <form className='form-q' onSubmit={handleSubmit}>
+          {
+           questions.questions[questionId].answers.map((answer, index) => {
+             return (
+              <div className='wrapper' key={answer.text}>
+               <input className='question-input' data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
+                <label htmlFor='question-label'> {answer.text} </label>
+              </div>
+             )
+            })
+           }
+          <button className='btn' type='submit'>Next</button>
+         </form>
+
+     </div>
+    </div>
+   </div>
   </>
   );
  };
