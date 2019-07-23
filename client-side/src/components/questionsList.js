@@ -4,12 +4,10 @@ export default {
       "title": "In the past 6-12 months, how much work have you done on your relationship with yourself?",
       "answers": [{
           "text": "This is something I never think about.",
-          "scores": [
-            {
+          "scores": [{
             "catagory": "breaking",
             "value": 1
-          }
-        ]
+          }]
         },
         {
           "text": "I think about doing work on myself sometimes, but what for?",
@@ -72,58 +70,76 @@ export default {
             "value": 1
           }]
         }
-      ]
+      ],
     },
     {
       "number": 3,
-      "title": "If you answered C, D, or E to the previous question, what was/is the impetus for you to begin working on yourself?",
+      "title": "What was the impetus to begin working on yourself? (If self-work is not currently your practice, select the reason that would most likely make you start.)",
       "answers": [{
           "text": "sudden significant change in life circumstances",
           "scores": [{
-            "catagory": "building",
-            "value": 0
+            "catagory": "with_it",
+            "value": 1
           }]
         },
         {
           "text": "significant yet expected change in life circumstances",
           "scores": [{
-            "catagory": "building",
-            "value": 0
+            "catagory": "with_it",
+            "value": 1
           }]
         },
         {
           "text": "current partner asked me to",
           "scores": [{
-            "catagory": "building",
-            "value": 0
+            "catagory": "against_it",
+            "value": 1
           }]
         },
         {
           "text": "want to meet a romantic partner and need to sort some things out first",
           "scores": [{
-            "catagory": "building",
-            "value": 0
+            "catagory": "against_it",
+            "value": 1
           }]
         },
         {
           "text": "I've been aware of it for a while and it was finally time to just do it",
           "scores": [{
-            "catagory": "building",
-            "value": 0
-          }]
+              "catagory": "with_it",
+              "value": 0.25
+            },
+            {
+              "catagory": "against_it",
+              "value": 0.75
+            }
+          ]
         },
         {
           "text": "just wasn't happy with myself and/or my circumstances",
           "scores": [{
-            "catagory": "building",
-            "value": 0
-          }]
+              "catagory": "with_it",
+              "value": 0.1
+
+            },
+            {
+              "catagory": "against_it",
+              "value": 0.9
+            }
+          ]
         },
         {
           "text": "saw patterns in my behavior that weren't working for me, so I decided to change them",
           "scores": [{
-            "catagory": "building",
-            "value": 0
+            "catagory": "against_it",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I've always done it.",
+          "scores": [{
+            "catagory": "with_it",
+            "value": 1
           }]
         }
       ]
@@ -156,25 +172,6 @@ export default {
     },
     {
       "number": 5,
-      "title": "Do you believe you have a clear understanding of who you are?",
-      "answers": [{
-          "text": "yes",
-          "scores": [{
-            "catagory": "building",
-            "value": 1
-          }]
-        },
-        {
-          "text": "no",
-          "scores": [{
-            "catagory": "breaking",
-            "value": 1
-          }]
-        }
-      ]
-    },
-    {
-      "number": 6,
       "title": "If you had it your way, are there many things you would want to change about yourself and/or your life as it is today?",
       "answers": [{
           "text": "I’m happy about the way things are. There are few or no things I would like to change about myself and my life.",
@@ -217,17 +214,17 @@ export default {
       ]
     },
     {
-      "number": 7,
-      "title": "How often do your actions have the impact you desire?",
+      "number": 6,
+      "title": "How often do the things you want come to pass (for your self and your life)?",
       "answers": [{
-          "text": "My actions always have their desired effect.",
+          "text": "The things I want for my self and my life always come to pass.",
           "scores": [{
             "catagory": "with_it",
             "value": 1
           }]
         },
         {
-          "text": "My actions often have their desired effect, but not always.",
+          "text": "The things I want for my self and my life often come to pass, but not always.",
           "scores": [{
               "catagory": "with_it",
               "value": 0.65
@@ -239,7 +236,7 @@ export default {
           ]
         },
         {
-          "text": "My actions sometimes have their desired effect, but not most of the time.",
+          "text": "The things I want for my self and my life sometimes come to pass, but not most of the time.",
           "scores": [{
               "catagory": "with_it",
               "value": 0.35
@@ -251,7 +248,7 @@ export default {
           ]
         },
         {
-          "text": "My actions never have their desired effect.",
+          "text": "The things I want for my self and my life never come to pass.",
           "scores": [{
             "catagory": "against_it",
             "value": 1
@@ -260,7 +257,7 @@ export default {
       ]
     },
     {
-      "number": 8,
+      "number": 7,
       "title": "Which of the following best describes the flow of your life over the past 12 months?",
       "answers": [{
           "text": "Things have been falling into place naturally, with minimal pushing on my part",
@@ -303,7 +300,7 @@ export default {
       ]
     },
     {
-      "number": 9,
+      "number": 8,
       "title": "Looking back over the past few years, how often have things 'worked out' the way they're 'supposed to'?",
       "answers": [{
           "text": "Things work out the way they’re supposed to all the time.",
@@ -353,33 +350,7 @@ export default {
       ]
     },
     {
-      "number": 10,
-      "title": "Do you perceive yourself receiving unsolicited feedback from the world around you?",
-      "answers": [{
-          "text": "Yes",
-          "scores": [{
-            "catagory": '',
-            "value": 0
-          }]
-        },
-        {
-          "text": "No",
-          "scores": [{
-            "catagory": '',
-            "value": 0
-          }]
-        },
-        {
-          "text": "Maybe",
-          "scores": [{
-            "catagory": '',
-            "value": 0
-          }]
-        }
-      ]
-    },
-    {
-      "number": 11,
+      "number": 9,
       "title": "Are you interested in more closely tuning in to feedback you may be receiving from the world around you?",
       "answers": [{
           "text": "Yes, I would like to tune in more closely",
@@ -410,24 +381,24 @@ export default {
       ]
     },
     {
-      "number": 12,
+      "number": 10,
       "title": "Do you prefer to follow your instincts or to make plans and/or work towards goals?",
       "answers": [{
           "text": "Prefer to follow my instincts most or all of the time",
           "scores": [{
             "catagory": "intuition",
-            "value": 1
+            "value": 2
           }]
         },
         {
           "text": "Both, but more instincts",
           "scores": [{
               "catagory": "intuition",
-              "value": 0.6
+              "value": 1.2
             },
             {
               "catagory": "intention",
-              "value": 0.4
+              "value": 0.8
             }
           ]
         },
@@ -435,18 +406,25 @@ export default {
           "text": "Both, but I'm more of a planner",
           "scores": [{
               "catagory": "intuition",
-              "value": 0.4
+              "value": 0.8
             },
             {
               "catagory": "intention",
-              "value": 0.6
+              "value": 1.2
             }
           ]
+        },
+        {
+          "text": "I prefer to operate with a plan most or all of the time",
+          "scores": [{
+            "catagory": "intention",
+            "value": 2
+          }]
         }
       ]
     },
     {
-      "number": 13,
+      "number": 11,
       "title": "Has your approach (instincts vs planning) been working for you?",
       "answers": [{
           "text": "Yes",
@@ -473,6 +451,228 @@ export default {
               "value": 0.5
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Please choose the statement that best describes the current state of your professional life.",
+      "answers": [{
+          "text": "I am comfortably settled in a professional situtation and am fairly clear about what I want in the near future.",
+          "scores": [{
+            "catagory": "intention",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am currently in a professional situation that I'm not satisfied with and would be open to change, but am not clear about what.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.9
+            },
+            {
+              "catagory": "intention",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "text": "I am currently in a professional situation that I'm not satisfied with and am quite clear about the path I would prefer to pursue.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.1
+            },
+            {
+              "catagory": "intention",
+              "value": 0.9
+            }
+          ]
+        },
+        {
+          "text": "I'm am trying to figure it out.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Please choose the statement that best describes the current state of your romantic life.",
+      "answers": [{
+          "text": "I am comfortably settled in my current romantic situation and am sure enough about what I want in the near future.",
+          "scores": [{
+            "catagory": "intention",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am not satisfied with my current romantic situation and would be open to change, but am not clear about what.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.9
+            },
+            {
+              "catagory": "intention",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "text": "I am not satisfied with my current romantic situation and am quite clear about what I would like.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.1
+            },
+            {
+              "catagory": "intention",
+              "value": 0.9
+            }
+          ]
+        },
+        {
+          "text": "I'm am trying to figure it out.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Please choose the statement that best describes the current state of your artistic life.",
+      "answers": [{
+          "text": "I am comfortably settled in my artistic life and am fairly certain about what I want in the near future.",
+          "scores": [{
+            "catagory": "intention",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am not satisfied with my artisitic life and would be open to change, but am not clear about what",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.9
+            },
+            {
+              "catagory": "intention",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "text": "I am not satisfied with the current state of my artistic life and am quite clear about the changes I would like to make.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.1
+            },
+            {
+              "catagory": "intention",
+              "value": 0.9
+            }
+          ]
+        },
+        {
+          "text": "I'm am trying to figure it out.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am not an artist.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Please choose the statement that best describes the current state of your social life.",
+      "answers": [{
+          "text": "I am comfortably settled in my current social situation and am clear enough about what I want in the near future.",
+          "scores": [{
+            "catagory": "intention",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am not satisfied with my current social situation and would be open to changing it, but am not clear about what I want.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.9
+            },
+            {
+              "catagory": "intention",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "text": "I am not satisfied with my current social situation and am quite clear about how I would like to change it.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.1
+            },
+            {
+              "catagory": "intention",
+              "value": 0.9
+            }
+          ]
+        },
+        {
+          "text": "I'm am trying to figure it out.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Please choose the statement that best describes the current state of your family life.",
+      "answers": [{
+          "text": "I am comfortably settled in my family situation and am clear enough about what I want in the near future.",
+          "scores": [{
+            "catagory": "intention",
+            "value": 1
+          }]
+        },
+        {
+          "text": "I am not satisfied with my current family situation and would be open to changing it, but am not clear about what I want.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.9
+            },
+            {
+              "catagory": "intention",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "text": "I am not satisfied with my current family situation and am quite clear about how I would like to change it.",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 0.1
+            },
+            {
+              "catagory": "intention",
+              "value": 0.9
+            }
+          ]
+        },
+        {
+          "text": "I'm am trying to figure it out.",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 1
+          }]
         }
       ]
     }

@@ -6,7 +6,6 @@ import TextTwo from './components/TextTwo';
 import TextThree from './components/TextThree';
 import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
-import FourteenQ from './components/FourteenQ';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
 import Header from'./components/Header';
@@ -25,7 +24,7 @@ function App(props) {
   const clearState = () => {
     setUserInfo('')
     setQuestionId(0)
-    setFinalAnswers('') // how to reset it midway
+    setFinalAnswers('')
   }
 
   const handleRegister = async(userInfo) => {
@@ -50,9 +49,9 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 2) {
+   if((questionId + increment) == 15) {
      setFinalAnswers(userAnswers)
-     props.history.push('/14')
+     props.history.push('/sum')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
@@ -114,13 +113,6 @@ useEffect(() => {
         handleNext={handleNext}
        />
      )}/>
-
-     <Route path='/14' render={props => (
-      <FourteenQ
-       finalAnswers={finalAnswers}
-       handleContinue={handleContinue}
-      />
-    )}/>
 
     <Route path='/sum' render={props => (
      <Sum
