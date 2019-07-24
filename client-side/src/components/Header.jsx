@@ -7,7 +7,6 @@ function Header(props) {
   function clearingState(e) {
     e.preventDefault();
     clearState();
-    props.history.push('/')
   }
 
   return (

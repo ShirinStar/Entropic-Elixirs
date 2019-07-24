@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Header from'./Header';
 
 function TextOne(props) {
+  const {clearState} = props
 
   return(
+  <>
+   <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
     <div className='text-container'>
-
       <div>
         <div className='div-title'>
         <h1 className='general-title'>Hello</h1>
@@ -17,6 +21,7 @@ function TextOne(props) {
        <button className='head-btn-intro' onClick={()=>props.history.push('/intro3')}>Next</button>
       </div>
     </div>
+  </>
   )
 }
 

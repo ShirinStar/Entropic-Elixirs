@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Header from'./Header';
 
 function ConsentForm(props) {
-  const {handleConsent} = props
+  const {handleConsent, clearState} = props
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,6 +24,7 @@ function ConsentForm(props) {
 
 return (
 <>
+ <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
   <div className='general-container'>
    <div className='div-title'>
     <h1 className='general-title'>Terms of use</h1>

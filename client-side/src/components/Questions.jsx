@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import questions from './questionsList';
 import { postAnswer} from '../services/apiHelper';
+import Header from'./Header';
 
 function Questions(props) {
-const {handleNext, questionId} = props
+const {handleNext, questionId, clearState} = props
 const [answers, setAnswers] = useState({
   'breaking': 0,
   'building': 0,
@@ -30,8 +32,17 @@ const [answers, setAnswers] = useState({
    submit(newAnswers);
  }
 
+ // useEffect(() => {
+ //       const audio = docuement.querySelector("#audio");
+ //       audio.play();
+
+ // <audio id="audio" autoPlay="on" src="sounds/{questionId}.wav"/> // this going to the return
+ //   }
+
  return (
   <>
+  <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
+
   <div className='form-container'>
    <div className='general-container'>
     <div className='div-title'>

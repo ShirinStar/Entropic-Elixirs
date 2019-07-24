@@ -8,7 +8,6 @@ import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
-import Header from'./components/Header';
 import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
@@ -25,6 +24,7 @@ function App(props) {
     setUserInfo('')
     setQuestionId(0)
     setFinalAnswers('')
+    props.history.push('/')
   }
 
   const handleRegister = async(userInfo) => {
@@ -78,25 +78,27 @@ useEffect(() => {
   return (
    <div className="App">
 
-     <Route path='/' render={props => (
-      <Header
-      clearState={clearState}
-      />
-     )}/>
-
      <Route exact path='/' render={Home}/>
      <Route path='/intro1' render={props => (
       <TextOne
       clearState={clearState}
       />
      )}/>
-     <Route path='/intro2' render={TextTwo} />
-     <Route path='/intro3' render={TextThree} />
-
+     <Route path='/intro2' render={props => (
+      <TextTwo
+      clearState={clearState}
+      />
+     )}/>
+     <Route path='/intro3' render={props => (
+      <TextThree
+      clearState={clearState}
+      />
+     )}/>
      <Route path='/welcome' render={props => (
        <ConsentForm
          {...props}
         handleConsent={handleConsent}
+        clearState={clearState}
         />
        )}/>
 
@@ -104,6 +106,7 @@ useEffect(() => {
        <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
+        clearState={clearState}
        />
       )}/>
 
@@ -111,6 +114,7 @@ useEffect(() => {
        <Questions
         questionId={props.match.params.questionId}
         handleNext={handleNext}
+        clearState={clearState}
        />
      )}/>
 

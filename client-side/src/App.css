@@ -52,15 +52,15 @@ body {
 
 .close-btn {
   width:20px;
-  margin-top: 2em;
+  margin-top: 5%;
   font-size: 1.1em;
   padding: 0.3em;
   color: #1F1F1F;
-  border: 1px solid #1F1F1F;
+  border: 1px dotted #1F1F1F;
   background-color: #f2f2f2;
-  border-radius: 0.7em;
+  border-radius: 50%;
   display: block;
-  margin-left: 5%;
+  margin-left: 7%;
 }
 
 .close-btn:hover {
@@ -71,11 +71,11 @@ body {
 
 .head-btn {
   width: 22%;
-  margin-top: 1.6em;
-  font-size: 1.1em;
+  margin-top: 70%;
+  font-size: 1.2em;
   padding: 0.3em;
-  color: #0F72BB;
-  border: 1px solid #0F72BB;
+  color: #1F1F1F;
+  border: 1px solid #1F1F1F;
   background-color: #f2f2f2;
   border-radius: 0.7em;
   display: block;
@@ -83,19 +83,18 @@ body {
 }
 
 .head-btn:hover {
-  background-color: #0F72BB;
+  background-color: #1F1F1F;
   color: #f2f2f2;
 }
 
 .text-container {
   margin: 0 auto;
-  max-width: 500px;
-  margin-top: 25%;
+  max-width: 550px;
+  margin-top: 20%;
   padding-bottom: 10%;
 }
 
 .intro-text {
-  /* text-align: center; */
   max-width: 550px;
   padding: 3%;
   font-size: 1.4rem;
@@ -103,7 +102,7 @@ body {
 
 .head-btn-intro{
   width: 22%;
-  font-size: 1.4em;
+  font-size: 1.2em;
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
@@ -111,7 +110,7 @@ body {
   border-radius: 0.7em;
   display: block;
   margin-left: 75%;
-  margin-top: 15%;
+  margin-top: 20%;
 }
 
 .head-btn-intro:hover {
@@ -119,20 +118,20 @@ body {
   color: #f2f2f2;
 }
 
-.temp-txt {
+/* .temp-txt {
   text-align: center;
   color: grey;
   margin-top: 10px;
   font-size: 1.1rem;
-}
+} */
 
 .div-title {
-  margin-top: 5%;
   max-width: 550px;
   background-color: #1F1F1F;
 }
 
 .general-title {
+  max-width: 550px;
   margin-left: 5%;
   padding: 0.5rem;
   color: white;
@@ -159,7 +158,7 @@ body {
 
 .main-terms {
   margin: 0 auto;
-  max-width: 470px;
+  max-width: 550px;
   margin-top: 10%;
   padding-bottom: 5%;
 }
@@ -180,7 +179,7 @@ input[type=checkbox] {
 }
 
 .main-info {
-  margin-top: 10%;
+  margin-top: 12%;
   margin-left: 20%;
 }
 
@@ -198,7 +197,6 @@ input[type=checkbox] {
   margin-bottom: 1rem;
   border-radius: .25em;
   margin-left: 4%;
-  text-align: center;
 }
 
 .label-gender {
@@ -216,7 +214,7 @@ input[type=checkbox] {
 .question-title {
   margin-left: 4%;
   padding-top: 3%;
-  padding-bottom: 3%;
+  /* padding-bottom: 2%; */
 }
 
 .radio-form {
@@ -229,17 +227,17 @@ input[type=checkbox] {
 
 .wrapper {
   position: relative;
-  width: 400px;
-  margin-left: -5%;
-  margin-top: -0.5rem;
+  width: 480px;
+  margin-left: -8%;
+  margin-top: -0.8rem;
 }
 
 .wrapper label {
   display: block;
-  margin-top: -8%;
+  margin-top: -6%;
   padding-right: 20px;
   padding-bottom: 30px;
-  padding-left: 54px;
+  padding-left: 50px;
   /* position: absolute; */
 }
 
@@ -287,7 +285,7 @@ input[type=radio] {
   transform: scale(2);
   margin-right: 5%;
   display: inline-block;
-  margin-top: 4%;
+  margin-top: 10%;
   /* position: absolute; */
 }
 
@@ -296,7 +294,7 @@ input[type=radio] {
 }
 
 .btn {
-  width: 25%;
+  width: 24%;
   font-size: 1.2em;
   padding: 0.3em;
   color: #0F72BB;
@@ -305,7 +303,7 @@ input[type=radio] {
   border-radius: 0.7em;
   display: block;
   margin-left: 85%;
-  margin-top: 10%;
+  margin-top: 12%;
 }
 
 .btn:hover {
@@ -326,14 +324,13 @@ input[type=radio] {
 
 .general-container {
   margin: 0 auto;
-  max-width: 500px;
-  margin-top: 25%;
-  padding-bottom: 10%;
+  max-width: 550px;
+  margin-top: 20%;
 }
 
 .form-container {
   margin: 0 auto;
-  max-width: 580px;
+  width: 580px;
   margin-top: 5%;
 }
 
@@ -409,12 +406,12 @@ input[type=radio] {
 }
 
 .btn-sum {
-  width: 30%;
-  margin-top: 1.6em;
-  font-size: 1.1em;
-  padding: 0.3em;
-  color: #0F72BB;
-  border: 1px solid #0F72BB;
+  width: 32%;
+  margin-top: 2em;
+  font-size: 1.4em;
+  padding: 0.6em;
+  color: #92298E;
+  border: 1px solid #92298E;
   background-color: #f2f2f2;;
   border-radius: 0.7em;
   display: block;
@@ -422,6 +419,6 @@ input[type=radio] {
 }
 
 .btn-sum:hover {
-  background-color: #0F72BB;
+  background-color: #92298E;
   color: #f2f2f2;;
 }
