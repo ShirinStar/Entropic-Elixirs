@@ -90,14 +90,14 @@ body {
 .text-container {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 20%;
-  padding-bottom: 10%;
+  margin-top: 10%;
 }
 
 .intro-text {
-  max-width: 550px;
+  max-width: 510px;
   padding: 3%;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  margin-left: 4%
 }
 
 .head-btn-intro{
@@ -164,11 +164,13 @@ body {
 }
 
 .text-terms {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  margin-left: 4%;
 }
 
 .form-terms {
   font-size: 1.6rem;
+  margin-left: 3%;
 }
 
 input[type=checkbox] {
@@ -303,7 +305,7 @@ input[type=radio] {
   border-radius: 0.7em;
   display: block;
   margin-left: 85%;
-  margin-top: 12%;
+  margin-top: 15%;
 }
 
 .btn:hover {
@@ -325,7 +327,7 @@ input[type=radio] {
 .general-container {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .form-container {
