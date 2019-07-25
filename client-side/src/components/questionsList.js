@@ -6,35 +6,35 @@ export default {
           "text": "This is something I never think about.",
           "scores": [{
             "catagory": "breaking",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "I think about doing work on myself sometimes, but what for?",
           "scores": [{
             "catagory": "breaking",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "I want to do work on myself, but I don’t know how.",
           "scores": [{
             "catagory": "breaking",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "I do work on myself often, but wouldn’t say it’s a central focus of my life.",
           "scores": [{
             "catagory": "building",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "Working on myself is something I spend considerable time and resources on (either by myself or with the support of others).",
           "scores": [{
             "catagory": "building",
-            "value": 1
+            "value": 0.5
           }]
         }
       ]
@@ -151,21 +151,21 @@ export default {
           "text": "always",
           "scores": [{
             "catagory": "breaking",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "sometimes",
           "scores": [{
             "catagory": "building",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "never",
           "scores": [{
             "catagory": "breaking",
-            "value": 1
+            "value": 0.5
           }]
         }
       ]
@@ -220,18 +220,18 @@ export default {
           "text": "The things I want for my self and my life always come to pass.",
           "scores": [{
             "catagory": "with_it",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "The things I want for my self and my life often come to pass, but not always.",
           "scores": [{
               "catagory": "with_it",
-              "value": 0.65
+              "value": 0.35
             },
             {
               "catagory": "against_it",
-              "value": 0.35
+              "value": 0.15
             }
           ]
         },
@@ -239,11 +239,11 @@ export default {
           "text": "The things I want for my self and my life sometimes come to pass, but not most of the time.",
           "scores": [{
               "catagory": "with_it",
-              "value": 0.35
+              "value": 0.15
             },
             {
               "catagory": "against_it",
-              "value": 0.65
+              "value": 0.35
             }
           ]
         },
@@ -251,7 +251,7 @@ export default {
           "text": "The things I want for my self and my life never come to pass.",
           "scores": [{
             "catagory": "against_it",
-            "value": 1
+            "value": 0.5
           }]
         }
       ]
@@ -306,14 +306,26 @@ export default {
           "text": "Things work out the way they’re supposed to all the time.",
           "scores": [{
             "catagory": "with_it",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "Things often work out the way they're supposed to, but not all the time.",
           "scores": [{
               "catagory": "with_it",
-              "value": 0.7
+              "value": 0.35
+            },
+            {
+              "catagory": "against_it",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "text": "Things sometimes work out the way they’re supposed to, but not often.",
+          "scores": [{
+              "catagory": "with_it",
+              "value": 0.2
             },
             {
               "catagory": "against_it",
@@ -322,30 +334,23 @@ export default {
           ]
         },
         {
-          "text": "Things sometimes work out the way they’re supposed to, but not often.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.4
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.6
-            }
-          ]
-        },
-        {
           "text": "Things never work out the way they’re supposed to.",
           "scores": [{
             "catagory": "against_it",
-            "value": 1
+            "value": 0.5
           }]
         },
         {
           "text": "I don’t believe things are “supposed” to “work out” any specific way.",
           "scores": [{
-            "catagory": '',
-            "value": 0
-          }]
+              "catagory": "with_it",
+              "value": 0.25
+            },
+            {
+              "catagory": "against_it",
+              "value": 0.25
+            }
+          ]
         }
       ]
     },

@@ -10,7 +10,7 @@ const SocketProvider = (props) => {
   });
 
 useEffect(() => {
-  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic'); 
+  const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic');
     ws.addEventListener('open', function open() {
      console.log('Websocket connection established 🚀');
     })
@@ -18,7 +18,7 @@ useEffect(() => {
     ws.addEventListener('message', async function incoming(msg) {
       const data = JSON.parse(msg.data);
       console.log('ws msg', data);
-      setValue(data)
+      setValue(data.token)
       const result = await loginWS(data.token);
       if (result.status == "success") {
         props.history.push('/intro1');

@@ -24,7 +24,7 @@ function App(props) {
     setUserInfo('')
     setQuestionId(0)
     setFinalAnswers('')
-    props.history.push('/')
+    props.history.push('/') // how to reset the experience after a certain time?
   }
 
   const handleRegister = async(userInfo) => {
@@ -69,7 +69,7 @@ function App(props) {
 const { incoming } = useContext(SocketContext)
 
 useEffect(() => {
-  if(incoming.data != currentToken) {
+  if(incoming != currentToken) {
     setCurrentToken(incoming)
   }
   console.log('incoming msg', incoming);

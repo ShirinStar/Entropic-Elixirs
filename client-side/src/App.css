@@ -35,7 +35,6 @@ body {
 }
 
 .span-headlin {
-  /* font-size: 28px; */
   font-weight: 100;
 }
 
@@ -90,7 +89,7 @@ body {
 .text-container {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .intro-text {
@@ -118,13 +117,6 @@ body {
   color: #f2f2f2;
 }
 
-/* .temp-txt {
-  text-align: center;
-  color: grey;
-  margin-top: 10px;
-  font-size: 1.1rem;
-} */
-
 .div-title {
   max-width: 550px;
   background-color: #1F1F1F;
@@ -138,7 +130,7 @@ body {
   font-size: 2.2rem;
 }
 
-.fourteen-container {
+/* .fourteen-container {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 25%;
@@ -154,12 +146,12 @@ body {
   padding: 0.5rem;
   color: white;
   font-size: 1.8rem;
-}
+} */
 
 .main-terms {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 10%;
+  margin-top: 20%;
   padding-bottom: 5%;
 }
 
@@ -216,7 +208,6 @@ input[type=checkbox] {
 .question-title {
   margin-left: 4%;
   padding-top: 3%;
-  /* padding-bottom: 2%; */
 }
 
 .radio-form {
@@ -242,46 +233,6 @@ input[type=checkbox] {
   padding-left: 50px;
   /* position: absolute; */
 }
-
-/* .wrapper input { */
-  /* height: 40px;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 40px; */
-/* } */
-
-/* .wrapper input + label::before { */
-  /* border: 2px solid;
-  content: "";
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-  border-radius: 50%; */
-/* } */
-
-/* .wrapper input + label::after { */
-  /* content: "";
-  opacity: 0;
-  border: 10px solid;
-  border-radius: 50%;
-  position: absolute;
-  left: 10px;
-  top: 10px; */
-  /* transition: opacity 0.2s ease-in-out; */
-/* } */
-
-/* .wrapper input:checked + label::after {
-  opacity: 1;
-}
-
-.wrapper input:focus + label::before {
-  box-shadow: 0 0 0 3px #ffbf47;
-  outline: 3px solid transparent; /* For Windows high contrast mode. */
-
 
 input[type=radio] {
   transform: scale(2);
@@ -327,7 +278,7 @@ input[type=radio] {
 .general-container {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .form-container {
@@ -423,4 +374,182 @@ input[type=radio] {
 .btn-sum:hover {
   background-color: #92298E;
   color: #f2f2f2;;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .general-container {
+    margin-top: 5%;
+  }
+
+  .text-container {
+    margin-top: 5%;
+  }
+
+  .intro-text {
+    max-width: 510px;
+    font-size: 1rem;
+  }
+
+  .head-btn {
+    margin-top: 20%;
+  }
+
+  .head-btn-intro {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    margin-left: 100%;
+  }
+
+  .form-terms {
+    font-size: 1.5rem;
+    margin-top: 8%;
+  }
+
+  .radio-form {
+    margin-left: 1%;
+  }
+
+  .wrapper {
+    position: relative;
+    width: 700px;
+    margin-left: -8%;
+    margin-top: -3rem;
+  }
+
+  .wrapper label {
+    margin-top: -3%;
+  }
+
+  .question-title {
+    width: 500px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+  .home {
+     max-width: 500px;
+   }
+
+  .head-line {
+    font-size: 40px;
+    margin-top: 30%;
+  }
+
+  .tagline-home {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .head-btn {
+    margin-top: 10%;
+  }
+
+  .text-container {
+    margin-top: 5%;
+    max-width: 450px;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .intro-text {
+    max-width: 380px;
+    font-size: 0.8rem;
+  }
+
+  .div-title {
+    margin-top: 10%;
+    max-width: 400px;
+  }
+
+  .general-title {
+    max-width: 450px;
+    font-size: 2rem;
+  }
+
+.head-btn-intro {
+  margin-left: 70%;
+  font-size: 1.1rem;
+  }
+
+.btn {
+  margin-left: 60%;
+  font-size: 1.1rem;
+}
+
+.main-terms {
+  max-width: 350px;
+}
+
+.text-terms {
+  font-size: 1rem;
+  margin-left: 4%;
+}
+
+.form-terms {
+  font-size: 1.4rem;
+}
+
+.form-info {
+  font-size: 1rem;
+   width: 380px;
+   margin-left: -10%;
+}
+
+.radio-form {
+  font-size: 14px;
+  max-width: 450px;
+  margin-left: 2%;
+}
+
+.wrapper {
+  position: relative;
+  width: 300px;
+  margin-left: -10%;
+  margin-top: -2.3rem;
+ }
+
+ .question-title {
+   width: 300px;
+   font-size: 18px;
+   padding-top: 1px;
+ }
+
+ .general-container {
+   margin: 0 auto;
+   max-width: 550px;
+ }
+
+ .general-container {
+   margin-top: 2%;
+ }
+
+ .form-container {
+   margin: 0 auto;
+   width: 400px;
+   margin-top: 5%;
+ }
+
+ .graph-container {
+   max-width: 150px;
+ }
+
+ #answers-chart {
+   margin-left: -85%;
+ }
+
+ .btn-sum {
+   width: 40%;
+   margin-top: 0.5em;
+   font-size: 1em;
+   margin-left: 30%;
+ }
+
 }

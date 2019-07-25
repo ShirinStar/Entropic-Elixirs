@@ -17,7 +17,12 @@ userRouter.get('/', async (req, res) => {
 userRouter.post('/', async (req, res) => {
   try {
     const { user_age, user_gender } = req.body;
-    const intakeUser = await User.create({
+    const user = await User.findOne({
+      where: {
+        token: req.cookies.token
+        }
+      });
+    const intakeUser = await user.update({
       user_age,
       user_gender
     });
@@ -38,7 +43,7 @@ userRouter.post('/login', async (req, res) => {
     const request = await fetch(`${url}?token=${token}`,
                           {'force new connection':true},
                           {mode: 'no-cors'})
-                          
+
     if (request.status == 200) {
         const userData = await request.json();
         console.log(userData);
