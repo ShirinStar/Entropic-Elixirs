@@ -377,7 +377,6 @@ input[type=radio] {
 }
 
 @media only screen and (min-width: 1000px) {
-
   .general-container {
     margin-top: 5%;
   }
@@ -432,8 +431,6 @@ input[type=radio] {
 }
 
 @media only screen and (max-width: 600px) {
-
-
   .home {
      max-width: 500px;
    }
@@ -551,5 +548,4 @@ input[type=radio] {
    font-size: 1em;
    margin-left: 30%;
  }
-
 }

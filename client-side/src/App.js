@@ -24,7 +24,7 @@ function App(props) {
     setUserInfo('')
     setQuestionId(0)
     setFinalAnswers('')
-    props.history.push('/') // how to reset the experience after a certain time?
+    props.history.push('/')
   }
 
   const handleRegister = async(userInfo) => {
@@ -102,7 +102,7 @@ useEffect(() => {
         />
        )}/>
 
-      <Route path='/intake' render={props => (
+     <Route path='/intake' render={props => (
        <IntakeForm
         userInfo={userInfo}
         handleRegister={handleRegister}
@@ -110,7 +110,7 @@ useEffect(() => {
        />
       )}/>
 
-      <Route path={'/question/:questionId'} render={props => (
+     <Route path={'/question/:questionId'} render={props => (
        <Questions
         questionId={props.match.params.questionId}
         handleNext={handleNext}
