@@ -14,7 +14,6 @@ function TextOne(props) {
         <div className='div-title'>
         <h1 className='general-title'>Hello</h1>
       </div>
-
        <p className='intro-text'>The ingredients that combine to create your Entropic Elixir wok at the molecular level to shift your body’s vibratory behavior in specific ways.
        Whether helping make or break connections, move with or against the flow, receive the right feedback at the right time, or project and manifest your intentions,
        Entropic Elixirs give you the extra boost that can make the work of living and relating so much easier. </p>

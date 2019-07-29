@@ -51,7 +51,7 @@ answerRouter.put('/', async (req, res) => {
         currentAnswer.update(req.body);
     }
     else {
-        user.createAnswer(req.body);
+       user.createAnswer(req.body);
     }
     res.end();
   } catch(e) {
@@ -69,16 +69,5 @@ answerRouter.post('/drinkMaker', async (req, res) => {
     res.status(500).send(e.message);
   }
 });
-
-// answerRouter.get('/:id', async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const answer = await Answer.findByPk(id);
-//     res.json(answer);
-//   } catch (e) {
-//     console.log(e);
-//     res.status(500).send(e.message);
-//   }
-// });
 
 module.exports = { answerRouter }

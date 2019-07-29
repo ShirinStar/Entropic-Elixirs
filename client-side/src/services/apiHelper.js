@@ -15,7 +15,7 @@ const intakeUser = async(userInfo) => {
   } catch(error) {
     console.log(error);
   }
-};
+ };
 
 const loginWS = async(token) => {
   try {
@@ -27,7 +27,7 @@ const loginWS = async(token) => {
   } catch(error) {
     console.log(error);
   }
-};
+ };
 
 const postAnswer = async (userAnswers) => {
  try {
@@ -37,7 +37,7 @@ const postAnswer = async (userAnswers) => {
   } catch(error) {
     console.log(error);
    }
-};
+ };
 
 const updatedAnswer = async (userAnswers) => {
  try {
@@ -47,10 +47,10 @@ const updatedAnswer = async (userAnswers) => {
   } catch(error) {
     console.log(error);
    }
-};
+ };
 
 const drinkMaker = async (answerValues) => {
-  console.log('hi ryan');
+  console.log('hi ryan, this goes to you');
  try {
     const resp = await axios.post(`${BASE_URL}/users/answers/drinkMaker`, {
       answerValues
@@ -60,7 +60,7 @@ const drinkMaker = async (answerValues) => {
   } catch(error) {
     console.log(error);
    }
-};
+ };
 
 export {
   intakeUser,
@@ -68,4 +68,4 @@ export {
   updatedAnswer,
   loginWS,
   drinkMaker
-}
+ }

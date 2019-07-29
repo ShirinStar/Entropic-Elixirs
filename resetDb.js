@@ -9,6 +9,6 @@ async function resetDb() {
   } finally {
     process.exit();
   }
-}
+};
 
 resetDb();

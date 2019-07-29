@@ -27,17 +27,9 @@ const [answers, setAnswers] = useState({
     }
   })
   setAnswers(newAnswers);
-  console.log(newAnswers, 'from questions');
   const submit = handleNext;
-   submit(newAnswers);
+  submit(newAnswers);
  }
-
- // useEffect(() => {
- //       const audio = docuement.querySelector("#audio");
- //       audio.play();
-
- // <audio id="audio" autoPlay="on" src="sounds/{questionId}.wav"/> // this going to the return
- //   }
 
  return (
   <>
@@ -52,7 +44,6 @@ const [answers, setAnswers] = useState({
        <div>
         <h2 className='question-title'>{questions.questions[questionId].title}</h2>
        </div>
-
         <div className='radio-form'>
          <form className='form-q' onSubmit={handleSubmit}>
           {
@@ -66,8 +57,7 @@ const [answers, setAnswers] = useState({
             })
            }
           <button className='btn' type='submit'>Next</button>
-         </form>
-
+        </form>
      </div>
     </div>
    </div>

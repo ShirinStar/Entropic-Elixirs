@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { LineChart, ColumnChart, PieChart } from 'react-chartkick';
 import Chart from 'chart.js';
-import { drinkMaker } from '../services/apiHelper';
+import { drinkMaker, updatedAnswer } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
 
 
 function Sum(props) {
   const {finalAnswers, clearState} = props
-
   const data = finalAnswers
 
   const graphData= {
@@ -23,6 +22,7 @@ function Sum(props) {
 
   function drinkMaking(e) {
     e.preventDefault();
+    updatedAnswer(graphData)
     drinkMaker(answerValues);
     clearState();
     props.history.push('/');
@@ -34,14 +34,12 @@ return (
     <div className='div-title'>
      <h1 className='general-title'>Summary</h1>
     </div>
-
     <div className='graph-container'>
       <PieChart id="answers-chart" data={graphData}
       width="400px" height="500px"
       suffix="%"
       />
     </div>
-
     <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
     </div>
   </>

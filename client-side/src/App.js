@@ -28,7 +28,6 @@ function App(props) {
   }
 
   const handleRegister = async(userInfo) => {
-    console.log(userInfo);
     try {
       const resp = await intakeUser(userInfo)
     } catch (error) {
@@ -54,16 +53,6 @@ function App(props) {
      props.history.push('/sum')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
-}
-
- const handleContinue = async(userAnswers) => {
-   setFinalAnswers(userAnswers)
-  try {
-   await updatedAnswer(userAnswers)
-  } catch(error) {
-   console.log(error);
-  }
-  props.history.push('/sum');
 }
 
 const { incoming } = useContext(SocketContext)
