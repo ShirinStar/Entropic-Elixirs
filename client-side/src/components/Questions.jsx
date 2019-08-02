@@ -31,17 +31,26 @@ const [answers, setAnswers] = useState({
   submit(newAnswers);
  }
 
-// useEffect(() => {
-//   document.querySelector("#audioWrap").load();
-//   document.querySelector("#audioWrap").play();
-//  })
-
 const audioRef = useRef();
 
-useEffect(() => {
-  audioRef.current.load();
-  audioRef.current.play();
- })
+const play = async () => {
+  try {
+    audioRef.current.load();
+    await audioRef.current.play();
+    console.log('done playing');
+  } catch (e) {
+    console.log('audio error: ', e.message);
+  }
+ }
+
+  useEffect(() => {
+    play();
+  });
+
+// useEffect(() => {
+//   audioRef.current.load();
+//   audioRef.current.play();
+//  })
 
  const audioSrc = "../audio/" + questionId + ".wav"
 
@@ -62,13 +71,20 @@ useEffect(() => {
         <div>
          <h2 className='question-title'>{questions.questions[questionId].title}</h2>
         </div>
+        
         <div className='radio-form'>
          <form className='form-q' onSubmit={handleSubmit}>
           {
            questions.questions[questionId].answers.map((answer, index) => {
              return (
               <div className='wrapper' key={answer.text}>
-               <input className='question-input' data-answer-index={index} data-catagory={answer.scores.catagory} value={answer.scores.value} type='radio' name='answer' required/>
+               <input className='question-input'
+                      data-answer-index={index}
+                      data-catagory={answer.scores.catagory}
+                      value={answer.scores.value}
+                      type='radio'
+                      name='answer'
+                      required/>
                 <label htmlFor='question-label'> {answer.text} </label>
               </div>
              )

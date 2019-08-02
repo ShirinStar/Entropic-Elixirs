@@ -25,6 +25,8 @@ return (
      <h1 className='general-title'>General Information</h1>
     </div>
 
+   <audio autoPlay src="../audio/age-gender.wav"/>
+
    <div className='main-info'>
     <form className='form-info' onSubmit={handleSubmit}>
       <label htmlFor='age'>Age: </label>

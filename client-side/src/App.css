@@ -94,7 +94,10 @@ body {
 
 .intro-text {
   max-width: 510px;
-  padding: 3%;
+  padding-top: 4%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-bottom: -1%;
   font-size: 1.3rem;
   margin-left: 4%
 }

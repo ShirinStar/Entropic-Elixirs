@@ -3,11 +3,10 @@ import Home from './components/Home';
 import IntakeForm from './components/IntakeForm';
 import TextOne from './components/TextOne';
 import TextTwo from './components/TextTwo';
-import TextThree from './components/TextThree';
-import ConsentForm from './components/ConsentForm';
 import Questions from './components/Questions';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
+import Loading from './components/Loading';
 import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
@@ -48,9 +47,9 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 15) {
+   if((questionId + increment) == 2) {
      setFinalAnswers(userAnswers)
-     props.history.push('/sum')
+     props.history.push('/loading')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
@@ -78,18 +77,6 @@ useEffect(() => {
       clearState={clearState}
       />
      )}/>
-     <Route path='/intro3' render={props => (
-      <TextThree
-      clearState={clearState}
-      />
-     )}/>
-     <Route path='/welcome' render={props => (
-       <ConsentForm
-         {...props}
-        handleConsent={handleConsent}
-        clearState={clearState}
-        />
-       )}/>
 
      <Route path='/intake' render={props => (
        <IntakeForm
@@ -106,6 +93,8 @@ useEffect(() => {
         clearState={clearState}
        />
      )}/>
+
+    <Route exact path='/loading' render={Loading}/>
 
     <Route path='/sum' render={props => (
      <Sum
