@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import questions from './questionsList';
 import { postAnswer} from '../services/apiHelper';
@@ -31,19 +31,37 @@ const [answers, setAnswers] = useState({
   submit(newAnswers);
  }
 
+// useEffect(() => {
+//   document.querySelector("#audioWrap").load();
+//   document.querySelector("#audioWrap").play();
+//  })
+
+const audioRef = useRef();
+
+useEffect(() => {
+  audioRef.current.load();
+  audioRef.current.play();
+ })
+
+ const audioSrc = "../audio/" + questionId + ".wav"
+
  return (
   <>
   <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
 
   <div className='form-container'>
-   <div className='general-container'>
-    <div className='div-title'>
-     <h1 className='general-title'>Question no. {questions.questions[questionId].number}</h1>
-      </div>
-
-       <div>
-        <h2 className='question-title'>{questions.questions[questionId].title}</h2>
+    <div className='general-container'>
+     <div className='div-title'>
+      <h1 className='general-title'>Question no. {questions.questions[questionId].number}</h1>
        </div>
+
+        <audio ref={audioRef}>
+         <source id="audio" src={audioSrc} type="audio/wav" />
+        </audio>
+
+        <div>
+         <h2 className='question-title'>{questions.questions[questionId].title}</h2>
+        </div>
         <div className='radio-form'>
          <form className='form-q' onSubmit={handleSubmit}>
           {
@@ -58,10 +76,10 @@ const [answers, setAnswers] = useState({
            }
           <button className='btn' type='submit'>Next</button>
         </form>
+       </div>
      </div>
     </div>
-   </div>
-  </>
+   </>
   );
  };
 

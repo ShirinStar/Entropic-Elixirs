@@ -43,15 +43,15 @@ module.exports = {
           use: ['style-loader', 'css-loader', 'sass-loader']
        },
        {
-              test: /\.(svg|png|jpg)$/,
-              use: {
-                loader: 'file-loader',
-                options: {
-                  limit: 22000,
-                  name: 'assets/[name]-[hash].[ext]'
-                }
+          test: /\.(svg|png|jpg)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              limit: 22000,
+              name: 'assets/[name]-[hash].[ext]'
               }
-          }
+            }
+        }
       ]
   }
 };
