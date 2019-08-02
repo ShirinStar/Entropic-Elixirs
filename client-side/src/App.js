@@ -6,7 +6,6 @@ import TextTwo from './components/TextTwo';
 import Questions from './components/Questions';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
-import Loading from './components/Loading';
 import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
@@ -47,9 +46,9 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 2) {
+   if((questionId + increment) == 15) {
      setFinalAnswers(userAnswers)
-     props.history.push('/loading')
+     props.history.push('/sum')
   } else { props.history.push(`/question/${questionId + increment}`);
  }
 }
@@ -93,8 +92,6 @@ useEffect(() => {
         clearState={clearState}
        />
      )}/>
-
-    <Route exact path='/loading' render={Loading}/>
 
     <Route path='/sum' render={props => (
      <Sum

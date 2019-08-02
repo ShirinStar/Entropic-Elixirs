@@ -37,7 +37,7 @@ return (
         autoComplete='off'
         onChange= {e => setUser_age(e.target.value)}
         required /> <br />
-     <label className='label-gender' htmlFor='gender'>Gender: </label> <br />
+     <label className='label-gender' htmlFor='gender'>Please select the gender that most closely represents you </label> <br />
        <input className='input-man' type="radio" name='gender' value='Male' required onChange={e => setUser_gender(e.target.value)}/> Male<br />
        <input type="radio" name='gender' value='Female' required onChange={e => setUser_gender(e.target.value)}/> Female<br />
        <input type="radio" name='gender' value='Non-binary' required onChange={e => setUser_gender(e.target.value)}/> Non-binary<br />

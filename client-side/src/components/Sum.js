@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LineChart, ColumnChart, PieChart } from 'react-chartkick';
 import Chart from 'chart.js';
 import { drinkMaker, updatedAnswer } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
+import Loader from 'react-loader-spinner'
 
 
 function Sum(props) {
   const {finalAnswers, clearState} = props
+  const [isLoading, setIsLoading] = useState(true);
   const data = finalAnswers
 
   const graphData= {
@@ -28,20 +30,44 @@ function Sum(props) {
     props.history.push('/');
   }
 
+  useEffect(() => {
+   page();
+  });
+
+ const page = () => {
+  setTimeout(() => {
+    setIsLoading(false)
+  }, 6000)
+ }
+
 return (
+
   <>
-  <div className='general-container'>
-    <div className='div-title'>
-     <h1 className='general-title'>Summary</h1>
-    </div>
-    <div className='graph-container'>
-      <PieChart id="answers-chart" data={graphData}
-      width="400px" height="500px"
-      suffix="%"
-      />
-    </div>
-    <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
-    </div>
+  {isLoading
+    ?
+    <div className='loading'>
+      <p className='loading-text'>Calculating the results...</p>
+        <Loader
+          type="Puff"
+          color="#92298E"
+          height={400}
+          width={550}
+          />
+         </div>
+     :
+      <div className='general-container'>
+          <div className='div-title'>
+           <h1 className='general-title'>Summary</h1>
+          </div>
+          <div className='graph-container'>
+            <PieChart id="answers-chart" data={graphData}
+            width="400px" height="500px"
+            suffix="%"
+            />
+          </div>
+          <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
+          </div>
+      }
   </>
  )
 }

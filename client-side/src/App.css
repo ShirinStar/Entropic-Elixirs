@@ -278,10 +278,25 @@ input[type=radio] {
   z-index: 10;
 }
 
+.loading {
+  margin: 0 auto;
+  max-width: 550px;
+  margin-top: 30%;
+  /* margin-left: 36%; */
+}
+
+.loading-text {
+  text-align: center;
+  max-width: 550px;
+  color: #1F1F1F;
+  font-size: 1.5rem;
+  padding-bottom: 5%;
+}
+
 .general-container {
   margin: 0 auto;
   max-width: 550px;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .form-container {
