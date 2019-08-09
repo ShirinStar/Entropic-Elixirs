@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, ColumnChart, PieChart } from 'react-chartkick';
 import Chart from 'chart.js';
+import Loader from 'react-loader-spinner';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { drinkMaker, updatedAnswer } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
-import Loader from 'react-loader-spinner'
 
 
 function Sum(props) {
@@ -41,7 +42,6 @@ function Sum(props) {
  }
 
 return (
-
   <>
   {isLoading
     ?
@@ -63,6 +63,20 @@ return (
             <PieChart id="answers-chart" data={graphData}
             width="400px" height="500px"
             suffix="%"
+            library={{
+                   plugins: {
+                     datalabels: {
+                       color: '#ffffff',
+                       formatter: function(value) {
+                         if (value > 0) {
+                         return value + " %";
+                       } else {
+                         return '';
+                       }
+                     }
+                   }
+                 }
+            }}
             />
           </div>
           <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
