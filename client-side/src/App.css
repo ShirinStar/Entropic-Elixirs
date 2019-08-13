@@ -367,18 +367,71 @@ input[type=radio] {
 
 .graph-container {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 600px;
+}
+
+.graphText {
+  display: flex;
+  font-size: 10px;
+}
+
+.graphTextBox {
+  padding-left: 12px;
+  padding-right: 10px;
+  border-top: 1px dotted #1F1F1F;
+  padding-top: 1%;
+  margin-top: 3%;
+}
+
+.graphTitle1 {
+  font-size: 14px;
+  margin: 0;
+  color: #3366CC;
+}
+
+.graphTitle2 {
+  font-size: 14px;
+  margin: 0;
+  color: #DC3912;
+}
+
+.graphTitle3 {
+  font-size: 14px;
+  margin: 0;
+  color: #FF9900;
+}
+
+.graphTitle4 {
+  font-size: 14px;
+  margin: 0;
+  color: #109618;
+}
+
+.graphTitle5 {
+  font-size: 14px;
+  margin: 0;
+  color: #8A008A;
+}
+
+.graphTitle6 {
+  font-size: 14px;
+  margin: 0;
+  color: #3B3EAC;
+}
+
+.graphSubTitle {
+  font-weight: 600;
+  color: #1F1F1F;
+  margin-bottom: -5%;
 }
 
 #answers-chart {
   margin: 0 auto;
-  margin-top: 10%;
-  padding: 5%;
 }
 
 .btn-sum {
   width: 32%;
-  margin-top: 2em;
+  margin-top: 1em;
   font-size: 1.4em;
   padding: 0.6em;
   color: #92298E;
@@ -386,12 +439,12 @@ input[type=radio] {
   background-color: #f2f2f2;;
   border-radius: 0.7em;
   display: block;
-  margin-left: 35%;
+  /* margin-left: 35%; */
 }
 
 .btn-sum:hover {
   background-color: #92298E;
-  color: #f2f2f2;;
+  color: #f2f2f2;
 }
 
 @media only screen and (min-width: 1000px) {

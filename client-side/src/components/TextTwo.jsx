@@ -19,9 +19,9 @@ function TextOne(props) {
 
        <p className='intro-text'>Here’s how it works.</p>
        <p className='intro-text'>For the next few minutes, we’ll take you through a short survey
-       to assess the state of your energetic body and your position inside this cycle of growth.</p>
+       to assess the state of your energetic body  its position inside your current growth cycle.</p>
        <p className='intro-text'>Based on your results, our system will generate a custom-formulated elixir
-       that will be dispensed by the machine to your right.</p>
+       elixir that will be dispensed by the machine.</p>
        <p className='intro-text'>Then, you drink the elixir on the spot.</p>
        <p className='intro-text'>Ready to begin?</p>
        <button className='head-btn-intro' onClick={()=>props.history.push('/intake')}>Let’s begin</button>

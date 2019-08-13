@@ -6,35 +6,35 @@ export default {
           "text": "This is something I never think about.",
           "scores": [{
             "catagory": "breaking",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "I think about doing work on myself sometimes, but what for?",
           "scores": [{
             "catagory": "breaking",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "I want to do work on myself, but I don’t know how.",
           "scores": [{
             "catagory": "breaking",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "I do work on myself often, but wouldn’t say it’s a central focus of my life.",
           "scores": [{
             "catagory": "building",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "Working on myself is something I spend considerable time and resources on (either by myself or with the support of others).",
           "scores": [{
             "catagory": "building",
-            "value": 0.5
+            "value": 1
           }]
         }
       ]
@@ -151,21 +151,21 @@ export default {
           "text": "always",
           "scores": [{
             "catagory": "breaking",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "sometimes",
           "scores": [{
             "catagory": "building",
-            "value": 0.5
+            "value": 1
           }]
         },
         {
           "text": "never",
           "scores": [{
             "catagory": "breaking",
-            "value": 0.5
+            "value": 1
           }]
         }
       ]
@@ -215,66 +215,23 @@ export default {
     },
     {
       "number": 6,
-      "title": "How often do the things you want come to pass (for your self and your life)?",
-      "answers": [{
-          "text": "The things I want for my self and my life always come to pass.",
-          "scores": [{
-            "catagory": "with_it",
-            "value": 0.5
-          }]
-        },
-        {
-          "text": "The things I want for my self and my life often come to pass, but not always.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.35
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.15
-            }
-          ]
-        },
-        {
-          "text": "The things I want for my self and my life sometimes come to pass, but not most of the time.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.15
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.35
-            }
-          ]
-        },
-        {
-          "text": "The things I want for my self and my life never come to pass.",
-          "scores": [{
-            "catagory": "against_it",
-            "value": 0.5
-          }]
-        }
-      ]
-    },
-    {
-      "number": 7,
       "title": "Which of the following best describes the flow of your life over the past 12 months?",
       "answers": [{
           "text": "Things have been falling into place naturally, with minimal pushing on my part",
           "scores": [{
             "catagory": "with_it",
-            "value": 1
+            "value": 2
           }]
         },
         {
           "text": "Things have been falling into place, but it has still taken a lot of effort on my part",
           "scores": [{
               "catagory": "with_it",
-              "value": 0.7
+              "value": 1.4
             },
             {
               "catagory": "against_it",
-              "value": 0.3
+              "value": 0.6
             }
           ]
         },
@@ -282,11 +239,11 @@ export default {
           "text": "Interesting opportunities have arisen but I've had to do a lot of maneuvering to make them happen",
           "scores": [{
               "catagory": "with_it",
-              "value": 0.5
+              "value": 1
             },
             {
               "catagory": "against_it",
-              "value": 0.5
+              "value": 1
             }
           ]
         },
@@ -294,99 +251,13 @@ export default {
           "text": "It's been an uphill battle at every turn",
           "scores": [{
             "catagory": "against_it",
-            "value": 1
+            "value": 2
           }]
         }
       ]
     },
     {
-      "number": 8,
-      "title": "Looking back over the past few years, how often have things 'worked out' the way they're 'supposed to'?",
-      "answers": [{
-          "text": "Things work out the way they’re supposed to all the time.",
-          "scores": [{
-            "catagory": "with_it",
-            "value": 0.5
-          }]
-        },
-        {
-          "text": "Things often work out the way they're supposed to, but not all the time.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.35
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.15
-            }
-          ]
-        },
-        {
-          "text": "Things sometimes work out the way they’re supposed to, but not often.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.2
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.3
-            }
-          ]
-        },
-        {
-          "text": "Things never work out the way they’re supposed to.",
-          "scores": [{
-            "catagory": "against_it",
-            "value": 0.5
-          }]
-        },
-        {
-          "text": "I don’t believe things are “supposed” to “work out” any specific way.",
-          "scores": [{
-              "catagory": "with_it",
-              "value": 0.25
-            },
-            {
-              "catagory": "against_it",
-              "value": 0.25
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "number": 9,
-      "title": "Are you interested in more closely tuning in to feedback you may be receiving from the world around you?",
-      "answers": [{
-          "text": "Yes, I would like to tune in more closely",
-          "scores": [{
-            "catagory": "intuition",
-            "value": 1
-          }]
-        },
-        {
-          "text": "Maybe",
-          "scores": [{
-              "catagory": "intuition",
-              "value": 0.5
-            },
-            {
-              "catagory": "intention",
-              "value": 0.5
-            }
-          ]
-        },
-        {
-          "text": "No, I would rather stick to what I know and observe",
-          "scores": [{
-            "catagory": "intention",
-            "value": 1
-          }]
-        }
-      ]
-    },
-    {
-      "number": 10,
+      "number": 7,
       "title": "Do you prefer to follow your instincts or to make plans and/or work towards goals?",
       "answers": [{
           "text": "Prefer to follow my instincts most or all of the time",
@@ -429,7 +300,7 @@ export default {
       ]
     },
     {
-      "number": 11,
+      "number": 8,
       "title": "Has your approach (instincts vs planning) been working for you?",
       "answers": [{
           "text": "Yes",
@@ -460,7 +331,38 @@ export default {
       ]
     },
     {
-      "number": 12,
+      "number": 9,
+      "title": "Are you interested in more closely tuning into feedback you may be receiving from the world around you?",
+      "answers": [{
+          "text": "Yes, I would like to tune in more closely",
+          "scores": [{
+            "catagory": "intuition",
+            "value": 2
+          }]
+        },
+        {
+          "text": "Maybe",
+          "scores": [{
+              "catagory": "intuition",
+              "value": 1
+            },
+            {
+              "catagory": "intention",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "text": "No, I would rather stick to what I know and observe",
+          "scores": [{
+            "catagory": "intention",
+            "value": 2
+          }]
+        }
+      ]
+    },
+    {
+      "number": 10,
       "title": "Please choose the statement that best describes the current state of your professional life.",
       "answers": [{
           "text": "I am comfortably settled in a professional situtation and am fairly clear about what I want in the near future.",
@@ -503,7 +405,7 @@ export default {
       ]
     },
     {
-      "number": 13,
+      "number": 11,
       "title": "Please choose the statement that best describes the current state of your romantic life.",
       "answers": [{
           "text": "I am comfortably settled in my current romantic situation and am sure enough about what I want in the near future.",
@@ -546,57 +448,7 @@ export default {
       ]
     },
     {
-      "number": 14,
-      "title": "Please choose the statement that best describes the current state of your artistic life.",
-      "answers": [{
-          "text": "I am comfortably settled in my artistic life and am fairly certain about what I want in the near future.",
-          "scores": [{
-            "catagory": "intention",
-            "value": 1
-          }]
-        },
-        {
-          "text": "I am not satisfied with my artisitic life and would be open to change, but am not clear about what",
-          "scores": [{
-              "catagory": "intuition",
-              "value": 0.9
-            },
-            {
-              "catagory": "intention",
-              "value": 0.1
-            }
-          ]
-        },
-        {
-          "text": "I am not satisfied with the current state of my artistic life and am quite clear about the changes I would like to make.",
-          "scores": [{
-              "catagory": "intuition",
-              "value": 0.1
-            },
-            {
-              "catagory": "intention",
-              "value": 0.9
-            }
-          ]
-        },
-        {
-          "text": "I'm am trying to figure it out.",
-          "scores": [{
-            "catagory": "intuition",
-            "value": 1
-          }]
-        },
-        {
-          "text": "I am not an artist.",
-          "scores": [{
-            "catagory": "intuition",
-            "value": 1
-          }]
-        }
-      ]
-    },
-    {
-      "number": 15,
+      "number": 12,
       "title": "Please choose the statement that best describes the current state of your social life.",
       "answers": [{
           "text": "I am comfortably settled in my current social situation and am clear enough about what I want in the near future.",
@@ -639,7 +491,7 @@ export default {
       ]
     },
     {
-      "number": 16,
+      "number": 13,
       "title": "Please choose the statement that best describes the current state of your family life.",
       "answers": [{
           "text": "I am comfortably settled in my family situation and am clear enough about what I want in the near future.",

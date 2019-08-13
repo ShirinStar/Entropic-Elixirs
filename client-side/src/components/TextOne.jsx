@@ -23,13 +23,14 @@ function clearingState(e) {
 
       <audio autoPlay src="../audio/screen1.wav"/>
 
-       <p className='intro-text'>Based on the groundbreaking science behind Vibratory Resonance*,
-       Entropic Elixirs are a new kind of supplement – the world’s most transformative approach to wellness, yet.</p>
-       <p className='intro-text'>Rather than working on your physical body like conventional medical approaches, our elixirs are designed to
-       align the function of your energetic body with your personal growth goals.</p>
-       <p className='intro-text'>Each ingredient in your custom Elixir is designed to activate a different aspect of your body’s vibratory behavior
-       at the molecular level – breaking or building patterns of consciousness, defining your relationship to the flow,
-       heightening receptivity, or sharpening your ability to manifestat intention.</p>
+       <p className='intro-text'>Entropic Elixirs are bespoke liquid supplements that align your
+       energetic body with your personal growth goals.</p>
+       <p className='intro-text'>Thanks to the groundbreaking science behind Vibratory Resonance*,
+       we’ve developed a transformative new approach that combines six active ingredients – each one
+       working at the molecular level to activate a specific aspect of your body’s vibratory behavior.</p>
+       <p className='intro-text'>Whether your aim is to break outdated patterns of consciousness or behavior;
+       build new perceptions and norms;(re)define your relationship to the flow; heighten receptivity; or
+       sharply manifest specific intentions in your life, Entropic Elixirs can help.</p>
        <button className='head-btn-intro' onClick={clearingState}>Next</button>
       </div>
     </div>

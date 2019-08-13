@@ -46,7 +46,7 @@ function App(props) {
    }
    let increment = 1;
    setQuestionId(questionId + increment);
-   if((questionId + increment) == 4) {
+   if((questionId + increment) == 13) {
      setFinalAnswers(userAnswers)
      props.history.push('/sum')
   } else { props.history.push(`/question/${questionId + increment}`);
