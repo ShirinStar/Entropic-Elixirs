@@ -43,7 +43,8 @@ function Sum(props) {
 
 return (
   <>
-  {isLoading
+  {
+    isLoading
     ?
     <div className='loading'>
       <p className='loading-text'>Calculating the results...</p>
@@ -53,23 +54,28 @@ return (
           height={400}
           width={550}
           />
-         </div>
+      </div>
      :
       <div className='general-container'>
           <div className='div-title'>
            <h1 className='general-title'>Summary</h1>
           </div>
+
+          <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
+
+
           <div className='graph-container'>
             <PieChart id="answers-chart" data={graphData}
             width="400px" height="500px"
             suffix="%"
+            legend={false}
             library={{
                    plugins: {
                      datalabels: {
                        color: '#ffffff',
-                       formatter: function(value) {
+                       formatter: function(value, context) {
                          if (value > 0) {
-                         return value + " %";
+                         return Object.keys(graphData)[context.dataIndex] + ': ' + value + '%';
                        } else {
                          return '';
                        }
@@ -79,8 +85,8 @@ return (
             }}
             />
           </div>
-          <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
-          </div>
+
+        </div>
       }
   </>
  )
