@@ -32,7 +32,7 @@ function App(props) {
       console.log(error);
     }
     props.history.push(`/question/${questionId}`);
-  }
+   }
 
   const handleConsent = () => {
     props.history.push('/intake');
@@ -49,9 +49,9 @@ function App(props) {
    if((questionId + increment) == 13) {
      setFinalAnswers(userAnswers)
      props.history.push('/sum')
-  } else { props.history.push(`/question/${questionId + increment}`);
+   } else { props.history.push(`/question/${questionId + increment}`);
+  }
  }
-}
 
 const { incoming } = useContext(SocketContext)
 
@@ -60,9 +60,9 @@ useEffect(() => {
     setCurrentToken(incoming)
   }
   console.log('incoming msg', incoming);
-}, [currentToken])
+ }, [currentToken])
 
-  return (
+return (
    <div className="App">
 
      <Route exact path='/' render={Home}/>
@@ -97,8 +97,8 @@ useEffect(() => {
      <Sum
       finalAnswers={finalAnswers}
       clearState={clearState}
-     />
-    )}/>
+      />
+     )}/>
     </div>
   );
 };

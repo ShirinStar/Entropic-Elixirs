@@ -37,7 +37,6 @@ const play = async () => {
   try {
     audioRef.current.load();
     await audioRef.current.play();
-    console.log('done playing');
   } catch (e) {
     console.log('audio error: ', e.message);
   }
@@ -46,11 +45,6 @@ const play = async () => {
   useEffect(() => {
     play();
   });
-
-// useEffect(() => {
-//   audioRef.current.load();
-//   audioRef.current.play();
-//  })
 
  const audioSrc = "../audio/" + questionId + ".wav"
 
@@ -71,7 +65,7 @@ const play = async () => {
         <div>
          <h2 className='question-title'>{questions.questions[questionId].title}</h2>
         </div>
-        
+
         <div className='radio-form'>
          <form className='form-q' onSubmit={handleSubmit}>
           {

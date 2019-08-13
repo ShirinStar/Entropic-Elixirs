@@ -52,6 +52,7 @@ const updatedAnswer = async (userAnswers) => {
 const drinkMaker = async (answerValues) => {
   console.log('hi ryan, this goes to you');
  try {
+   //this is a dummy post to the answers server route. need to be changed once connected to pi.
     const resp = await axios.post(`${BASE_URL}/users/answers/drinkMaker`, {
       answerValues
     });

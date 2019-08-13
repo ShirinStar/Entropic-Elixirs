@@ -6,7 +6,6 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { drinkMaker, updatedAnswer } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
 
-
 function Sum(props) {
   const {finalAnswers, clearState} = props
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +25,7 @@ function Sum(props) {
   function drinkMaking(e) {
     e.preventDefault();
     updatedAnswer(graphData)
+    //this is where the answers get sent to the drink API route/ drinkMaker.
     drinkMaker(answerValues);
     clearState();
     props.history.push('/');
@@ -42,7 +42,7 @@ function Sum(props) {
  }
 
 return (
-  <>
+ <>
   {
     isLoading
     ?
@@ -65,10 +65,10 @@ return (
           <button className='btn-sum' type='submit' onClick={drinkMaking}>make me my drink</button>
 
           <PieChart id="answers-chart" data={graphData}
-          width="450px" height="450px"
-          suffix="%"
-          legend={false}
-          library={{
+            width="450px" height="450px"
+            suffix="%"
+            legend={false}
+            library={{
                  plugins: {
                    datalabels: {
                      color: '#ffffff',
@@ -81,7 +81,7 @@ return (
                    }
                  }
                }
-          }}
+            }}
           />
 
           <div className='graphText'>

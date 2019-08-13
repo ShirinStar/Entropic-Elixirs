@@ -3,7 +3,6 @@ import SocketContext from "./SocketContext";
 import { loginWS } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
 
-
 const SocketProvider = (props) => {
   const [value, setValue] = useState({
     incoming: {}

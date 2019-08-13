@@ -5,7 +5,6 @@ import Header from'./Header';
 
 function ConsentForm(props) {
   const {handleConsent, clearState} = props
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     const submit = handleConsent;
@@ -16,7 +15,6 @@ function ConsentForm(props) {
      submit()
     }
   }
-
   const handleChange = (e) => {
    const input = document.querySelector('input[type=checkbox]');
    input.setCustomValidity('')
@@ -41,8 +39,8 @@ return (
       <button className='btn' type='submit'>submit</button>
     </form>
    </div>
- </div>
+  </div>
  </>
-  );
+ );
 }
 export default withRouter(ConsentForm);

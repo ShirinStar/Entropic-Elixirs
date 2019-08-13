@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import rankings from './questionFourteen';
 
-
 function FourteenQ(props) {
   const {handleContinue, finalAnswers} = props
   console.log(finalAnswers, 'finalAnswers');
-
   const handleSubmit = async (e) => {
    e.preventDefault()
    const input = document.querySelector('input[name="fourteen"]:checked');
@@ -18,7 +16,7 @@ function FourteenQ(props) {
          }
      })
    })
-   const submit = handleContinue;
+  const submit = handleContinue;
     submit(newAnswers);
   }
 
@@ -40,7 +38,7 @@ function FourteenQ(props) {
      <h4 className='number-q14'> 5 </h4>
      </div>
 
-    <form id='q-14' className='form-q14' onSubmit={handleSubmit}>
+     <form id='q-14' className='form-q14' onSubmit={handleSubmit}>
        <label className='lable-q14-1' htmlFor="uncertain">Totally uncertain</label>
        {
         rankings.rankings.map((ranking, index) => {
@@ -52,18 +50,18 @@ function FourteenQ(props) {
                    type='radio'
                    name='fourteen'
                    required/>
-          </div>
+           </div>
            )
          })
-       }
-       <label className='lable-q14-2' htmlFor="certain">Completely certain</label>
-    </form>
+        }
+        <label className='lable-q14-2' htmlFor="certain">Completely certain</label>
+       </form>
+      </div>
+     ))}
+    <button form='q-14' className='btn' type='submit'>Continue</button>
    </div>
- ))}
- <button form='q-14' className='btn' type='submit'>Continue</button>
- </div>
-</>
-)
+  </>
+ )
 };
 
 export default FourteenQ;

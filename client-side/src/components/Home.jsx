@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 function Home(props) {
  const {handleDemo} = props
 
-  return(
+return(
   <>
     <div className='home'>
     <h1 className='head-line'>Entropic Elixirs<span className='span-headlin'>™</span></h1>
