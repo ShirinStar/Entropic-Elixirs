@@ -38,7 +38,7 @@ function Sum(props) {
  const page = () => {
   setTimeout(() => {
     setIsLoading(false)
-  }, 6000)
+  }, 16000)
  }
 
 return (
@@ -51,8 +51,8 @@ return (
         <Loader
           type="Oval"
           color="#92298E"
-          height={400}
-          width={550}
+          height={300}
+          width={350}
           />
       </div>
      :
@@ -84,58 +84,37 @@ return (
             }}
           />
 
+          <h2 className='graphMainTitle'>Active Ingredients</h2>
+
           <div className='graphText'>
             <div className='graphTextBox'>
               <h3 className='graphTitle1'>Breaking</h3>
-              <p className='graphText'>Deconstructing perceptions, norms and behaviors that comprise current reality;
-              ideal for those actively or passively seeking concealed truths about one’s self and life </p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Introduces entropy to disrupt molecular bonding;
-              designed to initiate and/or support a transformation cycle</p>
+              <p className='graphText'>Deconstructs current perceptions, norms and behaviors to reveal concealed truths about self and life</p>
             </div>
 
             <div className='graphTextBox'>
               <h3 className='graphTitle2'>Building</h3>
-              <p className='graphText'>Constructs new perceptions, norms and behaviors based on insights and information
-              uncovered in self-discovery; ideal for those coming out of periods of breaking, and looking for what’s next</p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Reduces entropy and ionizes molecules to promote the creation of new bond and
-              structures from previously deconstructed materials</p>
+              <p className='graphText'>Constructs new perceptions, norms and behaviors based on insights uncovered during a phase of breaking</p>
             </div>
 
             <div className='graphTextBox'>
               <h3 className='graphTitle3'>With the flow</h3>
-              <p className='graphText'>Amplifies the body’s alignment with external energy flow;
-              useful for those who wish to maintain or amplify their current trajectory</p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Directionally aligns the molecules of the energetic body with the
-              flow of energies outside it; minimizes drag between individual and their environment</p>
+              <p className='graphText'>Aligns the body’s vibrations with external energy flow, maintains and amplifies current trajectory</p>
             </div>
 
             <div className='graphTextBox'>
               <h3 className='graphTitle4'>Against the flow</h3>
-              <p className='graphText'>Disrupts alignment between the body’s vibrations and external energetic flow;
-              ideal for those seeking a shift away from the inertia of life and/or external circumstances</p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Scrambles molecular alignment to disrupt trajectory of current flow</p>
+              <p className='graphText'>Disrupts alignment between the body’s vibrations and external energy flow; shifts trajectory away from inertia</p>
             </div>
 
             <div className='graphTextBox'>
               <h3 className='graphTitle5'>Intuition</h3>
-              <p className='graphText'>Promotes perception of and receptiveness to external energetic cues and currents;
-              supportive of those seeking clarity or answers</p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Promotes receptivity to external energetic cues and signals by activating the
-              parasympathetic nervous system</p>
+              <p className='graphText'>Promotes perception of and receptiveness to external energetic cues and currents, can provide clarity or answers</p>
             </div>
 
             <div className='graphTextBox'>
               <h3 className='graphTitle6'>Intention</h3>
-              <p className='graphText'>Amplifies focus and trajectory of the body’s vibratory signature to direct it towards specific
-              targets of manifestation; ideal for one who knows what they seek, but requires assistance to make it real</p>
-              <p className='graphSubTitle'>Active Ingredient→ </p>
-              <p className='graphTextSecondary'> Sharpens one’s ability to manifest against specific ideas or intentions by
-              activating precise triggers inside the sympathetic nervous system</p>
+              <p className='graphText'>Amplifies and directs the body’s vibrations towards specific targets of manifestation</p>
             </div>
           </div>
          </div>

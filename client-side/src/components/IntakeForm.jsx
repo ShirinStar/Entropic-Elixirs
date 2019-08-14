@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Header from'./Header';
 
 function IntakeForm(props) {
   const {handleRegister, userInfo, clearState} = props
@@ -19,7 +18,6 @@ function IntakeForm(props) {
 
 return (
  <>
- <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
   <div className='general-container'>
     <div className='div-title'>
      <h1 className='general-title'>General Information</h1>

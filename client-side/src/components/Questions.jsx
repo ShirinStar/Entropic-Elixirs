@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import questions from './questionsList';
 import { postAnswer} from '../services/apiHelper';
-import Header from'./Header';
 
 function Questions(props) {
 const {handleNext, questionId, clearState} = props
@@ -50,8 +49,6 @@ const play = async () => {
 
  return (
   <>
-  <Route path='/' render={props => ( <Header clearState={clearState} /> )}/>
-
   <div className='form-container'>
     <div className='general-container'>
      <div className='div-title'>

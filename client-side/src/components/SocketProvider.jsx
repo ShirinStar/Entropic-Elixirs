@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import SocketContext from "./SocketContext";
+import React, { useState, useEffect } from 'react';
+import SocketContext from './SocketContext';
 import { loginWS } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
 
@@ -19,7 +19,9 @@ useEffect(() => {
       console.log('ws msg', data);
       setValue(data.token)
       const result = await loginWS(data.token);
-      if (result.status == "success") {
+      if (value == data.token) {
+        props.history.push('/');
+      } else { (result.status == 'success')
         props.history.push('/intro1');
       }
     });

@@ -242,6 +242,7 @@ input[type=radio] {
   margin-right: 5%;
   display: inline-block;
   margin-top: 10%;
+  z-index: 10;
   /* position: absolute; */
 }
 
@@ -282,14 +283,12 @@ input[type=radio] {
   margin: 0 auto;
   max-width: 550px;
   margin-top: 30%;
-  /* margin-left: 36%; */
+  margin-left: 30%;
 }
 
 .loading-text {
-  text-align: center;
-  max-width: 550px;
   color: #1F1F1F;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-bottom: 5%;
 }
 
@@ -370,53 +369,66 @@ input[type=radio] {
   max-width: 600px;
 }
 
+.graphMainTitle {
+  text-align: center;
+  margin-top: 6%;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
 .graphText {
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .graphTextBox {
-  padding-left: 12px;
-  padding-right: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
   border-top: 1px dotted #1F1F1F;
   padding-top: 1%;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 .graphTitle1 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #3366CC;
+  margin-bottom: -8%;
 }
 
 .graphTitle2 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #DC3912;
+  margin-bottom: -8%;
 }
 
 .graphTitle3 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #FF9900;
+  margin-bottom: -8%;
 }
 
 .graphTitle4 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #109618;
+  margin-bottom: -8%;
 }
 
 .graphTitle5 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #8A008A;
+  margin-bottom: -8%;
 }
 
 .graphTitle6 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
   color: #3B3EAC;
+  margin-bottom: -8%;
 }
 
 .graphSubTitle {
@@ -431,7 +443,8 @@ input[type=radio] {
 
 .btn-sum {
   width: 32%;
-  margin-top: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
   font-size: 1.4em;
   padding: 0.6em;
   color: #92298E;
