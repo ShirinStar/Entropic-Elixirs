@@ -14,8 +14,8 @@ function Sum(props) {
   const graphData= {
     breaking: (data.breaking / 12 * 100).toFixed(2),
     building: (data.building / 12 * 100).toFixed(2),
-    with_it: (data.with_it / 12 * 100).toFixed(2),
-    against_it: (data.against_it / 12 * 100).toFixed(2),
+    in_flow: (data.with_it / 12 * 100).toFixed(2),
+    out_of_flow: (data.against_it / 12 * 100).toFixed(2),
     intuition: (data.intuition / 24 * 100).toFixed(2),
     intention: (data.intention / 24 * 100).toFixed(2)
   }
@@ -38,7 +38,7 @@ function Sum(props) {
  const page = () => {
   setTimeout(() => {
     setIsLoading(false)
-  }, 16000)
+  }, 6000)
  }
 
 return (
@@ -98,12 +98,12 @@ return (
             </div>
 
             <div className='graphTextBox'>
-              <h3 className='graphTitle3'>With the flow</h3>
+              <h3 className='graphTitle3'>In flow</h3>
               <p className='graphText'>Aligns the body’s vibrations with external energy flow, maintains and amplifies current trajectory</p>
             </div>
 
             <div className='graphTextBox'>
-              <h3 className='graphTitle4'>Against the flow</h3>
+              <h3 className='graphTitle4'>Out of flow</h3>
               <p className='graphText'>Disrupts alignment between the body’s vibrations and external energy flow; shifts trajectory away from inertia</p>
             </div>
 

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SocketContext from './SocketContext';
-import { loginWS } from '../services/apiHelper';
-import { withRouter } from 'react-router-dom';
 
 const SocketProvider = (props) => {
   const [value, setValue] = useState({
-    incoming: {}
+    incoming: ''
   });
 
 useEffect(() => {
@@ -17,20 +15,14 @@ useEffect(() => {
     ws.addEventListener('message', async function incoming(msg) {
       const data = JSON.parse(msg.data);
       console.log('ws msg', data);
-      setValue(data.token)
-      const result = await loginWS(data.token);
-      if (value == data.token) {
-        props.history.push('/');
-      } else { (result.status == 'success')
-        props.history.push('/intro1');
-      }
+      setValue({incoming: data.token})
     });
- },[value])
+ },[])
 
-return(
-    <SocketContext.Provider value={ value }>
+return (
+    <SocketContext.Provider value={value}>
       { props.children }
     </SocketContext.Provider>
   )
 };
-export default withRouter(SocketProvider);
+export default SocketProvider;

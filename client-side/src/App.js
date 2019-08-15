@@ -7,7 +7,7 @@ import Questions from './components/Questions';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
 import axios from 'axios';
-import { intakeUser, postAnswer, updatedAnswer } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
@@ -53,24 +53,34 @@ function App(props) {
   }
  }
 
-const { incoming } = useContext(SocketContext)
+const msg = useContext(SocketContext)
 
 useEffect(() => {
-  if(incoming != currentToken) {
-    setCurrentToken(incoming)
+  console.log('incoming msg', msg.incoming);
+  if(msg.incoming != currentToken) {
+    setCurrentToken(msg.incoming)
+    async function login () {
+     const result = await loginWS(msg.incoming);
+     if (result.status == 'success') {
+       props.history.push('/intro1'); //the ws doesn't play the first sound
+    }
+   }
+   login();
+  } else {
+    props.history.push('/');
   }
-  console.log('incoming msg', incoming);
- }, [currentToken])
+ }, [msg])
 
 return (
    <div className="App">
-
      <Route exact path='/' render={Home}/>
+
      <Route path='/intro1' render={props => (
       <TextOne
       clearState={clearState}
       />
      )}/>
+
      <Route path='/intro2' render={props => (
       <TextTwo
       clearState={clearState}

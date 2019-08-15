@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-// import Header from'./Header';
 
 function TextOne(props) {
 const {clearState} = props
@@ -22,14 +21,11 @@ function clearingState(e) {
 
       <audio autoPlay src="../audio/screen1.wav"/>
 
-       <p className='intro-text'>Entropic Elixirs are bespoke liquid supplements that align your
-       energetic body with your personal growth goals.</p>
-       <p className='intro-text'>Thanks to the groundbreaking science behind Vibratory Resonance*,
-       we’ve developed a transformative new approach that combines six active ingredients – each one
-       working at the molecular level to activate a specific aspect of your body’s vibratory behavior.</p>
-       <p className='intro-text'>Whether your aim is to break outdated patterns of consciousness or behavior;
-       build new perceptions and norms;(re)define your relationship to the flow; heighten receptivity; or
-       sharply manifest specific intentions in your life, Entropic Elixirs can help.</p>
+       <p className='intro-text'>Entropic Elixirs are custom liquid supplements that align your energetic body with your personal growth goals.</p>
+       <p className='intro-text'>Thanks to the groundbreaking science behind Vibratory Resonance, we’ve developed a transformative new approach
+       that combines six active ingredients–each one working at the molecular level to activate a specific aspect of your body’s vibratory behavior.</p>
+       <p className='intro-text'>Whether your aim is to break outdated patterns of consciousness; build new perceptions and norms; (re)define your
+       relationship to the flow; heighten receptivity; or sharply manifest specific intentions in your life, Entropic Elixirs can help.</p>
        <button className='head-btn-intro' onClick={clearingState}>Next</button>
       </div>
     </div>
