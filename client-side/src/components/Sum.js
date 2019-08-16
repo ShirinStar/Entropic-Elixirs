@@ -38,7 +38,7 @@ function Sum(props) {
  const page = () => {
   setTimeout(() => {
     setIsLoading(false)
-  }, 16000)
+  }, 6000)
  }
 
 return (
