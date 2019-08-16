@@ -61,11 +61,11 @@ useEffect(() => {
     setCurrentToken(msg.incoming)
     async function login () {
      const result = await loginWS(msg.incoming);
-     if (result.status == 'success') {
+     if(result.status == 'success') {
        props.history.push('/intro1'); //the ws doesn't play the first sound
+     }
     }
-   }
-   login();
+    login();
   } else {
     props.history.push('/');
   }
