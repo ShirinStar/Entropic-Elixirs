@@ -28,7 +28,7 @@ def mixElixir(essenceRecipe):
   GPIO.output(relayPins, GPIO.LOW)
   GPIO.cleanup() # CONFIRM BEHAVIOR HERE - WILL THIS PUT RELAYS IN A WEIRD STATE?
 
-  return "Elixir mixed."
+  print "Elixir mixed."
 
 
 def mixTick(remainingRecipe):
