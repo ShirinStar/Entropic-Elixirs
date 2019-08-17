@@ -64,7 +64,7 @@ answerRouter.post('/drinkMaker', async (req, res) => {
   try {
     var recipe = JSON.parse(req.body.answerValues);
     var spawn = require("child_process").spawn;
-    var process = spawn('python', ["../hardware-controls/elixirmixir.py",
+    var process = spawn('python', ["./hardware-controls/elixirmixir.py",
         Number(recipe[0]),
         Number(recipe[1]),
         Number(recipe[2]),
