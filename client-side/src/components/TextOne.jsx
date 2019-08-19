@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
@@ -11,7 +11,23 @@ function clearingState(e) {
   props.history.push('/intro2')
 }
 
-  return(
+const audioRef = useRef();
+
+// const play = async () => {
+//   try {
+//     audioRef.current.load();
+//     await audioRef.current.play();
+//     audioRef.defaultMuted = false
+//   } catch (e) {
+//     console.log('audio error: ', e.message);
+//   }
+//  }
+//
+//   useEffect(() => {
+//     play();
+//   });
+
+  return (
   <>
     <div className='text-container'>
       <div>
@@ -19,7 +35,7 @@ function clearingState(e) {
         <h1 className='general-title'>Welcome</h1>
       </div>
 
-      <audio autoPlay src="../audio/screen1.wav"/>
+      <audio ref={audioRef} autoPlay src="../audio/screen1.wav"/>
 
        <p className='intro-text'>Entropic Elixirs are custom liquid supplements that align your energetic body with your personal growth goals.</p>
        <p className='intro-text'>Thanks to the groundbreaking science behind Vibratory Resonance, we’ve developed a transformative new approach
