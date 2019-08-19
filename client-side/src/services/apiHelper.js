@@ -1,5 +1,6 @@
 import axios from 'axios';
-const BASE_URL = 'http://192.168.7.49:3001';
+const ip = location.host;
+const BASE_URL = "http://" + ip;
 // const BASE_WS = 'https://dummy-rest-api.glitch.me/user'
 // https://glitch.com/edit/#!/dummy-rest-api?path=server.js:1:0
 
