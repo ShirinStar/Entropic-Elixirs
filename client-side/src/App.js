@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Home from './components/Home';
+import Welcome from './components/Welcome';
 import IntakeForm from './components/IntakeForm';
 import TextOne from './components/TextOne';
 import TextTwo from './components/TextTwo';
 import Questions from './components/Questions';
+import ScrollToTop from './components/ScrollToTop';
 import Sum from './components/Sum';
 import SocketContext from './components/SocketContext';
 import axios from 'axios';
@@ -62,7 +64,7 @@ useEffect(() => {
     async function login () {
      const result = await loginWS(msg.incoming);
      if(result.status == 'success') {
-       props.history.push('/intro1'); //the ws doesn't play the first sound
+       props.history.push('/welcome');
      }
     }
     login();
@@ -74,6 +76,8 @@ useEffect(() => {
 return (
    <div className="App">
      <Route exact path='/' render={Home}/>
+
+     <Route path='/welcome' render={Welcome}/>
 
      <Route path='/intro1' render={props => (
       <TextOne
@@ -94,6 +98,8 @@ return (
         clearState={clearState}
        />
       )}/>
+
+     <ScrollToTop />
 
      <Route path={'/question/:questionId'} render={props => (
        <Questions

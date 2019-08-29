@@ -7,9 +7,9 @@ import SocketProvider from './components/SocketProvider';
 
 ReactDOM.render(
   <Router>
-  <SocketProvider>
-    <App />
-  </SocketProvider>
+   <SocketProvider>
+     <App />
+   </SocketProvider>
   </Router>,
   document.getElementById('root')
 );

@@ -86,10 +86,45 @@ body {
   color: #f2f2f2;
 }
 
+.cup {
+  width: 600px;
+  margin-left: -32%;
+  /* margin-top: 10%; */
+  z-index: -1000000;
+}
+
 .text-container {
   margin: 0 auto;
   max-width: 550px;
   margin-top: 20%;
+}
+
+.welcomeText {
+  margin-top: 40%;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 400px;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.welcome-btn {
+  width: 22%;
+  margin-top: 15%;
+  font-size: 1.2em;
+  padding: 0.3em;
+  color: #1F1F1F;
+  border: 1px solid #1F1F1F;
+  background-color: #f2f2f2;
+  border-radius: 0.7em;
+  display: block;
+  margin-left: 39%;
+  z-index: 1000;
+}
+
+.welcome-btn:hover {
+  background-color: #1F1F1F;
+  color: #f2f2f2;
 }
 
 .intro-text {
@@ -211,11 +246,12 @@ input[type=checkbox] {
 .question-title {
   margin-left: 4%;
   padding-top: 3%;
+  font-size: 22px;
 }
 
 .radio-form {
   box-sizing: border-box;
-  font-size: 22px;
+  font-size: 20px;
   max-width: 850px;
   margin-left: 5%;
   padding: 20px 50px
@@ -252,12 +288,12 @@ input[type=radio] {
 
 .btn {
   width: 24%;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0.3em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
   background-color: #f2f2f2;;
-  border-radius: 0.7em;
+  border-radius: 0.6em;
   display: block;
   margin-left: 85%;
   margin-top: 15%;
@@ -436,10 +472,10 @@ input[type=radio] {
 }
 
 .btn-sum {
-  width: 32%;
+  width: 36%;
   margin-top: 1.5em;
   margin-bottom: 0.6em;
-  font-size: 1.4em;
+  font-size: 1.2em;
   padding: 0.6em;
   color: #92298E;
   border: 1px solid #92298E;
@@ -482,7 +518,7 @@ input[type=radio] {
   }
 
   .form-terms {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 8%;
   }
 
@@ -684,7 +720,7 @@ input[type=radio] {
  }
 
  .loading-text {
-   font-size: 1.5rem;
+   font-size: 1.3rem;
    text-align: center;
    padding-bottom: 5%;
    margin-top: 30%;
