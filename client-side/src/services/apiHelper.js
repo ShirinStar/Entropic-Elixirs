@@ -1,8 +1,6 @@
 import axios from 'axios';
-let BASE_URL = 'http://localhost:3001';
-if (process.env.BASE_URL) {
-  BASE_URL = process.env.BASE_URL
-}
+const loc = window.location;
+const BASE_URL = loc.protocol + "//" + loc.hostname + (loc.port? ":"+loc.port : "")
 console.log('BASE_URL', BASE_URL);
 // const BASE_WS = 'https://dummy-rest-api.glitch.me/user'
 // https://glitch.com/edit/#!/dummy-rest-api?path=server.js:1:0
