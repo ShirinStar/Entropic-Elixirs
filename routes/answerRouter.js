@@ -62,8 +62,20 @@ answerRouter.put('/', async (req, res) => {
 
 answerRouter.post('/drinkMaker', async (req, res) => {
   try {
-    console.log(req.body);
-    res.json(req.body);
+    var recipe = JSON.parse(req.body.answerValues);
+    var spawn = require("child_process").spawn;
+    var process = spawn('python', ["./hardware-controls/elixirmixir.py",
+        parseInt(recipe[0]),
+        parseInt(recipe[1]),
+        parseInt(recipe[2]),
+        parseInt(recipe[3]),
+        parseInt(recipe[4]),
+        parseInt(recipe[5])
+    ]);
+
+    process.stdout.on('data', function (data) {
+        res.json(data.toString());
+    });
   } catch(e) {
     console.log(e);
     res.status(500).send(e.message);
