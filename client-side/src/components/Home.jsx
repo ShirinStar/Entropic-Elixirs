@@ -9,7 +9,6 @@ return(
     <div className='home'>
     <h1 className='head-line'>Entropic Elixirs<span className='span-headlin'>™</span></h1>
     <h3 className='tagline-home'>Presented by Aura and powered by you</h3>
-    <button className='head-btn' onClick={()=>props.history.push('/welcome')}>start</button>
     </div>
   </>
   )
