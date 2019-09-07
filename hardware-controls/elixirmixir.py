@@ -3,7 +3,7 @@ import sys
 import RPi.GPIO as GPIO
 
 SECONDS_PER_ML = 0.1250
-relayPins = [11, 13, 15, 29, 31, 33]
+relayPins = [32, 33, 36, 35, 38, 40]
 drinkSize = 100
 essenceNames = ["Almond", "Birch", "Cheddar", "Dandelion", "Earwig", "Fluorine"]
 
