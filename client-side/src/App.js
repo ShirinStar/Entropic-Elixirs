@@ -61,13 +61,7 @@ useEffect(() => {
   console.log('incoming msg', msg.incoming);
   if(msg.incoming != currentToken) {
     setCurrentToken(msg.incoming)
-    async function login () {
-     const result = await loginWS(msg.incoming);
-     if(result.status == 'success') {
-       props.history.push('/welcome');
-     }
-    }
-    login();
+    props.history.push('/welcome');
   } else {
     props.history.push('/');
   }
