@@ -18,7 +18,7 @@ function App(props) {
   const [userInfo, setUserInfo] = useState(''); // connect to user intake form
   const [questionId, setQuestionId] = useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = useState(''); //grabbing users answers from components
-  const [currentToken, setCurrentToken] = useState('');
+  const [currentToken, setCurrentToken] = useState('init');
 
   const clearState = () => {
     setUserInfo('')
@@ -55,17 +55,28 @@ function App(props) {
   }
  }
 
-const msg = useContext(SocketContext)
+let msg = useContext(SocketContext)
 
 useEffect(() => {
-  console.log('incoming msg', msg.incoming);
-  if(msg.incoming != currentToken) {
-    setCurrentToken(msg.incoming)
+  window.addEventListener('rfidtap', loginAttempt);
+
+	return () => {
+		window.removeEventListener('rfidtap', loginAttempt);
+	}
+}, [currentToken]);
+
+
+function loginAttempt(event) {
+  console.log('incoming msg', event.detail.token);
+	console.log(currentToken);
+  if(event.detail.token != currentToken) {
+    setCurrentToken(event.detail.token);
     props.history.push('/welcome');
   } else {
     props.history.push('/');
+    setCurrentToken('');
   }
- }, [msg])
+}
 
 return (
    <div className="App">

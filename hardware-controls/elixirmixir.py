@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 SECONDS_PER_ML = 0.1250
 relayPins = [32, 33, 36, 35, 38, 40]
-drinkSize = 100
+drinkSize = 200
 essenceNames = ["Almond", "Birch", "Cheddar", "Dandelion", "Earwig", "Fluorine"]
 
 GPIO.setmode(GPIO.BOARD)
