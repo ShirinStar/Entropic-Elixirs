@@ -6,7 +6,7 @@ const SocketProvider = (props) => {
 
 
   function openSocket(timeout) {
-    const ws = new WebSocket('wss://staging.projectamelia.ai/pusherman/companions/login/websocket?app=entropic');
+    const ws = new WebSocket('wss://projectamelia.ai/pusherman/companions/login/websocket?app=entropic');
     
     ws.onmessage = (event) => {
 	    const tapData = JSON.parse(event.data);

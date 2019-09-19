@@ -18,13 +18,13 @@ function App(props) {
   const [userInfo, setUserInfo] = useState(''); // connect to user intake form
   const [questionId, setQuestionId] = useState(0); // question ->url
   const [finalAnswers, setFinalAnswers] = useState(''); //grabbing users answers from components
-  const [currentToken, setCurrentToken] = useState('init');
+  const [currentToken, setCurrentToken] = useState('');
 
-  const clearState = () => {
-    setUserInfo('')
-    setQuestionId(0)
-    setFinalAnswers('')
-    props.history.push('/')
+  const clearState = () => {  
+    setUserInfo('');
+    setQuestionId(0);
+    setFinalAnswers('');
+    props.history.push('/');
   }
 
   const handleRegister = async(userInfo) => {
@@ -73,8 +73,8 @@ function loginAttempt(event) {
     setCurrentToken(event.detail.token);
     props.history.push('/welcome');
   } else {
-    props.history.push('/');
     setCurrentToken('');
+    props.history.push('/');
   }
 }
 

@@ -52,7 +52,7 @@ const play = async () => {
   <div className='form-container'>
     <div className='general-container'>
      <div className='div-title'>
-      <h1 className='general-title'>Question no. {questions.questions[questionId].number}</h1>
+      <h1 className='general-title'>Question no. {questions.questions[questionId].number} of 13</h1>
        </div>
 
         <audio ref={audioRef}>
