@@ -15,6 +15,8 @@ userRouter.get('/', async (req, res) => {
 });
 
 userRouter.post('/', async (req, res) => {
+  res.sendStatus(200)
+  return
   try {
     const { user_age, user_gender } = req.body;
     const user = await User.findOne({

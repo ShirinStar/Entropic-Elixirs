@@ -13,6 +13,7 @@ import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHe
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
+import {v4 as uuidv4} from 'uuid';
 
 function App(props) {
   const [userInfo, setUserInfo] = useState(''); // connect to user intake form
@@ -55,28 +56,22 @@ function App(props) {
   }
  }
 
-let msg = useContext(SocketContext)
+// const msg = useContext(SocketContext)
+const id = uuidv4();
 
 useEffect(() => {
-  window.addEventListener('rfidtap', loginAttempt);
-
-	return () => {
-		window.removeEventListener('rfidtap', loginAttempt);
-	}
-}, [currentToken]);
-
-
-function loginAttempt(event) {
-  console.log('incoming msg', event.detail.token);
-	console.log(currentToken);
-  if(event.detail.token != currentToken) {
-    setCurrentToken(event.detail.token);
-    props.history.push('/welcome');
-  } else {
-    setCurrentToken('');
-    props.history.push('/');
+  console.log('incoming msg', id);
+  if(id != currentToken) {
+    setCurrentToken(id)
+    async function login () {
+     const result = await loginWS(id);
+     if(result.status == 'success') {
+       props.history.push('/welcome');
+     }
+    }
+    login();
   }
-}
+ }, [id])
 
 return (
    <div className="App">

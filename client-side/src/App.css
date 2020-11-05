@@ -237,6 +237,10 @@ input[type=checkbox] {
   display: inline-block;
 }
 
+/* .question-label {
+  display: inline-block;
+} */
+
 .main-q {
   margin: 0 auto;
   max-width: 550px;

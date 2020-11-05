@@ -76,7 +76,7 @@ const play = async () => {
                       type='radio'
                       name='answer'
                       required/>
-                <label htmlFor='question-label'> {answer.text} </label>
+                <label className= "question-label" htmlFor='question-label'> {answer.text} </label>
               </div>
              )
             })
