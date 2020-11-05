@@ -61,7 +61,7 @@ const id = uuidv4();
 
 useEffect(() => {
   console.log('incoming msg', id);
-  if(currentToken != '') {
+  if(currentToken == '') {
     setCurrentToken(id)
     async function login () {
      const result = await loginWS(id);
@@ -71,7 +71,7 @@ useEffect(() => {
     }
     login();
   }
- }, [id])
+ }, [currentToken])
 
 return (
    <div className="App">
