@@ -3,7 +3,7 @@ import { LineChart, ColumnChart, PieChart } from 'react-chartkick';
 import Chart from 'chart.js';
 import Loader from 'react-loader-spinner';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { drinkMaker, updatedAnswer } from '../services/apiHelper';
+import { drinkMaker, updatedAnswer, emails, } from '../services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 
@@ -38,7 +38,8 @@ function Sum(props) {
   const onSubmit = values => console.log(values);
 
   function emailSent(e) {
-    console.log('email sent')
+    console.log('email sent');
+    emails(values);
     // clearState();
     // props.history.push('/');
   }

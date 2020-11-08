@@ -65,10 +65,25 @@ const drinkMaker = async (answerValues) => {
    }
  };
 
+
+const emails = async (answerValues) => {
+  console.log('sending email');
+ try {
+    const resp = await axios.post(`${BASE_URL}/users/answers/emails`, {
+      answerValues
+    });
+    console.log(resp.data);
+    return resp.data
+  } catch(error) {
+    console.log(error);
+   }
+ };
+
 export {
   intakeUser,
   postAnswer,
   updatedAnswer,
   loginWS,
+  emails,
   drinkMaker
  }
