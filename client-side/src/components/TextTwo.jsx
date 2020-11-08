@@ -22,7 +22,7 @@ function TextOne(props) {
        will be dispensed by the machine.</p>
        <p className='intro-text'>Then, you drink the elixir on the spot.</p>
        <p className='intro-text'>Ready to begin?</p>
-       <button className='head-btn-intro' onClick={()=>props.history.push('/intake')}>Let’s begin</button>
+       <button className='head-btn introTwo' onClick={()=>props.history.push('/intake')}>Let’s Begin</button>
       </div>
     </div>
   </>

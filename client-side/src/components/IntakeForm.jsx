@@ -40,7 +40,7 @@ return (
        <input type="radio" name='gender' value='Female' required onChange={e => setUser_gender(e.target.value)}/> Female<br />
        <input type="radio" name='gender' value='Non-binary' required onChange={e => setUser_gender(e.target.value)}/> Non-binary<br />
        <input type="radio" name='gender' value='Gender non-conforming' required onChange={e => setUser_gender(e.target.value)}/> Gender non-conforming<br />
-    <button className='btn' type='submit'>Next</button>
+    <button className='btn intake' type='submit'>Next</button>
    </form>
   </div>
  </div>

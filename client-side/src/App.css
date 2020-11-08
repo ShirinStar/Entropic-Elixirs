@@ -70,10 +70,12 @@ body {
 }
 
 .head-btn {
-  width: 24%;
+  /* width: 24%; */
   margin-top: 30%;
   font-size: 1.2em;
-  padding: 0.3em;
+  padding: 0.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
   color: #1F1F1F;
   border: 1px solid #1F1F1F;
   background-color: #f2f2f2;
@@ -110,10 +112,11 @@ body {
 }
 
 .welcome-btn {
-  width: 24%;
   margin-top: 15%;
   font-size: 1.2em;
-  padding: 0.3em;
+  padding: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   color: #1F1F1F;
   border: 1px solid #1F1F1F;
   background-color: #f2f2f2;
@@ -139,9 +142,11 @@ body {
 }
 
 .head-btn-intro{
-  width: 24%;
+  /* width: 24%; */
   font-size: 1.2em;
-  padding: 0.3em;
+  padding: 0.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
   background-color: #f2f2f2;
@@ -151,9 +156,38 @@ body {
   margin-top: 20%;
 }
 
+.head-btn.introTwo {
+  color: #0F72BB;
+  border: 1px solid #0F72BB;
+  background-color: #f2f2f2;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin-left: 65%;
+  margin-top: 20%;
+}
+
+.head-btn.introTwo:hover {
+  background-color: #0F72BB;
+  color: #f2f2f2;
+}
+
 .head-btn-intro:hover {
   background-color: #0F72BB;
   color: #f2f2f2;
+}
+
+.btn.intake {
+  font-size: 0.8em;
+  padding: 0.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  color: #0F72BB;
+  border: 1px solid #0F72BB;
+  background-color: #f2f2f2;
+  border-radius: 0.7em;
+  display: block;
+  margin-left: 80%;
+  margin-top: 20%;
 }
 
 .div-title {
@@ -292,15 +326,17 @@ input[type=radio] {
 }
 
 .btn {
-  width: 24%;
-  font-size: 1.1em;
-  padding: 0.3em;
+  /* width: 24%; */
+  font-size: 1em;
+  padding: 0.5em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
   color: #0F72BB;
   border: 1px solid #0F72BB;
   background-color: #f2f2f2;;
   border-radius: 0.6em;
   display: block;
-  margin-left: 85%;
+  margin-left: 100%;
   margin-top: 15%;
 }
 
@@ -550,10 +586,10 @@ input.email {
     margin-left: 80%;
   }
 
-  .btn {
-    font-size: 1.4rem;
+  /* .btn {
+    font-size: 1em;
     margin-left: 100%;
-  }
+  } */
 
   .form-terms {
     font-size: 1.6rem;
