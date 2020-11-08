@@ -132,12 +132,13 @@ body {
 }
 
 .intro-text {
-  max-width: 510px;
+  max-width: 550px;
   padding-top: 4%;
   padding-left: 1%;
   padding-right: 1%;
   margin-bottom: -1%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  margin-bottom: 0;
   margin-left: 4%
 }
 
@@ -153,7 +154,7 @@ body {
   border-radius: 0.7em;
   display: block;
   margin-left: 75%;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 .head-btn.introTwo {
@@ -290,22 +291,23 @@ input[type=checkbox] {
 
 .radio-form {
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 1.4rem;
   max-width: 850px;
   margin-left: 5%;
-  padding: 20px 50px
+  padding: 20px 50px;
 }
 
 .wrapper {
   position: relative;
-  width: 480px;
-  margin-left: -8%;
-  margin-top: -0.8rem;
+  /* width: 480px; */
+    width: 700px;
+    margin-left: -8%;
+    margin-top: -3rem;
 }
 
 .wrapper label {
   display: block;
-  margin-top: -6%;
+  margin-top: -5%;
   padding-right: 20px;
   padding-bottom: 30px;
   padding-left: 50px;
@@ -573,8 +575,9 @@ input.email {
   }
 
   .intro-text {
-    max-width: 510px;
-    font-size: 1rem;
+    max-width: 550px;
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
 
   .head-btn {
@@ -582,7 +585,7 @@ input.email {
   }
 
   .head-btn-intro {
-    margin-top: 30%;
+    margin-top: 10%;
     margin-left: 80%;
   }
 
@@ -607,9 +610,9 @@ input.email {
     margin-top: -3rem;
   }
 
-  .wrapper label {
+  /* .wrapper label {
     margin-top: -3%;
-  }
+  } */
 
   .question-title {
     width: 500px;
@@ -701,8 +704,26 @@ input.email {
   position: relative;
   width: 300px;
   margin-left: -10%;
-  margin-top: -2.3rem;
+  margin-top: -2rem;
  }
+
+ .wrapper label {
+  display: block;
+  margin-top: -8%;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  /* position: absolute; */
+}
+
+input[type=radio] {
+  transform: scale(1.5);
+  margin-right: 5%;
+  display: inline-block;
+  margin-top: 10%;
+  z-index: 10;
+  /* position: absolute; */
+}
 
  .question-title {
    width: 300px;
