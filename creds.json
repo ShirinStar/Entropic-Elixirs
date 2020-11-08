@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "entropic-elixirs",
+  "private_key_id": "72e4df0aa93ebce2954c2b83d532f241f79628ac",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHietBX/mX82km\nuMXnUcwBclbQUR/b2cGJh5CMqp1mzCBXrBjoURm+1B63r+Mn6fN2rVAtfsZrzTCs\nCIXgbhOvYWLCD10p3vnG2LUTlvOAmlCOwDYKen4fRVPTcU6l+sHeZga+UdortRwv\ngYEH712PRl5JvpysrFS7Wi671wqF5OKUPTdI0Y3a2tMJ4ad4EgAm5a9hZZMa6KrB\nRWgoXAKJN7na1pBkTx7hB7DsLTvCktckrntG0KY8jfGPba4wMPUnOeD8b3NnSsV5\nK5RAjiS/Th46QpWcIAgmTxA9yjqM4Ti+b3XJErZY0+te0Iao4cXKfQck3nQqfwrD\nZm4juW19AgMBAAECggEABOoqh23j8B0u56UN1gVXjAJf89OVTRn1wJU8amqNY/Ax\n+VbXNwNAXUkZbjBnEB82cvB3FOSWSI0ORNgU5axwaa8+LaxCzcdplljVS1bT4PgF\nqFTacxmfRgmA56iKMl/7Xg0o31xh9K+j5eIMgCbu9Zqn5qyxbGnDA7ZUVL+wL6oJ\nB51oPbLGfgYnYF6HNHipFOmZQ07SKcBGh4RCPYwDbmppPj817l62Ebws8aOeq4Dq\nTaVtNEoPpaP+uvAVvxch4qenHa7ZsnUKWMGJClyDg2fCfzGKmclXNgKv9cPwVjrZ\nKODijUT02yzsHKg9QOJYi6I33D7YZ3LkhzvOamLMFQKBgQDiCl96vFCtUaXV2lwL\nQRhQv1Y06zNULVE1Wu/cIqdqrNnF9xFsjJcD1lUNVswbeZqB0Yf4NNkx49kKWuHu\nmXIwWfe02GgGgb9cKkN4NRVOhuLeOJ1hMoZh6KBMvJTZa+Tdc9sSvVo9so+qJIKp\n/f8y2+qfZZ4hGI84lW6cxSNAowKBgQDh/FUVmP93lF1VuWK5VRj3kYLj2GpH+Oi1\naK7nn9lLgoBz/dWKvZOPSGIX3HdgDSa8gt29474N2RCTANejLEkQtMgXsUbdk070\njZHFuTOVXnAWNXegTG2wHPceRlLEKLIa8jRvAspfUTN2O4yFKxdhbC7Tc/dtcebR\nDKRsD9PbXwKBgHVRyvKqEPmUGg2f0wwoUhV+6aB3vuFez/pwY3QPLHOqmTEtpgaA\nBdWBBg3xUeikufPNK9RAocZKKxk7yG4NiH3eBDoB5CQUbZzJdtFKQ+/JBLEwE0ci\ncSsaETEi4+LhJB1oh3j3fIHvTq+RWZwfb7gW+nSWyncFBzjoHkwR6dUfAoGBAIMX\nPkAeFavHW/E7bkJ2U9phBZ2oT9baVBvP0w44EvQTivI+QB6QZEXMxmJzGKiWWG8o\nNvtNXlVoIo40AeL88JGJXT0pMCOerUF90h7xlTPDqZ+oenF5hHOSCeP9BUwXE2JA\nOBxhcQWj9AdU+enSGmkAOZWeAtzxIuUHwWWSNOJfAoGAeFtMstF2hUpGQ1TrSD+k\nOBW/bS6vX+kCHNen1ERnMdV2ytcAtSvCwsUZ7ImyD2ora0OdoGjvHtu4K3m0/9Z7\n+4hnRXWN4/cf1CIMmRoEruc9GFB7bb3n3eGv1tRNJTLOHvhVCNRgo+cpylu7jvMx\nepPEi1nbQtwi/EXqIOJ9/mg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "entropic-elixirs@entropic-elixirs.iam.gserviceaccount.com",
+  "client_id": "110087590457455060352",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/entropic-elixirs%40entropic-elixirs.iam.gserviceaccount.com"
+}

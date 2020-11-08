@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { Answer, User } = require('../models');
+const { sendMail } = require('../mailer');
 
 const answerRouter = Router();
 
@@ -91,5 +92,6 @@ answerRouter.post('/drinkMaker', async (req, res) => {
     res.status(500).send(e.message);
   }
 });
+
 
 module.exports = { answerRouter }
