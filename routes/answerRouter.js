@@ -62,7 +62,7 @@ answerRouter.put('/', async (req, res) => {
 
 answerRouter.post('/emails', async (req, res) => {
   try {
-    const emailsReq = JSON.parse(req.body.answerValues);
+    const emailsReq = JSON.parse(req.body.values);
 
   } catch (e) {
     console.log(e);

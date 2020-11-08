@@ -66,11 +66,11 @@ const drinkMaker = async (answerValues) => {
  };
 
 
-const emails = async (answerValues) => {
+const emails = async (values) => {
   console.log('sending email');
  try {
     const resp = await axios.post(`${BASE_URL}/users/answers/emails`, {
-      answerValues
+      values
     });
     console.log(resp.data);
     return resp.data
