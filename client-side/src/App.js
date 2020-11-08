@@ -7,7 +7,7 @@ import TextTwo from './components/TextTwo';
 import Questions from './components/Questions';
 import ScrollToTop from './components/ScrollToTop';
 import Sum from './components/Sum';
-import SocketContext from './components/SocketContext';
+//import SocketContext from './components/SocketContext';
 import axios from 'axios';
 import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';

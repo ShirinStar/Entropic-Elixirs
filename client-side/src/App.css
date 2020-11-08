@@ -11,6 +11,7 @@ font-family: 'DM Sans', sans-serif; */
 *::before,
 *::after {
   box-sizing: inherit;
+  outline: none; 
 }
 
 body {
@@ -69,7 +70,7 @@ body {
 }
 
 .head-btn {
-  width: 22%;
+  width: 24%;
   margin-top: 30%;
   font-size: 1.2em;
   padding: 0.3em;
@@ -109,7 +110,7 @@ body {
 }
 
 .welcome-btn {
-  width: 22%;
+  width: 24%;
   margin-top: 15%;
   font-size: 1.2em;
   padding: 0.3em;
@@ -138,7 +139,7 @@ body {
 }
 
 .head-btn-intro{
-  width: 22%;
+  width: 24%;
   font-size: 1.2em;
   padding: 0.3em;
   color: #0F72BB;
@@ -237,9 +238,9 @@ input[type=checkbox] {
   display: inline-block;
 }
 
-/* .question-label {
+ label {
   display: inline-block;
-} */
+} 
 
 .main-q {
   margin: 0 auto;
@@ -323,7 +324,7 @@ input[type=radio] {
   margin: 0 auto;
   max-width: 550px;
   margin-top: 30%;
-  margin-left: 30%;
+  text-align: center;
 }
 
 .loading-text {
@@ -407,6 +408,7 @@ input[type=radio] {
 .graph-container {
   margin: 0 auto;
   max-width: 600px;
+  text-align: center;
 }
 
 .graphMainTitle {
@@ -476,7 +478,7 @@ input[type=radio] {
 }
 
 .btn-sum {
-  width: 36%;
+  /* width: 36%; */
   margin-top: 1.5em;
   margin-bottom: 0.6em;
   font-size: 1.2em;
@@ -485,11 +487,43 @@ input[type=radio] {
   border: 1px solid #92298E;
   background-color: #f2f2f2;;
   border-radius: 0.7em;
-  display: block;
+  display: inline-block;
 }
 
 .btn-sum:hover {
   background-color: #92298E;
+  color: #f2f2f2;
+}
+
+.popModel {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+input.email {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 16px;
+  margin-left: 1rem;
+  width: 180px;
+}
+
+.btn.email {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 16px;
+  border: 1px solid black;
+  color: black;
+  width: 18%;
+}
+
+.btn.email:hover {
+  background-color: black;
   color: #f2f2f2;
 }
 
