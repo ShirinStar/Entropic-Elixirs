@@ -73,12 +73,15 @@ function Questions(props) {
                     <div className='wrapper' key={answer.text}>
                       <input className='question-input'
                         data-answer-index={index}
+                        id={index}
                         data-catagory={answer.scores.catagory}
                         value={index}
                         type='radio'
                         name='answer'
-                        required />
-                      <label className="question-label" > {answer.text} </label>
+                    required />
+                        <label htmlFor={index} className="question-label" >
+                          {answer.text}
+                        </label>
                     </div>
                   )
                 })
