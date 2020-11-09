@@ -12,14 +12,13 @@ if (process.env.DATABASE_URL) {
     }
   });
 } else {
-  sequelize = new Sequelize({
-    database: 'entropic_db',
-    dialect: 'postgresql',
-    // operatorsAliases: false,
+  console.log('another path');
+  sequelize = new Sequelize('postgres://postgres@localhost:5432/entropic_db', {
     define: {
       underscored: true
     }
   });
+  console.log('and got here');
 }
 
 const User = sequelize.define('user', {

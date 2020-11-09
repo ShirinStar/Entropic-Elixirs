@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const email = new Email({
+const sender = new Email({
   message: {
         from: EMAIL_ADDRESS
       
@@ -28,15 +28,18 @@ const email = new Email({
   transport: transporter
 });
 
-export async function sendMail(address, answers) {
-  await email
+export async function sendMail({username, email}, answers) {
+  console.log(email);
+  await sender
     .send({
       template: 'elixirs',
       message: {
-        to: address
+        to: email
       },
       locals: {
-        bar: answers
+        username,
+        email,
+        answers
       }
     })
     .then(console.log)

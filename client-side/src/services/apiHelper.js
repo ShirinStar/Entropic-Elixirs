@@ -19,6 +19,17 @@ const intakeUser = async(userInfo) => {
   }
  };
 
+const cookieLogin = async () => {
+  console.log('got here');
+  try {
+    const resp = await axios.get(`${BASE_URL}/users/init`);
+    console.log(resp);
+    return resp;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 const loginWS = async(token) => {
   try {
     const resp = await axios.post(`${BASE_URL}/users/login`, {
@@ -66,10 +77,11 @@ const drinkMaker = async (answerValues) => {
  };
 
 
-const emails = async (values) => {
+const emails = async (userData, values) => {
   console.log('sending email');
  try {
     const resp = await axios.post(`${BASE_URL}/users/answers/emails`, {
+      userData,
       values
     });
     console.log(resp.data);
@@ -85,5 +97,6 @@ export {
   updatedAnswer,
   loginWS,
   emails,
-  drinkMaker
+  drinkMaker,
+  cookieLogin
  }

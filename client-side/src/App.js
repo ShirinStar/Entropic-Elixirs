@@ -9,7 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Sum from './components/Sum';
 //import SocketContext from './components/SocketContext';
 import axios from 'axios';
-import { intakeUser, postAnswer, updatedAnswer, loginWS } from './services/apiHelper';
+import { intakeUser, postAnswer, updatedAnswer, loginWS, cookieLogin } from './services/apiHelper';
 import { withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -59,20 +59,18 @@ function App(props) {
 
   // const msg = useContext(SocketContext)
   const id = uuidv4();
-
   useEffect(() => {
-    console.log('incoming msg', id);
-    if (currentToken == '') {
-      setCurrentToken(id)
-      async function login() {
-        const result = await loginWS(id);
-        if (result.status == 'success') {
-          props.history.push('/welcome');
-        }
+    const fn = async () => {
+      try {
+        const resp = await cookieLogin();    
+        console.log(resp);
+      } catch (e) {
+        console.log(e);
       }
-      login();
     }
-  }, [currentToken])
+
+    fn();
+  }, []);
 
   return (
     <div className="App">

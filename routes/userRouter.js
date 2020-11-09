@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const {  Answer, User } = require('../models');
 const { answerRouter } = require('./answerRouter');
+import { v4 as uuidv4 } from 'uuid';
 import fetch from 'node-fetch';
 
 const userRouter = Router();
@@ -14,9 +15,29 @@ userRouter.get('/', async (req, res) => {
   }
 });
 
+userRouter.get('/init', async (req, res) => {
+  let token = req.cookies.token;
+  let user;
+  console.log(token);
+  if (!!token) {
+     user = await User.findOne({
+      where: {
+        token
+      }
+    });
+  }
+
+  if (!user) {
+    token = uuidv4();
+    await User.create({ token })
+    res.cookie('token', token);
+    res.sendStatus(201);
+  } else {
+    res.sendStatus(200);
+  }
+});
+
 userRouter.post('/', async (req, res) => {
-  res.sendStatus(200)
-  return
   try {
     const { user_age, user_gender } = req.body;
     const user = await User.findOne({
@@ -68,8 +89,15 @@ userRouter.post('/login', async (req, res) => {
 });
 
 userRouter.use('/answers', (req, res, next) => {
-  res.locals.user_id = req.params.id
-  next();
+  try {
+    console.log('user middleware')
+    res.locals.user_id = req.params.id
+  } catch (e) {
+    console.log('got an issue: ', e);
+  } finally {
+    console.log('ending user middleware')
+    next();
+  }
 }, answerRouter)
 
 module.exports = { userRouter }
