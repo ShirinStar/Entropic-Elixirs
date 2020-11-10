@@ -303,9 +303,10 @@ input[type=checkbox] {
 .wrapper {
   position: relative;
   /* width: 480px; */
-    width: 700px;
-    margin-left: -8%;
-    margin-top: 1.5em;
+    width: 600px;
+    margin-left: -12%;
+    margin-top: 2em;
+    margin-bottom: 2.8em;
 }
 
 .wrapper label {
@@ -602,10 +603,11 @@ input.email {
   }
 
   .wrapper {
-    margin-top: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
     position: relative;
-    width: 700px;
-    margin-left: -8%;
+    width: 660px;
+    margin-left: -10%;
   }
 
   /* .wrapper label {
@@ -700,9 +702,11 @@ input.email {
 
 .wrapper {
   position: relative;
-  width: 300px;
+  width: 320px;
   margin-left: -10%;
   margin-top: 2em;
+  margin-bottom: 3em;
+  padding-bottom: 0;
  }
 
  .wrapper label {
