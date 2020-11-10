@@ -15,7 +15,7 @@ if (process.env.DATABASE_URL) {
   });
 } else {
   console.log('another path');
-  sequelize = new Sequelize('postgres://ubuntu@localhost:5432/entropic_db', {
+  sequelize = new Sequelize('postgres://entropic:elixirs2019@3.13.228.78/entropic_db', {
     define: {
       underscored: true
     }
