@@ -32,16 +32,22 @@ function Sum(props) {
     updatedAnswer(graphData)
     //this is where the answers get sent to the drink API route/ drinkMaker.
     // drinkMaker(answerValues);
+    emails(graphData);
     setShowModel(true)
   }
 
-  const onSubmit = values => console.log(values);
+  const onSubmit = async (values) => {
+    const resp = await emails(values, graphData);
+    console.log(resp);
+    props.history.push('/');
+  }
 
   function emailSent(e) {
+    //debugger;
+    let values;
     console.log('email sent');
-    emails(values);
+    //emails(values);
     // clearState();
-    // props.history.push('/');
   }
 
   useEffect(() => {
@@ -118,7 +124,7 @@ function Sum(props) {
                       }
                     })}
                   />
-                  <button className='btn email' type="submit" onClick={emailSent}>Send</button>
+                  <button className='btn email' type="submit">Send</button>
                 </form>
 
                 :

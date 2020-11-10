@@ -68,16 +68,20 @@ function Questions(props) {
             <form className='form-q' onSubmit={handleSubmit}>
               {
                 questions.questions[questionId].answers.map((answer, index) => {
+                  console.log(answer.scores);;
                   return (
                     <div className='wrapper' key={answer.text}>
                       <input className='question-input'
                         data-answer-index={index}
+                        id={index}
                         data-catagory={answer.scores.catagory}
-                        value={answer.scores.value}
+                        value={index}
                         type='radio'
                         name='answer'
-                        required />
-                      <label className="question-label" htmlFor='question-label'> {answer.text} </label>
+                    required />
+                        <label htmlFor={index} className="question-label" >
+                          {answer.text}
+                        </label>
                     </div>
                   )
                 })
