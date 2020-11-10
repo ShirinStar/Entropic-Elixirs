@@ -28,7 +28,7 @@ const sender = new Email({
   transport: transporter
 });
 
-export async function sendMail({username, email}, answers) {
+async function sendMail({username, email}, answers) {
   console.log(email);
   const url = 'https://draketalley.com';
   await sender
@@ -47,3 +47,7 @@ export async function sendMail({username, email}, answers) {
     .then(console.log)
     .catch(console.error);
 }
+
+module.exports = {
+  sendMail
+};
