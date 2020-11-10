@@ -30,7 +30,7 @@ const sender = new Email({
 
 export async function sendMail({username, email}, answers) {
   console.log(email);
-  const url = 'https://draketalley.com';
+  const url = 'https://calendly.com/';
   await sender
     .send({
       template: 'elixirs',
