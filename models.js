@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
+require('dotenv').config()
 
 let sequelize;
+console.log(process.env.DATABASE_URL);
 if (process.env.DATABASE_URL) {
   console.log('called');
   sequelize = new Sequelize(process.env.DATABASE_URL, {
@@ -13,7 +15,7 @@ if (process.env.DATABASE_URL) {
   });
 } else {
   console.log('another path');
-  sequelize = new Sequelize('postgres://postgres@localhost:5432/entropic_db', {
+  sequelize = new Sequelize('postgres://ubuntu@localhost:5432/entropic_db', {
     define: {
       underscored: true
     }
