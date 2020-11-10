@@ -30,6 +30,7 @@ const sender = new Email({
 
 export async function sendMail({username, email}, answers) {
   console.log(email);
+  const url = 'https://draketalley.com';
   await sender
     .send({
       template: 'elixirs',
@@ -39,7 +40,8 @@ export async function sendMail({username, email}, answers) {
       locals: {
         username,
         email,
-        answers
+        answers,
+        url
       }
     })
     .then(console.log)
