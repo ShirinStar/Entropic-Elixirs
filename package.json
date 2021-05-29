@@ -39,7 +39,7 @@
     "webpack": "^4.35.0",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
-    "ws": "^7.1.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
